@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OverHaul</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Login.css" />
+    <link rel="stylesheet" href="~/css/Carros.css" />
+    <link rel="stylesheet" href="~/css/Detalhes.css" />
+    <link rel="stylesheet" href="~/css/sidemenu.css" />
+    <script src="~/js/site.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="~/images/logo.png" alt="OverHaul Logo" />
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><button type="button" id="btn-iniciar-sessao" class="btn login" data-toggle="modal" data-target="#myModal">Iniciar Sessão</button></li>
+                    <li><button type="button" id="btn-nossos-carros" class="btn menu-button" onclick="location.href='@Url.Action("Carros", "Home")'">Nossos Carros</button></li>
+                    <li><button type="button" id="btn-menu" class="btn menu-button">Menu</button></li> 
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="content">
+        @RenderBody()
+    </main>
+
+    <!-- Menu lateral -->
+    <div id="sideMenu" class="side-menu">
+        <a href="#" class="close-menu">&times;</a>
+        <div class="side-menu-content">
+            <div class="logo">
+                <img src="path/to/overhaul-logo.png" alt="Overhaul Logo">
+            </div>
+
+            <div class="menu-linha"></div> 
+
+            <ul>
+                <li><a href="#">Iniciar Sessão</a></li>
+                <li><a href="#">Comprar</a></li>
+                <li><a href="#">Ajude-nos a Melhorar</a></li>
+                <li><a href="#">Porque OverHaul</a></li>
+                <li><a href="#">Suporte</a></li>
+            </ul>
+
+            <div class="menu-linha"></div> 
+
+            <div class="logos-redes">
+                <a href="#"><img src="~/images/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="~/images/instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="~/images/linkedin-icon.png" alt="LinkedIn"></a>
+            </div>
+            <div class="footer">
+                <p>&copy; 2024 Todos os Direitos Reservados OverHaul</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-overlay"></div>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-sobre">
+                <h1>Overhaul</h1>
+                <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+            <div class="footer-visita">
+                <h1>Faça uma visita</h1>
+                <p>Av. Não Faça a mínima 123 - São Paulo - SP</p>
+                <p>CEP - 12345-666</p>
+            </div>
+            <div class="footer-contato">
+                <h1>Fale Conosco</h1>
+                <p>(11) 4002-8922</p>
+                <p>contato@overhaul.com.br</p>
+                <p>overhaul</p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2024 Todos os Direitos Reservados OverHaul</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <img src="path/to/close-icon.png" alt="Fechar" />
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="modal-title">Faça login com seu OverHaul ID</h4>
+                    <p><strong>Com seu Haul ID, você agora pode:</strong></p>
+                    <ul>
+                        <li><img src="~/images/check.png" alt="Check" /> acompanhe seus pedidos</li>
+                        <li><img src="~/images/check.png" alt="Check" /> mantenha-se atualizado com o conteúdo</li>
+                        <li><img src="~/images/check.png" alt="Check" /> receba atendimento exclusivo</li>
+                        <li><img src="~/images/check.png" alt="Check" /> acesse nossos recursos online</li>
+                    </ul>
+                    <div class="modal-buttons">
+                        <button type="button" id="btn-sessao" class="btn btn-primary btn-block" onclick="location.href='@Url.Action("Login", "Home")'">Iniciar Sessão</button>
+                        <button type="button" id="btn-conta" class="btn btn-secondary btn-block">Criar Conta</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

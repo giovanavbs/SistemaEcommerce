@@ -1,0 +1,12 @@
+C:\Users\giova\Desktop\overhaul teste\Carros.Classes\bin\Debug\net8.0\Carros.Classes.deps.json
+C:\Users\giova\Desktop\overhaul teste\Carros.Classes\bin\Debug\net8.0\Carros.Classes.dll
+C:\Users\giova\Desktop\overhaul teste\Carros.Classes\bin\Debug\net8.0\Carros.Classes.pdb
+C:\Users\giova\Desktop\overhaul teste\Carros.Classes\obj\Debug\net8.0\Carros.Classes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giova\Desktop\overhaul teste\Carros.Classes\obj\Debug\net8.0\Carros.Classes.AssemblyInfoInputs.cache
+C:\Users\giova\Desktop\overhaul teste\Carros.Classes\obj\Debug\net8.0\Carros.Classes.AssemblyInfo.cs
+C:\Users\giova\Desktop\overhaul teste\Carros.Classes\obj\Debug\net8.0\Carros.Classes.csproj.CoreCompileInputs.cache
+C:\Users\giova\Desktop\overhaul teste\Carros.Classes\obj\Debug\net8.0\Carros.Classes.sourcelink.json
+C:\Users\giova\Desktop\overhaul teste\Carros.Classes\obj\Debug\net8.0\Carros.Classes.dll
+C:\Users\giova\Desktop\overhaul teste\Carros.Classes\obj\Debug\net8.0\refint\Carros.Classes.dll
+C:\Users\giova\Desktop\overhaul teste\Carros.Classes\obj\Debug\net8.0\Carros.Classes.pdb
+C:\Users\giova\Desktop\overhaul teste\Carros.Classes\obj\Debug\net8.0\ref\Carros.Classes.dll

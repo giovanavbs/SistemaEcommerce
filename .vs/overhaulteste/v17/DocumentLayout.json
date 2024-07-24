@@ -1,0 +1,211 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\giova\\Desktop\\overhaul teste\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\overhaul teste\\overhaul teste\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\overhaul teste\\overhaul teste\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\overhaul teste\\overhaul teste\\views\\home\\detalhes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\detalhes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\overhaul teste\\overhaul teste\\views\\home\\carros.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\carros.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\overhaul teste\\overhaul teste\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\carros.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\wwwroot\\css\\carros.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\detalhes.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\wwwroot\\css\\detalhes.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\sidemenu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\wwwroot\\css\\sidemenu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\overhaul teste\\overhaul teste\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Detalhes.css",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\Detalhes.css",
+              "RelativeDocumentMoniker": "overhaul teste\\wwwroot\\css\\Detalhes.css",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\Detalhes.css",
+              "RelativeToolTip": "overhaul teste\\wwwroot\\css\\Detalhes.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFYAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-23T23:26:54.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Carros.css",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\Carros.css",
+              "RelativeDocumentMoniker": "overhaul teste\\wwwroot\\css\\Carros.css",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\Carros.css",
+              "RelativeToolTip": "overhaul teste\\wwwroot\\css\\Carros.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-23T22:28:13.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "sidemenu.css",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\sidemenu.css",
+              "RelativeDocumentMoniker": "overhaul teste\\wwwroot\\css\\sidemenu.css",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\sidemenu.css",
+              "RelativeToolTip": "overhaul teste\\wwwroot\\css\\sidemenu.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-23T22:21:16.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\Views\\Home\\Login.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Login.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\Views\\Home\\Login.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T22:14:25.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.css",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\Login.css",
+              "RelativeDocumentMoniker": "overhaul teste\\wwwroot\\css\\Login.css",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\Login.css",
+              "RelativeToolTip": "overhaul teste\\wwwroot\\css\\Login.css",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAAAF4AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-23T22:14:18.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAAAHoAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-03T03:49:27.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-03T03:40:50.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "overhaul teste\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "overhaul teste\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAA8BAAAAAAAAAAAAACEBAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-03T17:28:39.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Detalhes.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\Views\\Home\\Detalhes.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Detalhes.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\Views\\Home\\Detalhes.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\Detalhes.cshtml",
+              "ViewState": "AQIAACgAAAAAAAAAAAAAAAUAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T23:30:57.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Carros.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\Views\\Home\\Carros.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Carros.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\Views\\Home\\Carros.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\Carros.cshtml",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAABkAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T22:27:43.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "overhaul teste\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\overhaul teste\\overhaul teste\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "overhaul teste\\wwwroot\\js\\site.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-24T01:34:39.997Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+﻿@using Carros.Classes.Entidades
+@model List<Carro>
+
+@{
+    ViewData["Title"] = "Nossos Carros";
+}
+
+<div class="carros-section">
+    <h1>Nossos Carros</h1>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="filtros">
+                <div class="buscar">
+                    <input type="text" placeholder="Pesquisar" class="form-imput">
+                </div>
+                <div class="form-label">
+                    <label for="fabricante">Fabricante:</label>
+                    <input type="text" id="fabricante" class="form-imput">
+                </div>
+                <div class="form-label">
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" class="form-imput">
+                </div>
+                <div class="form-label">
+                    <label for="anoDe">Ano De:</label>
+                    <input type="text" id="anoDe" class="form-imput">
+                </div>
+                <div class="form-label">
+                    <label for="anoAte">Ano Até:</label>
+                    <input type="text" id="anoAte" class="form-imput">
+                </div>
+                <div class="form-label">
+                    <label for="precoDe">Preço De:</label>
+                    <input type="text" id="precoDe" class="form-imput">
+                </div>
+                <div class="form-label">
+                    <label for="precoAte">Preço Até:</label>
+                    <input type="text" id="precoAte" class="form-imput">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="ordenar-section">
+                <span>Ordenar Por:</span>
+                <button class="ordenar-btn">Preço</button>
+                <button class="ordenar-btn">Ano</button>
+                <button class="ordenar-btn">Marca</button>
+                <button class="ordenar-btn">Modelo</button>
+            </div>
+
+             <div class="lista-carros">
+                <div class="carro">
+                    <img src="" alt="carro imagem"> 
+                    <div class="carro-detalhes">
+                        <!-- <p><strong>Nome:</strong> carro.modelo</p> -->
+                        <p><strong>Nome:</strong></p>
+                        <p><strong>Marca:</strong></p> 
+                        <p><strong>Modelo:</strong></p> 
+                        <p><strong>Ano:</strong></p> 
+                        <p><strong>A partir de R$ </strong></p> 
+                        <a href="@Url.Action("Detalhes", "Home")" class="mais-detalhes">Mais Detalhes ></a>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="paginas-section">
+                <div class="paginas">
+                    <button class="pgn-btn">1</button>
+                    <button class="pgn-btn">2</button>
+                    <button class="pgn-btn">></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

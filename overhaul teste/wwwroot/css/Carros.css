@@ -1,0 +1,110 @@
+﻿.carros-section {
+    color: white;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.filtros {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 5px;
+    margin-left: 60px; 
+}
+
+.buscar {
+    margin-bottom: 10px;
+}
+
+.form-label {
+    margin-bottom: 10px;
+}
+
+.form-imput {
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+    .form-imput::placeholder {
+        color: #bbb;
+    }
+
+.ordenar-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-left: 80px;
+}
+
+.ordenar-btn {
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    margin-left: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .ordenar-btn:hover, .ordenar-btn:active {
+        background-color: white;
+        color: black;
+    }
+
+.lista-carros {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+}
+
+.carro {
+    display: flex;
+    margin-bottom: 30px;
+    margin-left: 20px; 
+}
+
+    .carro img {
+        width: 250px; 
+        height: 200px; 
+        border-radius: 5px;
+    }
+
+.carro-detalhes {
+    margin-left: 20px; 
+    font-size: 1.2em;
+}
+
+.mais-detalhes {
+    color: #00f;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.paginas-section {
+    margin-left: 210px; 
+}
+
+.paginas {
+    display: flex;
+    margin-top: 20px;
+}
+
+.pgn-btn {
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    margin: 0 5px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .pgn-btn:hover, .pgn-btn:active {
+        background-color: white;
+        color: black;
+    }

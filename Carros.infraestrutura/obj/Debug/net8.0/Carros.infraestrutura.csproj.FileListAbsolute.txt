@@ -1,0 +1,16 @@
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\bin\Debug\net8.0\Carros.infraestrutura.deps.json
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\bin\Debug\net8.0\Carros.infraestrutura.dll
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\bin\Debug\net8.0\Carros.infraestrutura.pdb
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\bin\Debug\net8.0\Carros.Classes.dll
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\bin\Debug\net8.0\Carros.Classes.pdb
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\obj\Debug\net8.0\Carros.infraestrutura.csproj.AssemblyReference.cache
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\obj\Debug\net8.0\Carros.infraestrutura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\obj\Debug\net8.0\Carros.infraestrutura.AssemblyInfoInputs.cache
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\obj\Debug\net8.0\Carros.infraestrutura.AssemblyInfo.cs
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\obj\Debug\net8.0\Carros.infraestrutura.csproj.CoreCompileInputs.cache
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\obj\Debug\net8.0\Carros.infraestrutura.sourcelink.json
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\obj\Debug\net8.0\Carros.i.072D1F47.Up2Date
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\obj\Debug\net8.0\Carros.infraestrutura.dll
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\obj\Debug\net8.0\refint\Carros.infraestrutura.dll
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\obj\Debug\net8.0\Carros.infraestrutura.pdb
+C:\Users\giova\Desktop\overhaul teste\Carros.infraestrutura\obj\Debug\net8.0\ref\Carros.infraestrutura.dll
