@@ -1,38 +1,148 @@
-﻿<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - OverHaul</title>
-    <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/login.css" />
-    <script src="~/js/site.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+﻿@model overhaul_teste.Models.Cliente;
 
-</head>
-<body>
-    
-    <div class="login-section">
-        <div class="login-div">
-            <h2>Inicie sessão com a sua Haul ID</h2>
-            <form action="/Home/Login" method="post">
-                <div class="form-login">
-                    <label for="email">Digite o Haul ID (e-mail ou telefone)</label>
-                    <input type="text" id="email" name="email" class="form-conteudo">
+@{
+    ViewData["Title"] = "Login";
+}
+
+<style>
+    .login-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+    }
+
+    .login-section h3{
+        font-weight: bold;
+    }
+
+    .container {
+        max-width: 400px;
+        width: 100%;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+       /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    }
+
+    .subtitle-doc {
+        font-size: 22px;
+        text-align: center;
+        color: #000;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            font-size: 14px;
+            color: #000;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #1D4ED8;
+        border-radius: 6px;
+        background-color: #EEF2FF;
+        color: #000;
+        box-sizing: border-box;
+    }
+
+        .form-control::placeholder {
+            color: #6366F1;
+            font-size: 14px;
+        }
+
+    a.esqueci-senha {
+        color: #1D4ED8;
+        text-decoration: none;
+        font-size: 12px;
+        display: inline-block;
+        margin-top: -5px;
+        margin-bottom: 20px;
+    }
+
+        a.esqueci-senha:hover {
+            text-decoration: underline;
+        }
+
+    .btn-primary,
+    .btn-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-primary {
+        background-color: #1D4ED8;
+        color: #ffffff;
+        padding: 14px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-bottom: 10px;
+    }
+
+        .btn-primary:hover {
+            background-color: white;
+            color: #1D4ED8;
+            border: 2px solid #1D4ED8;
+        }
+
+    .btn-link {
+        background-color: white;
+        border: 2px solid #1D4ED8;
+        color: #1D4ED8;
+        padding: 14px;
+        font-size: 16px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-link:hover {
+            background-color: #1D4ED8;
+            color: white;
+        }
+</style>
+
+
+<main role="main">
+    <section class="login-section">
+        <div class="container">
+            <h3 class="subtitle-doc">Inicie sessão com a sua <br /> Haul ID</h3>
+            <div id="code_login_1">
+                <div class="card">
+                    <article class="card-body">
+                        @if (ViewData["msg"] != null)
+                        {
+                            <p class="alert alert-danger">@Html.Raw(ViewData["msg"])</p>
+                        }
+                        <form method="post">
+                            <div class="form-group">
+                                <label>Digite o Haul ID (e-mail)</label>
+                                <input asp-for="Email" class="form-control" placeholder="Email" type="email">
+                            </div>
+                            <div class="form-group">
+                                <label>Insira sua senha</label>
+                                <input asp-for="Senha" class="form-control" placeholder="******" type="password">
+                            </div>
+                            <a href="#" class="esqueci-senha">Esqueci minha senha</a>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            </div>
+                            <a href="@Url.Action("CadastrarCliente", "Home")" class="btn-link">Criar Conta</a>
+                        </form>
+                    </article>
                 </div>
-                <div class="form-login">
-                    <label for="password">Insira sua senha</label>
-                    <input type="password" id="password" name="password" class="form-conteudo">
-                </div>
-                <a href="#" class="esqueceu-senha">Esqueci minha senha</a>
-                <button type="submit" class="btn btn-login">Login</button>
-            </form>
-            <button id="btn-criar-conta" class="btn btn-criar-conta">Criar Conta</button>
+            </div>
         </div>
-    </div>
-
-
-</body>
-</html>
+    </section>
+</main>

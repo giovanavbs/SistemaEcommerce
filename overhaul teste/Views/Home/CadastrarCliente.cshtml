@@ -1,0 +1,225 @@
+﻿@model overhaul_teste.Models.Cliente
+
+@{
+    ViewData["Title"] = "Cadastrar Cliente";
+}
+
+<style>
+    section.cadastro-section {
+        font-family: Arial, sans-serif;
+        background-color: #F3F4F6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 60px 0;
+    }
+
+    .container {
+        background-color: white;
+        padding: 40px;
+        border-radius: 8px;
+        max-width: 800px;
+        width: 100%;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .cadastro-section h1 {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #000;
+    } 
+
+    h4 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #000;
+    }
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .form-column {
+        flex: 1;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input.form-control {
+        padding: 12px;
+        font-size: 16px;
+        border: 2px solid #E5E7EB;
+        border-radius: 6px;
+        background-color: #F3F4F6;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+        input.form-control:focus {
+            border-color: #6366F1;
+            background-color: #E0E7FF;
+        }
+
+    .btn-primary {
+        background-color: #1D4ED8;
+        color: white;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: white;
+            color: #1D4ED8;
+            border: 2px solid #1D4ED8;
+        }
+
+    .btn-toggle {
+        padding: 10px 20px;
+        border: 2px solid #E5E7EB;
+        border-radius: 6px;
+        background-color: white;
+        color: #000;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .btn-toggle.active {
+            background-color: #1D4ED8;
+            color: white;
+            border-color: #1D4ED8;
+        }
+
+        .btn-toggle:hover {
+            border-color: #6366F1;
+        }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+<main role="main">
+    <section class="cadastro-section">
+        <div class="container">
+            <h1>Cadastrar Cliente</h1>
+            <form asp-action="CadastrarCliente">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-row">
+                    <div class="form-column">
+                        <h4>Informações Pessoais</h4>
+                        <div class="form-group">
+                            <label asp-for="Nome" class="control-label"></label>
+                            <input asp-for="Nome" class="form-control" />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Sobrenome" class="control-label"></label>
+                            <input asp-for="Sobrenome" class="form-control" />
+                            <span asp-validation-for="Sobrenome" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Telefone" class="control-label"></label>
+                            <input asp-for="Telefone" class="form-control" />
+                            <span asp-validation-for="Telefone" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Senha" class="control-label"></label>
+                            <input asp-for="Senha" type="password" class="form-control" />
+                            <span asp-validation-for="Senha" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="TipoCliente" class="control-label"></label>
+                            <div>
+                                <button type="button" class="btn-toggle" id="pf-btn" onclick="setTipoCliente('pf')">Pessoa Física</button>
+                                <button type="button" class="btn-toggle" id="pj-btn" onclick="setTipoCliente('pj')">Pessoa Jurídica</button>
+                                <input type="hidden" id="TipoCliente" name="TipoCliente" />
+                            </div>
+                            <span asp-validation-for="TipoCliente" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-column">
+                        <h4>Informações de Endereço</h4>
+                        <div class="form-group">
+                            <label asp-for="CepCli" class="control-label"></label>
+                            <input asp-for="CepCli" class="form-control" />
+                            <span asp-validation-for="CepCli" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="NumEnd" class="control-label"></label>
+                            <input asp-for="NumEnd" class="form-control" />
+                            <span asp-validation-for="NumEnd" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="CompEnd" class="control-label"></label>
+                            <input asp-for="CompEnd" class="form-control" />
+                            <span asp-validation-for="CompEnd" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Logradouro" class="control-label"></label>
+                            <input asp-for="Logradouro" class="form-control" />
+                            <span asp-validation-for="Logradouro" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Bairro" class="control-label"></label>
+                            <input asp-for="Bairro" class="form-control" />
+                            <span asp-validation-for="Bairro" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Cidade" class="control-label"></label>
+                            <input asp-for="Cidade" class="form-control" />
+                            <span asp-validation-for="Cidade" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="UF" class="control-label"></label>
+                            <input asp-for="UF" class="form-control" />
+                            <span asp-validation-for="UF" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<script>
+    function setTipoCliente(tipo) {
+        document.getElementById('TipoCliente').value = tipo;
+        document.getElementById('pf-btn').classList.toggle('active', tipo === 'pf');
+        document.getElementById('pj-btn').classList.toggle('active', tipo === 'pj');
+    }
+</script>

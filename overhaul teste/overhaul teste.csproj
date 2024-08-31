@@ -8,8 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Carros.Classes\Carros.Classes.csproj" />
-    <ProjectReference Include="..\Carros.infraestrutura\Carros.infraestrutura.csproj" />
+    <PackageReference Include="MySql.Data" Version="9.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>

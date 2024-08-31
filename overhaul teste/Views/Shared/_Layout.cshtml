@@ -13,18 +13,151 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #fff;
+            color: #000;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+            nav .logo {
+                display: flex;
+                align-items: center;
+                margin-left: 0px;
+            }
+
+                nav .logo img {
+                    height: 50px;
+                    margin-left: 0px;
+                    margin-right: 5px;
+                }
+
+                nav .logo h2 {
+                    font-size: 1.5em;
+                    margin: 0;
+                    color: #000;
+                    font-weight: normal;
+                }
+
+            nav .menu ul {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+            }
+
+                nav .menu ul li {
+                    display: inline;
+                }
+
+                    nav .menu ul li a {
+                        color: #000;
+                        text-decoration: none;
+                        display: inline-block;
+                        padding: 10px 15px;
+                        border-radius: 4px;
+                        transition: background-color 0.3s, font-weight 0.3s;
+                        font-size: 1.2em;
+                    }
+
+                        nav .menu ul li a:hover {
+                            font-weight: bold;
+                        }
+
+                        /* Remove a borda preta ao clicar */
+                        nav .menu ul li a:focus {
+                            outline: none;
+                        }
+
+        /* botões do menu */
+        .menu ul li button {
+            background: none;
+            border: none;
+            color: #000;
+            font-size: inherit;
+            font-weight: inherit;
+            padding: 0;
+            cursor: pointer;
+        }
+
+            .menu ul li button:hover {
+                font-weight: bold;
+            }
+
+        /* botão de login */
+        .menu .login {
+            margin-left: auto;
+            color: #000;
+            background: none;
+            border: none;
+        }
+
+            .menu .login:hover {
+                font-weight: bold;
+            }
+
+
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .footer-conteudo {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-section {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            padding-top: 10px;
+            border-top: 1px solid #fff;
+        }
+    </style>
+
 </head>
+
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <img src="~/images/logo.png" alt="OverHaul Logo" />
-            </div>
+            <nav>
+                <a href="@Url.Action("Index", "Home")" class="logo-link">
+                 <div class="logo">
+                   <img src="/images/overhaul.png" alt="OverHaul Logo" />
+                </a>
+                   <h2>OVERHAUL</h2>
+                 </div>
+
             <div class="menu">
                 <ul>
-                    <li><button type="button" id="btn-iniciar-sessao" class="btn login" data-toggle="modal" data-target="#myModal">Iniciar Sessão</button></li>
-                    <li><button type="button" id="btn-nossos-carros" class="btn menu-button" onclick="location.href='@Url.Action("Carros", "Home")'">Nossos Carros</button></li>
-                    <li><button type="button" id="btn-menu" class="btn menu-button">Menu</button></li> 
+                    <li><a href="#" id="btn-iniciar-sessao" class="login" data-toggle="modal" data-target="#myModal">INICIAR SESSÃO</a></li>
+                    <li><a href="@Url.Action("Carros", "Home")" id="btn-nossos-carros" class="menu-button">NOSSOS CARROS</a></li>
+                    <li><a href="#" id="btn-menu" class="menu-button">MENU</a></li>
                 </ul>
             </div>
         </nav>
@@ -42,17 +175,17 @@
                 <img src="path/to/overhaul-logo.png" alt="Overhaul Logo">
             </div>
 
-            <div class="menu-linha"></div> 
+            <div class="menu-linha"></div>
 
             <ul>
-                <li><a href="#">Iniciar Sessão</a></li>
-                <li><a href="#">Comprar</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#myModal">Iniciar Sessão</a></li>
+                <li><a href="@Url.Action("Carros", "Home")">Comprar</a></li>
                 <li><a href="#">Ajude-nos a Melhorar</a></li>
                 <li><a href="#">Porque OverHaul</a></li>
                 <li><a href="#">Suporte</a></li>
             </ul>
 
-            <div class="menu-linha"></div> 
+            <div class="menu-linha"></div>
 
             <div class="logos-redes">
                 <a href="#"><img src="~/images/facebook-icon.png" alt="Facebook"></a>
@@ -70,19 +203,27 @@
     <footer>
         <div class="footer-conteudo">
             <div class="footer-sobre">
-                <h1>Overhaul</h1>
-                <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h2>OVERHAUL</h2>
+                <br />
+                <p>Lorem ipsum is simply dummy</p>
+                <p>text of the printing and</p>
+                <p>typesetting industry.</p>
+                <br />
             </div>
             <div class="footer-visita">
-                <h1>Faça uma visita</h1>
+                <h3>Faça uma visita</h3>
+                <br />
                 <p>Av. Não Faça a mínima 123 - São Paulo - SP</p>
                 <p>CEP - 12345-666</p>
+                <br />
             </div>
             <div class="footer-contato">
-                <h1>Fale Conosco</h1>
+                <h3>Fale Conosco</h3>
+                <br />
                 <p>(11) 4002-8922</p>
                 <p>contato@overhaul.com.br</p>
                 <p>overhaul</p>
+                <br />
             </div>
         </div>
         <div class="footer-copyright">
@@ -109,11 +250,10 @@
                         <li><img src="~/images/check.png" alt="Check" /> acesse nossos recursos online</li>
                     </ul>
                     <div class="modal-buttons">
-                        <button type="button" id="btn-sessao" class="btn btn-primary btn-block" onclick="location.href='@Url.Action("Login", "Home")'">Iniciar Sessão</button>
-                        <button type="button" id="btn-conta" class="btn btn-secondary btn-block">Criar Conta</button>
+                        <a href="@Url.Action("Login", "Home")" id="btn-sessao" class="btn btn-primary btn-block">Iniciar Sessão</a>
+                        <a href="@Url.Action("CadastrarCliente", "Home")" id="btn-conta" class="btn btn-secondary btn-block">Criar Conta</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

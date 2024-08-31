@@ -1,13 +1,18 @@
-using Carros.infraestrutura;
-using Microsoft.EntityFrameworkCore;
+using overhaul_teste.Libraries.Login;
+using overhaul_teste.Repositorio;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//Adicionado para manipular a Sessão
+builder.Services.AddHttpContextAccessor();
+//Adicionar a Interface como um serviço 
+// Adicionar serviços 
+builder.Services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
 
-builder.Services.AddDbContext<CarroDbContext>(options =>
-    options.UseMySQL(builder.Configuration.GetConnectionString("Mysql")));
+builder.Services.AddScoped<overhaul_teste.Libraries.Sessao.Sessao>();
+builder.Services.AddScoped<LoginCliente>();
 
 var app = builder.Build();
 
@@ -29,10 +34,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.MapControllerRoute(
-    name: "teste",
-    pattern: "teste",
-    defaults: new { controller = "Teste", action = "Index" });
 
 app.Run();
