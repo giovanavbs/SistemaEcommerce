@@ -10,6 +10,7 @@ builder.Services.AddHttpContextAccessor();
 //Adicionar a Interface como um serviço 
 // Adicionar serviços 
 builder.Services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
+builder.Services.AddScoped<ICarroRepositorio, CarroRepositorio>();
 
 builder.Services.AddScoped<overhaul_teste.Libraries.Sessao.Sessao>();
 builder.Services.AddScoped<LoginCliente>();
