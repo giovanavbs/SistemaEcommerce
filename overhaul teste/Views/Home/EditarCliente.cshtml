@@ -1,0 +1,76 @@
+﻿@model overhaul_teste.Models.Cliente
+
+<div>
+    <h2>Editar Cliente</h2>
+
+    <form asp-action="EditarCliente">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div>
+            <label>Nome:</label>
+            <input type="text" asp-for="Nome" required />
+        </div>
+
+        <div>
+            <label>Sobrenome:</label>
+            <input type="text" asp-for="Sobrenome" required />
+        </div>
+
+        <div>
+            <label>Email:</label>
+            <input type="email" asp-for="Email" required />
+        </div>
+
+        <div>
+            <label>Telefone:</label>
+            <input type="tel" asp-for="Telefone" required />
+        </div>
+
+        <div>
+            <label>Tipo de Cliente:</label>
+            <select asp-for="TipoCliente">
+                <option value="pf">Pessoa Física</option>
+                <option value="pj">Pessoa Jurídica</option>
+            </select>
+        </div>
+
+        <div>
+            <label>CEP:</label>
+            <input type="text" asp-for="CepCli" required />
+        </div>
+
+        <div>
+            <label>Número do Endereço:</label>
+            <input type="number" asp-for="NumEnd" required />
+        </div>
+
+        <div>
+            <label>Complemento:</label>
+            <input type="text" asp-for="CompEnd" />
+        </div>
+
+        <div>
+            <label>Logradouro:</label>
+            <input type="text" asp-for="Logradouro" required />
+        </div>
+
+        <div>
+            <label>Bairro:</label>
+            <input type="text" asp-for="Bairro" required />
+        </div>
+
+        <div>
+            <label>Cidade:</label>
+            <input type="text" asp-for="Cidade" required />
+        </div>
+
+        <div>
+            <label>UF:</label>
+            <input type="text" asp-for="UF" required maxlength="2" />
+        </div>
+
+        <div>
+            <input type="submit" value="Alterar" class="btn btn-success" />
+        </div>
+    </form>
+</div>

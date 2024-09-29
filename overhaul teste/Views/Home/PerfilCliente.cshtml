@@ -1,0 +1,27 @@
+﻿@model overhaul_teste.Models.Cliente
+
+<div>
+    <h2>Perfil do Cliente</h2>
+    <div>
+        <strong>Código:</strong> @Model.Codigo<br />
+        <strong>Nome:</strong> @Model.Nome<br />
+        <strong>Sobrenome:</strong> @Model.Sobrenome<br />
+        <strong>Email:</strong> @Model.Email<br />
+        <strong>Telefone:</strong> @Model.Telefone<br />
+        <strong>Tipo de Cliente:</strong> @Model.TipoCliente<br />
+        <strong>Data de Cadastro:</strong> @Model.DataCadastro.ToString("dd/MM/yyyy HH:mm:ss")<br />
+        <strong>CEP:</strong> @Model.CepCli<br />
+        <strong>Número do Endereço:</strong> @Model.NumEnd<br />
+        <strong>Complemento:</strong> @Model.CompEnd<br />
+        <strong>Logradouro:</strong> @Model.Logradouro<br />
+        <strong>Bairro:</strong> @Model.Bairro<br />
+        <strong>Cidade:</strong> @Model.Cidade<br />
+        <strong>UF:</strong> @Model.UF<br />
+    </div>
+
+    <!-- botao editar cliente -->
+    <div>
+        <a asp-action="EditarCliente" asp-route-id="@Model.Codigo" class="btn btn-primary">Editar Cliente</a>
+    </div>
+
+</div>
