@@ -1,0 +1,36 @@
+﻿@model overhaul_teste.Models.Carro
+
+@{
+    ViewData["Title"] = "Marcar Test Drive";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overhaul</title>
+</head>
+<body>
+    <h1>Marcar Test Drive - @Model.Modelo</h1>
+
+    <div>
+        <p>Marca: @Model.Marca</p>
+        <p>Cor: @Model.Cor</p>
+        <p>Preço: R$ @Model.Preco</p>
+        <p>Descrição: @Model.Descricao</p>
+    </div>
+
+    <form method="post" action="@Url.Action("InserirTestDrive", "Home")">
+        <input type="hidden" name="id_cliente" value="1" /> <!-- id fixo pro cliente -->
+        <input type="hidden" name="id_carro" value="@Model.Id" />
+
+        <label for="data_test">Escolha a data e hora do test drive:</label>
+        <input type="datetime-local" id="data_test" name="data_test" required />
+
+        <button type="submit">Marcar Test Drive</button>
+    </form>
+
+    <a href="@Url.Action("Carros", "Home")">Voltar para a lista de carros</a>
+</body>
+</html>

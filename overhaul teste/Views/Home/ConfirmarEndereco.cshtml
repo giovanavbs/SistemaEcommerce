@@ -1,0 +1,59 @@
+﻿@model Cliente
+
+<h2>Confirmação de Entrega</h2>
+
+<form method="post" asp-action="ConfirmarEnderecoEntrega">
+    <h4>Escolha a forma de entrega:</h4>
+
+    <button type="button" id="btnReceberEmCasa">Receber em Casa</button>
+    <button type="submit" name="enderecoSelecionado" value="retirada">Retirar na Concessionária</button>
+
+
+    <!-- endereçoa atual do cliente -->
+    <div id="enderecoAtual" style="display: none;">
+        <h5>Endereço Atual</h5>
+        <p>@Model.Logradouro, @Model.NumEnd - @Model.Bairro</p>
+        <p>@Model.Cidade - @Model.UF, CEP: @Model.CepCli</p>
+
+        <button type="submit" name="enderecoSelecionado" value="atual">Usar Endereço Atual</button>
+    </div>
+
+    <!-- form pra inserir endereço de entrega -->
+    <div id="novoEnderecoForm" style="display: none;">
+        <h5>Insira um Novo Endereço</h5>
+        <label for="CepCli">CEP:</label>
+        <input type="text" id="CepCli" name="CepCli" required />
+
+        <label for="Logradouro">Logradouro:</label>
+        <input type="text" id="Logradouro" name="Logradouro" required />
+
+        <label for="Bairro">Bairro:</label>
+        <input type="text" id="Bairro" name="Bairro" required />
+
+        <label for="Cidade">Cidade:</label>
+        <input type="text" id="Cidade" name="Cidade" required />
+
+        <label for="UF">UF:</label>
+        <input type="text" id="UF" name="UF" required maxlength="2" />
+
+        <label for="NumEnd">Número:</label>
+        <input type="text" id="NumEnd" name="NumEnd" required />
+
+        <label for="CompEnd">Complemento:</label>
+        <input type="text" id="CompEnd" name="CompEnd" />
+
+        <button type="submit" name="enderecoSelecionado" value="novo">Usar Novo Endereço</button>
+    </div>
+</form>
+
+<script>
+    document.getElementById("btnReceberEmCasa").onclick = function () {
+        document.getElementById("enderecoAtual").style.display = "block";
+        document.getElementById("novoEnderecoForm").style.display = "block";
+    };
+
+    document.getElementById("btnRetirar").onclick = function () {
+        document.getElementById("enderecoAtual").style.display = "none";
+        document.getElementById("novoEnderecoForm").style.display = "none";
+    };
+</script>

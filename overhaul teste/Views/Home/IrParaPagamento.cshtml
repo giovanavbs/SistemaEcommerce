@@ -1,0 +1,12 @@
+﻿<h2>Escolha o Método de Pagamento</h2>
+<div>
+    <form asp-action="PagarCartao" method="get">
+        <input type="hidden" name="idPedido" value="@ViewBag.IdPedido" />
+        <button type="submit" class="btn btn-primary">Pagar com Cartão</button>
+    </form>
+
+    <form asp-action="PagarPix" method="get">
+        <input type="hidden" name="idPedido" value="@ViewBag.IdPedido" />
+        <button type="submit" class="btn btn-secondary">Pagar com Pix</button>
+    </form>
+</div>

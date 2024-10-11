@@ -1,0 +1,64 @@
+﻿@model List<overhaul_teste.Models.Cartao>
+
+<h2>Cartões Cadastrados</h2>
+
+@if (Model != null && Model.Count > 0)
+{
+    <form method="post" asp-action="SelecionarCartao">
+        <select name="idCartao" required>
+            <option value="">Selecione um cartão</option>
+            @foreach (var cartao in Model)
+            {
+                <option value="@cartao.IdCartao">@cartao.NumeroCartao - @cartao.NomeTitular - Válido até: @cartao.Validade</option>
+            }
+        </select>
+        <button type="submit">Usar Cartão Selecionado</button>
+    </form>
+}
+else
+{
+    <p>Nenhum cartão encontrado.</p>
+}
+
+<h3>Adicionar Novo Cartão</h3>
+<button id="btnAdicionarCartao">Adicionar Cartão</button>
+
+<div id="formNovoCartao" style="display:none;">
+    <form method="post" asp-action="AdicionarCartao">
+        <input type="hidden" name="idCliente" value="@ViewBag.ClientId" /> <!-- id do cliente escondido sendo passado no futuro -->
+        <div>
+            <label>Numero do Cartão:</label>
+            <input type="text" name="NumeroCartao" required />
+        </div>
+        <div>
+            <label>Nome do Titular:</label>
+            <input type="text" name="NomeTitular" required />
+        </div>
+        <div>
+            <label>Validade (MM/AAAA):</label>
+            <input type="text" name="Validade" required />
+        </div>
+        <div>
+            <label>CVV:</label>
+            <input type="text" name="CVV" required />
+        </div>
+        <div>
+            <label>Bandeira:</label>
+            <input type="text" name="Bandeira" required />
+        </div>
+        <button type="submit">Adicionar Cartão</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById("btnAdicionarCartao").onclick = function() {
+            var form = document.getElementById("formNovoCartao");
+            if (form.style.display === "none") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+        };
+    </script>
+}

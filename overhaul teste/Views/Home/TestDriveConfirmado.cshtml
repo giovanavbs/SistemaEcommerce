@@ -1,0 +1,14 @@
+﻿@model overhaul_teste.Models.TestDrive
+
+<h1>Test Drive Confirmado</h1>
+
+<p>Seu test drive foi agendado com sucesso!</p>
+<h2>Detalhes do Test Drive</h2>
+
+<p><strong>Carro:</strong> @Model.ModeloCarro</p>
+<p><strong>Marca:</strong> @Model.MarcaCarro</p>
+<p><strong>Cor:</strong> @Model.CorCarro</p>
+<p><strong>Preço:</strong> R$ @Model.PrecoCarro</p>
+<p><strong>Data e Hora do Test Drive:</strong> @Model.DataTest.ToString("dd/MM/yyyy HH:mm")</p>
+
+<a href="@Url.Action("Index", "Carros")">Voltar para a lista de carros</a>

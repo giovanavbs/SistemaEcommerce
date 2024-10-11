@@ -1,0 +1,20 @@
+﻿@model string // esse modelo recebe o pix gerado no controller 
+
+@{
+    ViewData["Title"] = "Pagamento via Pix";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="alert alert-info">
+    <h3>Código Pix:</h3>
+    <p>@Model</p> <!-- exibir o codigo -->
+</div>
+
+<div>
+    <h4>Confirme seu pagamento clicando no botão abaixo:</h4>
+    <form asp-action="ConfirmarEndereco" method="post">
+        <input type="hidden" name="codigoPix" value="@Model" /> <!-- armazenar o codigo pix ao clicar no botão-->
+        <button type="submit" class="btn btn-success">Pagamento Concluído</button> <!-- como a logica de pagamento nao é real, botao pra confirmar-->
+    </form>
+</div>

@@ -1,0 +1,30 @@
+﻿@if (Model.Itens != null && Model.Itens.Count > 0)
+{
+    <ul>
+        @foreach (var item in Model.Itens)
+        {
+            <li>
+                <img src="@item.Imagem" alt="@item.Modelo" style="width: 100px; height: auto;" />
+                @item.Quantidade x @item.Modelo @item.Marca (Ano: @item.Ano, Cor: @item.Cor) - Preço Unitário: @item.PrecoUnitario
+            </li>
+        }
+    </ul>
+
+    <p><strong>Valor Total do Pedido:</strong> R$ @Model.ValorTotal</p>
+
+    <div>
+        <form asp-action="CancelarPedido" method="post">
+            <input type="hidden" name="idPedido" value="@Model.IdPedido" />
+            <button type="submit" class="btn btn-danger">Cancelar Pedido</button>
+        </form>
+
+        <form asp-action="IrParaPagamento" method="get">
+            <input type="hidden" name="idPedido" value="@Model.IdPedido" />
+            <button type="submit" class="btn btn-success">Realizar Pagamento</button>
+        </form>
+    </div>
+}
+else
+{
+    <p>Nenhum item encontrado para este pedido.</p>
+}

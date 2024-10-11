@@ -1,0 +1,40 @@
+﻿@model overhaul_teste.ViewModels.PagamentoConfirmadoViewModel
+
+<h2>Pagamento Confirmado</h2>
+
+<h3>Detalhes do Pedido</h3>
+<p><strong>ID do Pedido:</strong> @Model.Pedido.IdPedido</p>
+<p><strong>Status do Pedido:</strong> @Model.Pedido.StatusPedido</p>
+<p><strong>Valor Total:</strong> R$ @Model.Pedido.ValorTotal</p>
+
+<h3>Itens do Pedido</h3>
+@if (Model.Itens != null && Model.Itens.Count > 0)
+{
+    <ul>
+        @foreach (var item in Model.Itens)
+        {
+            <li>
+                <img src="@item.Imagem" alt="@item.Modelo" style="width: 100px; height: auto;" />
+                @item.Quantidade x @item.Modelo @item.Marca (Ano: @item.Ano, Cor: @item.Cor) - Preço Unitário: R$ @item.PrecoUnitario
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Nenhum item encontrado para este pedido.</p>
+}
+
+<h3>Endereço de Entrega</h3>
+@if (Model.EnderecoEntrega != null)
+{
+    <p><strong>Logradouro:</strong> @Model.EnderecoEntrega.Logradouro</p>
+    <p><strong>CEP:</strong> @Model.EnderecoEntrega.CEP</p>
+    <p><strong>Bairro:</strong> @Model.EnderecoEntrega.BairroNome</p>
+    <p><strong>Cidade:</strong> @Model.EnderecoEntrega.CidadeNome</p>
+    <p><strong>UF:</strong> @Model.EnderecoEntrega.UFNome</p>
+}
+else
+{
+    <p>nao foi possível acessar o endereço de entrega</p>
+}
