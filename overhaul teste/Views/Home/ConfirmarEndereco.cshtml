@@ -2,23 +2,29 @@
 
 <h2>Confirmação de Entrega</h2>
 
-<form method="post" asp-action="ConfirmarEnderecoEntrega">
-    <h4>Escolha a forma de entrega:</h4>
+<h4>Escolha a forma de entrega:</h4>
 
-    <button type="button" id="btnReceberEmCasa">Receber em Casa</button>
+<form method="post" asp-action="InserirEnderecoRetirada">
     <button type="submit" name="enderecoSelecionado" value="retirada">Retirar na Concessionária</button>
+</form>
 
+<form method="post" asp-action="InserirEnderecoAtual" id="formUsarEnderecoAtual" style="display: none;">
+    <button type="submit" name="enderecoSelecionado" value="atual">Confirmar Endereço Atual</button>
+</form>
 
-    <!-- endereçoa atual do cliente -->
-    <div id="enderecoAtual" style="display: none;">
-        <h5>Endereço Atual</h5>
-        <p>@Model.Logradouro, @Model.NumEnd - @Model.Bairro</p>
-        <p>@Model.Cidade - @Model.UF, CEP: @Model.CepCli</p>
+<button type="button" id="btnUsarEnderecoAtual">Usar Endereço Atual</button>
 
-        <button type="submit" name="enderecoSelecionado" value="atual">Usar Endereço Atual</button>
-    </div>
+<!-- exibir endereço atual(do cli) ao clicar -->
+<div id="enderecoAtual" style="display: none;">
+    <h5>Endereço Atual</h5>
+    <p>@Model.Logradouro, @Model.NumEnd - @Model.Bairro</p>
+    <p>@Model.Cidade - @Model.UF, CEP: @Model.CepCli</p>
+</div>
 
-    <!-- form pra inserir endereço de entrega -->
+<button type="button" id="btnNovoEndereco">Inserir Novo Endereço</button>
+
+<!-- form pra inserir novo endereço ao clicar no botao -->
+<form method="post" asp-action="ConfirmarEnderecoEntrega">
     <div id="novoEnderecoForm" style="display: none;">
         <h5>Insira um Novo Endereço</h5>
         <label for="CepCli">CEP:</label>
@@ -47,13 +53,14 @@
 </form>
 
 <script>
-    document.getElementById("btnReceberEmCasa").onclick = function () {
+    // mostrar endereço atual
+    document.getElementById("btnUsarEnderecoAtual").onclick = function () {
         document.getElementById("enderecoAtual").style.display = "block";
-        document.getElementById("novoEnderecoForm").style.display = "block";
+        document.getElementById("formUsarEnderecoAtual").style.display = "block";
     };
 
-    document.getElementById("btnRetirar").onclick = function () {
-        document.getElementById("enderecoAtual").style.display = "none";
-        document.getElementById("novoEnderecoForm").style.display = "none";
+    // mostrar form do novo endereço
+    document.getElementById("btnNovoEndereco").onclick = function () {
+        document.getElementById("novoEnderecoForm").style.display = "block";
     };
 </script>

@@ -1,0 +1,56 @@
+﻿@model overhaul_teste.Models.Carro
+
+<h2>@(Model.StatusCarro == "excluido" ? "Confirmar Informações do Carro" : "Editar Carro")</h2>
+
+<form asp-action="EditarCarro" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label>Modelo:</label>
+        <input asp-for="Modelo" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Marca:</label>
+        <input asp-for="Marca" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Ano:</label>
+        <input asp-for="Ano" class="form-control" type="number" required />
+    </div>
+    <div class="form-group">
+        <label>Preço:</label>
+        <input asp-for="Preco" class="form-control" type="decimal" required />
+    </div>
+    <div class="form-group">
+        <label>Categoria:</label>
+        <select asp-for="Categoria" class="form-control" required>
+            <option value="1" selected="@((Model.Categoria == "Híbridos"))">Híbridos</option>
+            <option value="2" selected="@((Model.Categoria == "Elétricos"))">Elétricos</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Carregador:</label>
+        <input asp-for="Carregador" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Descrição:</label>
+        <textarea asp-for="Descricao" class="form-control" required></textarea>
+    </div>
+    <div class="form-group">
+        <label>Imagem:</label>
+        <input asp-for="Imagem" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Cor:</label>
+        <input asp-for="Cor" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        @(Model.StatusCarro == "excluido" ? "Reabilitar Venda" : "Atualizar Carro")
+    </button>
+</form>
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success">@TempData["MensagemSucesso"]</div>
+}

@@ -33,14 +33,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 100%; /* Ajustado para usar 100% da largura disponível */
-            margin: 0 auto; /* Remove qualquer margem automática */
-            padding-left: 0; /* Garante que não haja padding à esquerda */
+            max-width: 100%; 
+            margin: 0 auto; 
+            padding-left: 0; /* por puro fogo isso aqui */
             font-family: 'Poppins', sans-serif;
         }
 
             nav .logo {
-                margin-right: auto; /* Empurra tudo depois da logo para a direita */
+                margin-right: auto; 
             }
 
                 nav .logo img {
@@ -82,7 +82,7 @@
                         font-weight: bold;
                     }
 
-                    /* Remove a borda preta ao clicar */
+                    /* tirar a borda preta */
                     nav .menu ul li a:focus {
                         outline: none;
                     }
@@ -155,7 +155,17 @@
 
             <div class="menu">
                 <ul>
-                    <li><a href="#" id="btn-iniciar-sessao" class="login" data-toggle="modal" data-target="#myModal">INICIAR SESSÃO</a></li>
+                    <li>
+                        @if (Cliente.ClienteLogadoId == 0)
+                        {
+                        <li><a href="#" id="btn-iniciar-sessao" class="login" data-toggle="modal" data-target="#myModal">INICIAR SESSÃO</a></li>
+                        }
+                        else
+                        {
+                        <li><a href="@Url.Action("PerfilCliente", "Home")" id="btn-perfil" class="menu-button">PERFIL</a></li>
+                        }
+
+                    </li>
                     <li><a href="@Url.Action("Carros", "Home")" id="btn-nossos-carros" class="menu-button">NOSSOS CARROS</a></li>
                     <li><a href="#" id="btn-menu" class="menu-button">MENU</a></li>
                 </ul>
@@ -200,7 +210,7 @@
         </div>
     </footer>
 
-    <!-- Modal -->
+    <!-- modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -230,5 +240,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

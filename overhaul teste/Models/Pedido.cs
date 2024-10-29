@@ -9,6 +9,9 @@
 
            public string StatusPedido { get; set; }
 
+        public string NomeCliente { get; set; }
+        public string SobrenomeCliente { get; set; }
+
         public List<ItensPedido> Itens { get; set; } = new List<ItensPedido>();
 
     }

@@ -1,0 +1,38 @@
+﻿@model List<overhaul_teste.Models.Pedido>
+
+<h2>Todos os Pedidos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID Pedido</th>
+            <th>Cliente</th>
+            <th>Data do Pedido</th>
+            <th>Valor Total</th>
+            <th>Status</th>
+            <th>Itens</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pedido in Model)
+        {
+            <tr>
+                <td>@pedido.IdPedido</td>
+                <td>@pedido.NomeCliente @pedido.SobrenomeCliente</td>
+                <td>@pedido.DataPedido.ToShortDateString()</td>
+                <td>@pedido.ValorTotal.ToString("C")</td>
+                <td>@pedido.StatusPedido</td>
+                <td>
+                    <ul>
+                        @foreach (var item in pedido.Itens)
+                        {
+                            <li>
+                                @item.Marca @item.Modelo - @item.Quantidade x @item.PrecoUnitario.ToString("C")
+                            </li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

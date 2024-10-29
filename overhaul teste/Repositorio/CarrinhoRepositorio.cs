@@ -11,14 +11,14 @@ namespace overhaul_teste.Repositorio
 
         public CarrinhoRepositorio(IConfiguration conf) => _conexaoMySQL = conf.GetConnectionString("ConexaoMySQL");
 
-        // Adicionar item ao carrinho
+        // adicionar ao carrinho
         public void AdicionarItem(Carrinho item)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
 
-                // Verificar se o item já existe no carrinho
+                // nao adicionar 2x o mesmo item no carrinho
                 var existingItem = new MySqlCommand("SELECT * FROM CarrinhoCompra WHERE id_carro = @IdCarro AND id_cliente = @IdCliente", conexao);
                 existingItem.Parameters.AddWithValue("@IdCarro", item.IdCarro);
                 existingItem.Parameters.AddWithValue("@IdCliente", item.IdCliente);
@@ -26,14 +26,12 @@ namespace overhaul_teste.Repositorio
                 using (var reader = existingItem.ExecuteReader())
                 {
                     if (reader.Read())
-                    {
-                        // Atualiza a quantidade se o item já existir
+                    {   // aumentar a quantidade se ja existe
                         var quantidadeAtual = Convert.ToInt32(reader["QuantidadeProd"]);
                         var novaQuantidade = quantidadeAtual + item.QuantidadeProd;
 
-                        reader.Close(); // Fechar o reader antes de executar outro comando
+                        reader.Close(); 
 
-                        // Atualiza a quantidade
                         var updateCmd = new MySqlCommand("UPDATE CarrinhoCompra SET QuantidadeProd = @QuantidadeProd WHERE id_carro = @IdCarro AND id_cliente = @IdCliente", conexao);
                         updateCmd.Parameters.AddWithValue("@QuantidadeProd", novaQuantidade);
                         updateCmd.Parameters.AddWithValue("@IdCarro", item.IdCarro);
@@ -42,8 +40,8 @@ namespace overhaul_teste.Repositorio
                     }
                     else
                     {
-                        // Adiciona um novo item ao carrinho
-                        reader.Close(); // Fechar o reader antes de executar outro comando
+                       
+                        reader.Close(); 
 
 
                         var insertCmd = new MySqlCommand("INSERT INTO CarrinhoCompra (id_carro, id_cliente, modelo, marca, ano, preco, id_categoria, carregador, descricao, imagem, cor, QuantidadeProd) VALUES (@IdCarro, @IdCliente, @Modelo, @Marca, @Ano, @Preco, @IdCategoria, @Carregador, @Descricao, @Imagem, @Cor, @QuantidadeProd)", conexao);
@@ -67,7 +65,7 @@ namespace overhaul_teste.Repositorio
 
 
 
-        // Remover item do carrinho
+        // remover item
         public void RemoverItem(int idCarro, int idCliente)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
@@ -81,7 +79,7 @@ namespace overhaul_teste.Repositorio
             }
         }
 
-        // Obter itens do carrinho por cliente
+        // mostrar todos os itens do carrinho
         public List<Carrinho> ObterCarrinhoPorCliente(int idCliente)
         {
             var carrinho = new List<Carrinho>();
@@ -120,7 +118,7 @@ namespace overhaul_teste.Repositorio
             return carrinho;
         }
 
-        // Atualizar item no carrinho
+        // atualizar carrinho
         public void AtualizarItem(Carrinho item)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
@@ -135,7 +133,7 @@ namespace overhaul_teste.Repositorio
             }
         }
 
-        // Limpar carrinho do cliente
+        // limpar carrinho
         public void LimparCarrinho(int idCliente)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))

@@ -3,7 +3,8 @@
 <div>
     <h2>Perfil do Cliente</h2>
     <div>
-        <strong>Código:</strong> @Model.Codigo<br />
+        <strong>Código:</strong> @Cliente.ClienteLogadoId<br />
+        <strong>nivel de acesso:</strong> @Cliente.NivelAcesso<br />
         <strong>Nome:</strong> @Model.Nome<br />
         <strong>Sobrenome:</strong> @Model.Sobrenome<br />
         <strong>Email:</strong> @Model.Email<br />
@@ -17,11 +18,28 @@
         <strong>Bairro:</strong> @Model.Bairro<br />
         <strong>Cidade:</strong> @Model.Cidade<br />
         <strong>UF:</strong> @Model.UF<br />
+        <strong>CPF/CNPJ:</strong> @Model.CpfCnpj<br />
     </div>
 
     <!-- botao editar cliente -->
     <div>
-        <a asp-action="EditarCliente" asp-route-id="@Model.Codigo" class="btn btn-primary">Editar Cliente</a>
+        <a asp-action="EditarCliente" asp-route-id="@Model.Codigo" class="btn btn-primary">Editar Conta</a>
     </div>
+
+    <!-- botao excluir cliente -->
+    <div>
+        <form asp-action="ExcluirConta" method="post" onsubmit="return confirm('tem certeza que deseja excluir sua conta?');">
+            <input type="hidden" name="id" value="@Model.Codigo" />
+            <button type="submit" class="btn btn-danger">Excluir Conta</button>
+        </form>
+    </div>
+
+    <!-- botqo pra acessar o menu de administrador -->
+    @if (@Cliente.NivelAcesso == 2)
+    {
+        <div>
+            <a asp-action="MenuAdmin" class="btn btn-warning">Acessar Menu de Administrador</a>
+        </div>
+    }
 
 </div>

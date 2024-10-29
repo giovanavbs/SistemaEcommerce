@@ -1,0 +1,37 @@
+﻿@model List<overhaul_teste.Models.TestDrive>
+
+@{
+    ViewData["Title"] = "Test Drives Agendados";
+}
+
+<h2>Test Drives Agendados</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Cliente</th>
+            <th>CPF/CNPJ</th>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Ano</th>
+            <th>Data do Test Drive</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var testDrive in Model)
+        {
+            <tr>
+                <td>@testDrive.IdTest</td>
+                <td>@testDrive.ClienteNome</td>
+                <td>@testDrive.ClienteCpf</td>
+                <td>@testDrive.ModeloCarro</td>
+                <td>@testDrive.MarcaCarro</td>
+                <td>@testDrive.AnoCarro</td>
+                <td>@testDrive.DataTest.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>@testDrive.StatusTest</td>
+            </tr>
+        }
+    </tbody>
+</table>

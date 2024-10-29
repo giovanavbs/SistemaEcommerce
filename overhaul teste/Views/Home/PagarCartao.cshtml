@@ -25,7 +25,7 @@ else
 
 <div id="formNovoCartao" style="display:none;">
     <form method="post" asp-action="AdicionarCartao">
-        <input type="hidden" name="idCliente" value="@ViewBag.ClientId" /> <!-- id do cliente escondido sendo passado no futuro -->
+        <input type="hidden" name="idCliente" value="@Cliente.ClienteLogadoId" /> <!-- id do cliente escondido passado no futuro -->
         <div>
             <label>Numero do Cartão:</label>
             <input type="text" name="NumeroCartao" required />

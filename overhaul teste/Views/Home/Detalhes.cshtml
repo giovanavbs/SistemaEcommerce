@@ -10,183 +10,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overhaul</title>
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #fff;
-        }
-
-        .overhaul-section {
-            background-color: #121212;
-            padding: 20px;
-        }
-
-        .aaaa {
-            background-color: #121212;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            gap: 20px;
-        }
-
-        .outras-fotos {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-            .outras-fotos img {
-                width: 100px;
-                height: 100px;
-                border-radius: 10px;
-                object-fit: cover;
-            }
-
-        .principal img {
-            width: 500px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-
-        .produto-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex: 1;
-        }
-
-            .produto-info h1 {
-                font-size: 2em;
-                margin-bottom: 10px;
-            }
-
-            .produto-info p {
-                font-size: 1.2em;
-                margin-bottom: 10px;
-            }
-
-        .estrelas span {
-            font-size: 1.5em;
-            color: #ffd700;
-        }
-
-        .preco span {
-            font-size: 1.5em;
-            color: #00ff00;
-        }
-
-        .preco p {
-            font-size: 1em;
-            color: #bbb;
-        }
-
-        .cores {
-            margin-top: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .cores-escolha {
-            display: flex;
-            flex-direction: row;
-            margin-left: 10px;
-        }
-
-        .cor {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        /* Cores específicas */
-        .cor-vermelha {
-            background-color: red;
-        }
-
-        .cor-azul {
-            background-color: blue;
-        }
-
-        .cor-branca {
-            background-color: white;
-            border: 2px solid black; /* pra enxergar */
-        }
-
-        .cor-preta {
-            background-color: black;
-        }
-
-        .cor-prata {
-            background-color: silver;
-        }
-
-        /* cor nao selecionada */
-        .cor.inativa {
-            opacity: 0.4;
-        }
-
-        .quantidade {
-            margin-top: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-            .quantidade label {
-                margin-right: 10px;
-            }
-
-            /* Ajustando cor do select */
-            .quantidade select {
-                padding: 5px;
-                font-size: 1em;
-                background-color: black; /* Cor de fundo preta */
-                color: white; /* Texto branco */
-                border: 1px solid white; /* Borda branca */
-            }
-
-        .botoes {
-            margin-top: 20px;
-            display: flex;
-            gap: 10px;
-        }
-
-            .botoes button {
-                background-color: black; 
-                border: 1px solid white; 
-                color: white; 
-                padding: 10px 15px;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: all 0.3s ease;
-            }
-
-                .botoes button:hover,
-                .botoes button:active {
-                    background-color: white; 
-                    color: black;
-                }
-
-        .descricao {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #1e1e1e; 
-            border-radius: 10px;
-        }
-    </style>
 </head>
 <body>
     <section class="overhaul-section">
         <div class="aaaa">
-            <!-- no futuro mais atributos pra imagem nonbanco -->
+            <!-- imagens do carro -->
             <div class="outras-fotos">
                 <img src="@Model.Imagem" alt="imagem carro">
                 <img src="@Model.Imagem" alt="imagem carro">
@@ -195,7 +23,7 @@
             </div>
 
             <div class="principal">
-                <img src="@Model.Imagem" alt="Car">
+                <img src="@Model.Imagem" alt="car">
             </div>
 
             <div class="produto-info">
@@ -208,6 +36,9 @@
                     <span>A partir de R$ @Model.Preco</span>
                     <p>à vista no Pix (10% off)</p>
                 </div>
+
+                <p>Carregador: @Model.Carregador</p>
+
                 <div class="cores">
                     <span>Cor:</span>
                     <div class="cores-escolha">
@@ -218,6 +49,7 @@
                         <div class="cor cor-prata" data-cor="prata"></div>
                     </div>
                 </div>
+
                 <div class="quantidade">
                     <label for="quantidade">Quantidade:</label>
                     <select id="quantidade" name="quantidade">
@@ -226,10 +58,41 @@
                         <option value="3">3</option>
                     </select>
                 </div>
+
                 <div class="botoes">
-                    <button class="comprar-agora">Comprar agora</button>
-                    <button class="test-drive">Marcar Test Drive</button>
+                    <!-- carrinho -->
+                    @if (Cliente.ClienteLogadoId == 0) 
+                    {
+                        <button><a href="#" class="comprar-agora" data-toggle="modal" data-target="#myModal">
+                            Adicionar ao Carrinho
+                        </a></button>
+                    }
+                    else
+                    {
+                        @using (Html.BeginForm("AdicionarItem", "Home", "Carrinho", FormMethod.Post))
+                        {
+                            <input type="hidden" name="id" value="@Model.Id" />
+                            <input type="hidden" name="quantidade" value="1" />
+                            <button type="submit" class="comprar-agora">
+                                Adicionar ao Carrinho
+                            </button>
+                        }
+                    }
+
+                    @if (Cliente.ClienteLogadoId == 0) 
+                    {
+                        <button><a href="#" class="test-drive" data-toggle="modal" data-target="#myModal">
+                            Marcar Test Drive
+                        </a></button>
+                    }
+                    else
+                    {
+                        <button class="test-drive" onclick="window.location.href='@Url.Action("MarcarTestDrive", "Home", new { id = Model.Id })'">
+                            Marcar Test Drive
+                        </button>
+                    }
                 </div>
+
             </div>
         </div>
 
@@ -237,14 +100,16 @@
             <p>Descrição:</p>
             <p>@Model.Descricao</p>
         </div>
+
+        <p>Categoria: @Model.Categoria</p>
+
     </section>
 
     <script>
- 
+        // script das cores
         const cores = document.querySelectorAll('.cores-escolha .cor');
         const corAtual = "@Model.Cor".toLowerCase(); // cor do carro em questão
 
-        // se clicar em outra cor(pensando em quando for fazer o crud dos carros)
         function destacarCor(corSelecionada) {
             cores.forEach(cor => {
                 if (cor.getAttribute('data-cor') === corSelecionada) {
@@ -257,7 +122,6 @@
 
         destacarCor(corAtual);
 
-        // evento de click pra cada cor
         cores.forEach(cor => {
             cor.addEventListener('click', function () {
                 let corSelecionada = this.getAttribute('data-cor');

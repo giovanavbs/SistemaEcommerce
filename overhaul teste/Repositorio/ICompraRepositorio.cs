@@ -6,7 +6,7 @@ namespace overhaul_teste.Repositorio
     {
         void RegistrarPedido(int idCliente);
 
-        Pedido ObterPedidoRecente(/*int idCliente*/);
+        Pedido ObterPedidoRecente(int idCliente);
 
         void SelecionarCartao(int idPedido, int idCartao, decimal valorPago);
 
@@ -15,5 +15,7 @@ namespace overhaul_teste.Repositorio
         void InserirFormaPagamento(int idPedido, string formaPagamento, decimal valorPago);
 
         void CancelarPedido(int idPedido, int idCliente);
+
+        List<Pedido> VerPedidos();
     }
 }

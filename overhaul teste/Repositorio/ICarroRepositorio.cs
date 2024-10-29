@@ -4,12 +4,21 @@ namespace overhaul_teste.Repositorio
 {
     public interface ICarroRepositorio
     {
-        // Método para exibir todos os carros
         IEnumerable<Carro> ExibirCarros();
 
-        // Método para obter um carro por ID
         Carro ObterCarroPorId(int id);
 
+        int ObterCarroIdRecente();
+
+        void AdicionarCarro(Carro carro);
+
+        IEnumerable<Carro> ObterTodosCarros();
+
+        IEnumerable<Carro> ObterTodosCarroStatus();
+
+        void ExcluirCarro(int idCarro);
+
+        void AtualizarCarro(Carro carro);
     }
 }
 

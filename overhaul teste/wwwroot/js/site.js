@@ -6,15 +6,15 @@
 $(document).ready(function () {
     $('#btn-menu').click(function () {
         $('body').toggleClass('side-menu-open');
-        return false; // Impede que o evento de clique seja propagado
+        return false; 
     });
 
     $('.close-menu, .menu-overlay').click(function () {
         $('body').removeClass('side-menu-open');
-        return false; // Impede que o evento de clique seja propagado
+        return false; 
     });
 
-    // Fechar o menu ao clicar em um item do menu
+    // fechar o menu
     $('#sideMenu ul li a').click(function () {
         $('body').removeClass('side-menu-open');
     });

@@ -12,7 +12,7 @@ namespace overhaul_teste.Models
         public string CVV { get; set; } 
         public string Bandeira { get; set; } 
 
-        // retornar os ultimos 4 digitos do cartao
+        // ultimos 4 digitos do cartao
         public string UltimosQuatroDigitos
         {
             get

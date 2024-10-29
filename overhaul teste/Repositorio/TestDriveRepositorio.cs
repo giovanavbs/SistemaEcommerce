@@ -96,6 +96,43 @@ namespace overhaul_teste.Repositorio
             return idTest;
         }
 
+        public List<TestDrive> ObterTodosTestDrives()
+        {
+            var testDrives = new List<TestDrive>();
+
+            using (var connection = new MySqlConnection(_conexaoMySQL))
+            {
+                connection.Open();
+
+                using (var command = new MySqlCommand("MostrarTodosTestDrives", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var testDrive = new TestDrive
+                            {
+                                IdTest = reader.GetInt32("id_test"),
+                                ClienteNome = reader.GetString("cliente_nome"),
+                                ClienteCpf = reader.GetDecimal("cliente_cpf").ToString(),   
+                                DataTest = reader.GetDateTime("data_test"),
+                                ModeloCarro = reader.GetString("carro_modelo"),
+                                MarcaCarro = reader.GetString("carro_marca"),
+                                AnoCarro = reader.GetInt32("carro_ano"),       
+                                StatusTest = reader.GetString("status_test")     
+                            };
+                            testDrives.Add(testDrive);
+                        }
+                    }
+                }
+            }
+
+            return testDrives;
+        }
+
+
 
     }
 }

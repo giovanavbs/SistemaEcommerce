@@ -9,5 +9,7 @@ namespace overhaul_teste.Repositorio
         TestDrive ObterTestDrive(int idCliente, int idTest);
 
         int ObterTestDriveRecenteID(int idCliente);
+
+        List<TestDrive> ObterTodosTestDrives();
     }
 }

@@ -2,8 +2,12 @@
 {
     public class Cliente
     {
-        //CRIANDO O ENCAPSULAMENTO DO OBJETO COM GET E SET
-        // ARRAY
+        // atributos globais 
+        public static int ClienteLogadoId { get; set; }
+
+        public static int NivelAcesso { get; set; }
+
+        // atributos
         public int Codigo { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
@@ -19,6 +23,10 @@
         public string Bairro { get; set; }
         public string Cidade { get; set; }
         public string UF { get; set; }
+
+        public DateTime DataCadastro { get; set; }
+
+        public decimal CpfCnpj { get; set; }
 
         public List<Cliente>? ListaCliente { get; set; }
     }

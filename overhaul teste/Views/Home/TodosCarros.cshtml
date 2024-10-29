@@ -1,0 +1,49 @@
+﻿@model IEnumerable<overhaul_teste.Models.Carro>
+
+<div>
+    <h2>Todos os Carros</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Ano</th>
+                <th>Preço</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var carro in Model)
+            {
+                <tr>
+                    <td>@carro.Id</td>
+                    <td>@carro.Modelo</td>
+                    <td>@carro.Marca</td>
+                    <td>@carro.Ano</td>
+                    <td>@carro.Preco</td>
+                    <td>@carro.StatusCarro</td>
+                    <td>
+                        <form asp-action="EditarCarro" method="get" style="display:inline;">
+                            <input type="hidden" name="id" value="@carro.Id" />
+                            <button type="submit" class="btn btn-primary">
+                                @(carro.StatusCarro == "excluido" ? "Reabilitar Venda" : "Alterar")
+                            </button>
+                        </form>
+
+
+
+
+
+                        <form asp-action="ExcluirCarro" method="post" style="display:inline;">
+                            <input type="hidden" name="idCarro" value="@carro.Id" />
+                            <button type="submit" class="btn btn-danger" @(carro.StatusCarro == "excluido" ? "disabled" : "")>Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

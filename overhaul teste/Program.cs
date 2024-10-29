@@ -11,9 +11,17 @@ builder.Services.AddHttpContextAccessor();
 // Adicionar serviços 
 builder.Services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
 builder.Services.AddScoped<ICarroRepositorio, CarroRepositorio>();
+builder.Services.AddScoped<ICarrinhoRepositorio, CarrinhoRepositorio>();
+builder.Services.AddScoped<ICompraRepositorio, CompraRepositorio>();
+builder.Services.AddScoped<ITestDriveRepositorio, TestDriveRepositorio>();
 
 builder.Services.AddScoped<overhaul_teste.Libraries.Sessao.Sessao>();
 builder.Services.AddScoped<LoginCliente>();
+
+//Add Gerenciador Arquivo como servi?os
+
+builder.Services.AddScoped<overhaul_teste.Cookie.Cookie>();
+builder.Services.AddScoped<overhaul_teste.CarrinhoCompra.CookieCarrinhoCompra>();
 
 var app = builder.Build();
 
