@@ -14,8 +14,10 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var pedido in Model)
+        @foreach (var grupoPedido in Model.GroupBy(p => p.IdPedido))
         {
+            var pedido = grupoPedido.First();
+
             <tr>
                 <td>@pedido.IdPedido</td>
                 <td>@pedido.NomeCliente @pedido.SobrenomeCliente</td>
@@ -24,7 +26,7 @@
                 <td>@pedido.StatusPedido</td>
                 <td>
                     <ul>
-                        @foreach (var item in pedido.Itens)
+                        @foreach (var item in grupoPedido.SelectMany(p => p.Itens))
                         {
                             <li>
                                 @item.Marca @item.Modelo - @item.Quantidade x @item.PrecoUnitario.ToString("C")

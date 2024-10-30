@@ -3,8 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\verificarpedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\verificarpedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\perfilcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\perfilcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\pagarpix.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\pagarpix.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\pagamentoconfirmado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\pagamentoconfirmado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\carrinho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\carrinho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\cadastrarcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\cadastrarcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\adicionarcarro.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\adicionarcarro.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\verpedidoscliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\verpedidoscliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\verificartestdrives.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\verificartestdrives.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\pagarcartao.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\pagarcartao.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\viewmodels\\pagamentoconfirmadoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\viewmodels\\pagamentoconfirmadoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\repositorio\\testdriverepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\repositorio\\testdriverepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\repositorio\\itestdriverepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\repositorio\\itestdriverepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\repositorio\\icomprarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\repositorio\\icomprarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\repositorio\\iclienterepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\repositorio\\iclienterepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\repositorio\\icarrorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\repositorio\\icarrorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\repositorio\\icarrinhorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,20 +91,28 @@
       "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\repositorio\\carrinhorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\viewmodels\\pagamentoconfirmadoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\viewmodels\\pagamentoconfirmadoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\models\\itenspedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\models\\itenspedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\irparapagamento.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\irparapagamento.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\confirmarendereco.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\confirmarendereco.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\verificartestdrives.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\verificartestdrives.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\verificarpedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\verificarpedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\todoscarros.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -49,22 +121,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\testdriveconfirmado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\testdriveconfirmado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\perfilcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\perfilcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\pagarpix.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\pagarpix.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\pagarcartao.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\pagarcartao.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\pagamentoconfirmado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\pagamentoconfirmado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\menuadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -77,10 +133,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\irparapagamento.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\irparapagamento.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -103,40 +155,8 @@
       "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\confirmarpedido.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\confirmarendereco.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\confirmarendereco.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\carros.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\carros.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\carrinho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\carrinho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\cadastrarcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\cadastrarcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\views\\home\\adicionarcarro.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\adicionarcarro.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\repositorio\\itestdriverepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\repositorio\\itestdriverepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\repositorio\\icomprarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\repositorio\\icomprarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\repositorio\\iclienterepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\repositorio\\iclienterepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\repositorio\\icarrorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\repositorio\\icarrorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\models\\testdrive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -147,24 +167,12 @@
       "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\models\\pedidocompleto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\models\\itenspedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\models\\itenspedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\models\\cartao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -177,10 +185,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\models\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\models\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\giova\\desktop\\tccoverhaul\\overhaul teste\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -242,47 +246,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 0,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Controllers\\HomeController.cs",
               "RelativeToolTip": "overhaul teste\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA5AAAA",
+              "ViewState": "AQIAAOgBAAAAAAAAAAAAAFECAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-30T16:03:06.132Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "VerificarPedidos.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\VerificarPedidos.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\VerificarPedidos.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\VerificarPedidos.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\VerificarPedidos.cshtml",
-              "ViewState": "AQIAABMAAAAAAAAAAAAAAB8AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-28T18:35:05.651Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CompraRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\CompraRepositorio.cs",
-              "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\CompraRepositorio.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\CompraRepositorio.cs",
-              "RelativeToolTip": "overhaul teste\\Repositorio\\CompraRepositorio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAALwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T17:33:09.376Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -292,98 +268,111 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ClienteRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\ClienteRepositorio.cs",
-              "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\ClienteRepositorio.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\ClienteRepositorio.cs",
-              "RelativeToolTip": "overhaul teste\\Repositorio\\ClienteRepositorio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIUBAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T15:58:34.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ICarrinhoRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\ICarrinhoRepositorio.cs",
-              "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\ICarrinhoRepositorio.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\ICarrinhoRepositorio.cs",
-              "RelativeToolTip": "overhaul teste\\Repositorio\\ICarrinhoRepositorio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T21:41:56.675Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TestDriveRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\TestDriveRepositorio.cs",
-              "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\TestDriveRepositorio.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\TestDriveRepositorio.cs",
-              "RelativeToolTip": "overhaul teste\\Repositorio\\TestDriveRepositorio.cs",
-              "ViewState": "AQIAAHgAAAAAAAAAAAAAAIcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T22:01:55.252Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CarroRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\CarroRepositorio.cs",
-              "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\CarroRepositorio.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\CarroRepositorio.cs",
-              "RelativeToolTip": "overhaul teste\\Repositorio\\CarroRepositorio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAOcAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-22T21:05:51.796Z",
+              "DocumentIndex": 6,
+              "Title": "CadastrarCliente.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\CadastrarCliente.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\CadastrarCliente.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\CadastrarCliente.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\CadastrarCliente.cshtml",
+              "ViewState": "AQIAAN0AAAAAAAAAAAAAALAAAABZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-30T16:12:35.072Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CarrinhoRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\CarrinhoRepositorio.cs",
-              "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\CarrinhoRepositorio.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\CarrinhoRepositorio.cs",
-              "RelativeToolTip": "overhaul teste\\Repositorio\\CarrinhoRepositorio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T21:41:42.207Z",
+              "Title": "Carrinho.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Carrinho.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Carrinho.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Carrinho.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\Carrinho.cshtml",
+              "ViewState": "AQIAAJQAAAAAAAAAAAAAAKAAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-29T20:35:41.141Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PagamentoConfirmadoViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\ViewModels\\PagamentoConfirmadoViewModel.cs",
-              "RelativeDocumentMoniker": "overhaul teste\\ViewModels\\PagamentoConfirmadoViewModel.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\ViewModels\\PagamentoConfirmadoViewModel.cs",
-              "RelativeToolTip": "overhaul teste\\ViewModels\\PagamentoConfirmadoViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T23:46:10.835Z",
+              "DocumentIndex": 4,
+              "Title": "PagamentoConfirmado.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PagamentoConfirmado.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\PagamentoConfirmado.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PagamentoConfirmado.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\PagamentoConfirmado.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T00:28:13.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PagarPix.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PagarPix.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\PagarPix.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PagarPix.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\PagarPix.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T20:24:29.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PerfilCliente.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PerfilCliente.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\PerfilCliente.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PerfilCliente.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\PerfilCliente.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-28T21:35:53.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VerificarPedidos.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\VerificarPedidos.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\VerificarPedidos.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\VerificarPedidos.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\VerificarPedidos.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-28T18:35:05.651Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKAAAACHAAAA",
+              "Title": "AdicionarCarro.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\AdicionarCarro.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\AdicionarCarro.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\AdicionarCarro.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\AdicionarCarro.cshtml",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAAC8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-03T03:49:27.295Z",
+              "WhenOpened": "2024-10-22T23:25:04.782Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "VerPedidosCliente.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\VerPedidosCliente.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\VerPedidosCliente.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\VerPedidosCliente.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\VerPedidosCliente.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T22:09:06.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "VerificarTestDrives.cshtml",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\VerificarTestDrives.cshtml",
               "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\VerificarTestDrives.cshtml",
@@ -397,58 +386,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "TodosCarros.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\TodosCarros.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\TodosCarros.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\TodosCarros.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\TodosCarros.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T23:51:17.342Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TestDriveConfirmado.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\TestDriveConfirmado.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\TestDriveConfirmado.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\TestDriveConfirmado.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\TestDriveConfirmado.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-08T21:59:11.436Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "PerfilCliente.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PerfilCliente.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\PerfilCliente.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PerfilCliente.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\PerfilCliente.cshtml",
-              "ViewState": "AQIAABkAAAAAAAAAAAAAABQAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-28T21:35:53.607Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "PagarPix.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PagarPix.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\PagarPix.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PagarPix.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\PagarPix.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-08T20:24:29.439Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "PagarCartao.cshtml",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PagarCartao.cshtml",
               "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\PagarCartao.cshtml",
@@ -461,202 +398,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "PagamentoConfirmado.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PagamentoConfirmado.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\PagamentoConfirmado.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\PagamentoConfirmado.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\PagamentoConfirmado.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-08T00:28:13.516Z",
+              "DocumentIndex": 11,
+              "Title": "PagamentoConfirmadoViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\ViewModels\\PagamentoConfirmadoViewModel.cs",
+              "RelativeDocumentMoniker": "overhaul teste\\ViewModels\\PagamentoConfirmadoViewModel.cs",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\ViewModels\\PagamentoConfirmadoViewModel.cs",
+              "RelativeToolTip": "overhaul teste\\ViewModels\\PagamentoConfirmadoViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T23:46:10.835Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "MenuAdmin.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\MenuAdmin.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\MenuAdmin.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\MenuAdmin.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\MenuAdmin.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T21:43:32.103Z",
+              "DocumentIndex": 12,
+              "Title": "TestDriveRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\TestDriveRepositorio.cs",
+              "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\TestDriveRepositorio.cs",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\TestDriveRepositorio.cs",
+              "RelativeToolTip": "overhaul teste\\Repositorio\\TestDriveRepositorio.cs",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAAAIcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T22:01:55.252Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "MarcarTestDrive.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\MarcarTestDrive.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\MarcarTestDrive.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\MarcarTestDrive.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\MarcarTestDrive.cshtml",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAACEAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-08T21:55:55.276Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Login.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Login.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Login.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\Login.cshtml",
-              "ViewState": "AQIAAIsAAAAAAAAAAAAAAJAAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-23T22:14:25.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IrParaPagamento.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\IrParaPagamento.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\IrParaPagamento.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\IrParaPagamento.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\IrParaPagamento.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-07T17:40:41.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-03T03:40:50.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "EditarCliente.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\EditarCliente.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\EditarCliente.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\EditarCliente.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\EditarCliente.cshtml",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAAAEgAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-28T22:09:20.7Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "EditarCarro.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\EditarCarro.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\EditarCarro.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\EditarCarro.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\EditarCarro.cshtml",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAADIAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-28T15:53:42.568Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Detalhes.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Detalhes.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Detalhes.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Detalhes.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\Detalhes.cshtml",
-              "ViewState": "AQIAAHgAAAAAAAAAAAAAAG0AAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-23T23:30:57.396Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ConfirmarPedido.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\ConfirmarPedido.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\ConfirmarPedido.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\ConfirmarPedido.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\ConfirmarPedido.cshtml",
-              "ViewState": "AQIAABAAAAAAAAAAAAAAABwAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-02T17:30:17.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ConfirmarEndereco.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\ConfirmarEndereco.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\ConfirmarEndereco.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\ConfirmarEndereco.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\ConfirmarEndereco.cshtml",
-              "ViewState": "AQIAADEAAAAAAAAAAAAAADsAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-07T19:18:43.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Carros.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Carros.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Carros.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Carros.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\Carros.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-23T22:27:43.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Carrinho.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Carrinho.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Carrinho.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Carrinho.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\Carrinho.cshtml",
-              "ViewState": "AQIAAJQAAAAAAAAAAAAAAKAAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-29T20:35:41.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "CadastrarCliente.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\CadastrarCliente.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\CadastrarCliente.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\CadastrarCliente.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\CadastrarCliente.cshtml",
-              "ViewState": "AQIAAN0AAAAAAAAAAAAAALAAAABZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-30T16:12:35.072Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "AdicionarCarro.cshtml",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\AdicionarCarro.cshtml",
-              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\AdicionarCarro.cshtml",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\AdicionarCarro.cshtml",
-              "RelativeToolTip": "overhaul teste\\Views\\Home\\AdicionarCarro.cshtml",
-              "ViewState": "AQIAACkAAAAAAAAAAAAAAC8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T23:25:04.782Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 13,
               "Title": "ITestDriveRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\ITestDriveRepositorio.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\ITestDriveRepositorio.cs",
@@ -669,33 +437,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 14,
               "Title": "ICompraRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\ICompraRepositorio.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\ICompraRepositorio.cs",
               "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\ICompraRepositorio.cs",
               "RelativeToolTip": "overhaul teste\\Repositorio\\ICompraRepositorio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAiAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAABQAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-02T17:33:44.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 15,
               "Title": "IClienteRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\IClienteRepositorio.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\IClienteRepositorio.cs",
               "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\IClienteRepositorio.cs",
               "RelativeToolTip": "overhaul teste\\Repositorio\\IClienteRepositorio.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAAACAAAABBAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAACkAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-30T16:01:20.958Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 16,
               "Title": "ICarroRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\ICarroRepositorio.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\ICarroRepositorio.cs",
@@ -708,7 +476,281 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ICarrinhoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\ICarrinhoRepositorio.cs",
+              "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\ICarrinhoRepositorio.cs",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\ICarrinhoRepositorio.cs",
+              "RelativeToolTip": "overhaul teste\\Repositorio\\ICarrinhoRepositorio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T21:41:56.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CompraRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\CompraRepositorio.cs",
+              "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\CompraRepositorio.cs",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\CompraRepositorio.cs",
+              "RelativeToolTip": "overhaul teste\\Repositorio\\CompraRepositorio.cs",
+              "ViewState": "AQIAAAIBAAAAAAAAAAAAAO4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T17:33:09.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ClienteRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\ClienteRepositorio.cs",
+              "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\ClienteRepositorio.cs",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\ClienteRepositorio.cs",
+              "RelativeToolTip": "overhaul teste\\Repositorio\\ClienteRepositorio.cs",
+              "ViewState": "AQIAAGkBAAAAAAAAAAAAAOMBAABaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T15:58:34.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CarroRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\CarroRepositorio.cs",
+              "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\CarroRepositorio.cs",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\CarroRepositorio.cs",
+              "RelativeToolTip": "overhaul teste\\Repositorio\\CarroRepositorio.cs",
+              "ViewState": "AQIAAPEAAAAAAAAAAAAAAOcAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T21:05:51.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CarrinhoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\CarrinhoRepositorio.cs",
+              "RelativeDocumentMoniker": "overhaul teste\\Repositorio\\CarrinhoRepositorio.cs",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Repositorio\\CarrinhoRepositorio.cs",
+              "RelativeToolTip": "overhaul teste\\Repositorio\\CarrinhoRepositorio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T21:41:42.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\Pedido.cs",
+              "RelativeDocumentMoniker": "overhaul teste\\Models\\Pedido.cs",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\Pedido.cs",
+              "RelativeToolTip": "overhaul teste\\Models\\Pedido.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAkwBAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T17:24:40.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ItensPedido.cs",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\ItensPedido.cs",
+              "RelativeDocumentMoniker": "overhaul teste\\Models\\ItensPedido.cs",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\ItensPedido.cs",
+              "RelativeToolTip": "overhaul teste\\Models\\ItensPedido.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T17:25:57.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ConfirmarEndereco.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\ConfirmarEndereco.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\ConfirmarEndereco.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\ConfirmarEndereco.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\ConfirmarEndereco.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-07T19:18:43.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IrParaPagamento.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\IrParaPagamento.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\IrParaPagamento.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\IrParaPagamento.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\IrParaPagamento.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-07T17:40:41.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "overhaul teste\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\Cliente.cs",
+              "RelativeToolTip": "overhaul teste\\Models\\Cliente.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAA5wBwAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T16:07:23.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKAAAACHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-03T03:49:27.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "TodosCarros.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\TodosCarros.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\TodosCarros.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\TodosCarros.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\TodosCarros.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T23:51:17.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "TestDriveConfirmado.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\TestDriveConfirmado.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\TestDriveConfirmado.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\TestDriveConfirmado.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\TestDriveConfirmado.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T21:59:11.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "MenuAdmin.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\MenuAdmin.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\MenuAdmin.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\MenuAdmin.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\MenuAdmin.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T21:43:32.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "MarcarTestDrive.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\MarcarTestDrive.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\MarcarTestDrive.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\MarcarTestDrive.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\MarcarTestDrive.cshtml",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAACEAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T21:55:55.276Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Login.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Login.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Login.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\Login.cshtml",
+              "ViewState": "AQIAAIsAAAAAAAAAAAAAAJAAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T22:14:25.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-03T03:40:50.163Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 34,
+              "Title": "EditarCliente.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\EditarCliente.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\EditarCliente.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\EditarCliente.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\EditarCliente.cshtml",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAEgAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-28T22:09:20.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "EditarCarro.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\EditarCarro.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\EditarCarro.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\EditarCarro.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\EditarCarro.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAADIAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-28T15:53:42.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Detalhes.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Detalhes.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Detalhes.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Detalhes.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\Detalhes.cshtml",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAAAG0AAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T23:30:57.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ConfirmarPedido.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\ConfirmarPedido.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\ConfirmarPedido.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\ConfirmarPedido.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\ConfirmarPedido.cshtml",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAABwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-02T17:30:17.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Carros.cshtml",
+              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Carros.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\Carros.cshtml",
+              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Views\\Home\\Carros.cshtml",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\Carros.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T22:27:43.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
               "Title": "TestDrive.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\TestDrive.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Models\\TestDrive.cs",
@@ -716,12 +758,11 @@
               "RelativeToolTip": "overhaul teste\\Models\\TestDrive.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAAABEAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T22:04:21.043Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T22:04:21.043Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 40,
               "Title": "PedidoCompleto.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\PedidoCompleto.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Models\\PedidoCompleto.cs",
@@ -729,38 +770,11 @@
               "RelativeToolTip": "overhaul teste\\Models\\PedidoCompleto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T17:19:25.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T17:19:25.911Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "Pedido.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\Pedido.cs",
-              "RelativeDocumentMoniker": "overhaul teste\\Models\\Pedido.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\Pedido.cs",
-              "RelativeToolTip": "overhaul teste\\Models\\Pedido.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T17:24:40.92Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "ItensPedido.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\ItensPedido.cs",
-              "RelativeDocumentMoniker": "overhaul teste\\Models\\ItensPedido.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\ItensPedido.cs",
-              "RelativeToolTip": "overhaul teste\\Models\\ItensPedido.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T17:25:57.203Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Models\\ErrorViewModel.cs",
@@ -768,12 +782,11 @@
               "RelativeToolTip": "overhaul teste\\Models\\ErrorViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T18:46:14.24Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-11T18:46:14.24Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "Endereco.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\Endereco.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Models\\Endereco.cs",
@@ -781,25 +794,11 @@
               "RelativeToolTip": "overhaul teste\\Models\\Endereco.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T23:28:31.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T23:28:31.737Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\Cliente.cs",
-              "RelativeDocumentMoniker": "overhaul teste\\Models\\Cliente.cs",
-              "ToolTip": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\Cliente.cs",
-              "RelativeToolTip": "overhaul teste\\Models\\Cliente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T16:07:23.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 43,
               "Title": "Cartao.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\Cartao.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Models\\Cartao.cs",
@@ -807,12 +806,11 @@
               "RelativeToolTip": "overhaul teste\\Models\\Cartao.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T17:44:27.976Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T17:44:27.976Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "Carro.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\Carro.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Models\\Carro.cs",
@@ -820,12 +818,11 @@
               "RelativeToolTip": "overhaul teste\\Models\\Carro.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-22T21:07:20.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-22T21:07:20.643Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 45,
               "Title": "Carrinho.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Models\\Carrinho.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Models\\Carrinho.cs",
@@ -833,12 +830,11 @@
               "RelativeToolTip": "overhaul teste\\Models\\Carrinho.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T16:27:30.327Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-29T16:27:30.327Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "overhaul teste\\wwwroot\\css\\site.css",
@@ -850,7 +846,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "sidemenu.css",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\wwwroot\\css\\sidemenu.css",
               "RelativeDocumentMoniker": "overhaul teste\\wwwroot\\css\\sidemenu.css",
@@ -862,7 +858,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "Login.css",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\wwwroot\\css\\Login.css",
               "RelativeDocumentMoniker": "overhaul teste\\wwwroot\\css\\Login.css",
@@ -874,7 +870,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "Detalhes.css",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\wwwroot\\css\\Detalhes.css",
               "RelativeDocumentMoniker": "overhaul teste\\wwwroot\\css\\Detalhes.css",
@@ -886,7 +882,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "Carros.css",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\wwwroot\\css\\Carros.css",
               "RelativeDocumentMoniker": "overhaul teste\\wwwroot\\css\\Carros.css",
@@ -898,7 +894,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "overhaul teste\\wwwroot\\js\\site.js",
@@ -910,7 +906,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "LoginCliente.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Libraries\\Login\\LoginCliente.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Libraries\\Login\\LoginCliente.cs",
@@ -922,7 +918,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "Sessao.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Libraries\\Sessao\\Sessao.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Libraries\\Sessao\\Sessao.cs",
@@ -934,7 +930,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Program.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Program.cs",
@@ -946,7 +942,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\appsettings.json",
               "RelativeDocumentMoniker": "overhaul teste\\appsettings.json",
@@ -958,7 +954,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "CookieCarrinhoCompra.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\CarrinhoCompra\\CookieCarrinhoCompra.cs",
               "RelativeDocumentMoniker": "overhaul teste\\CarrinhoCompra\\CookieCarrinhoCompra.cs",
@@ -970,7 +966,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "Cookie.cs",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\Cookie\\Cookie.cs",
               "RelativeDocumentMoniker": "overhaul teste\\Cookie\\Cookie.cs",
@@ -982,7 +978,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\giova\\Desktop\\TCCoverhaul\\overhaul teste\\appsettings.Development.json",
               "RelativeDocumentMoniker": "overhaul teste\\appsettings.Development.json",

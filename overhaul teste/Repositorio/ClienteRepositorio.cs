@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using overhaul_teste.Models;
+using overhaul_teste.ViewModels;
 using System.Data;
 namespace overhaul_teste.Repositorio
 {
@@ -403,9 +404,119 @@ namespace overhaul_teste.Repositorio
             }
         }
 
+        public List<Pedido> VerPedidosCliente(int idCliente)
+        {
+            var pedidos = new List<Pedido>();
+
+            using (var connection = new MySqlConnection(_conexaoMySQL))
+            {
+                connection.Open();
+
+                using (var command = new MySqlCommand("spObterPedidosEItensCliente", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@cliente_id", idCliente);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var pedido = new Pedido
+                            {
+                                IdPedido = reader.GetInt32("id_pedido"),
+                                DataPedido = reader.GetDateTime("data_pedido"),
+                                ValorTotal = reader.GetDecimal("valor_total"),
+                                StatusPedido = reader.GetString("status_pedido"),
+                                Itens = new List<ItensPedido>()
+                            };
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("id_item_pedido")))
+                            {
+                                var item = new ItensPedido
+                                {
+                                    IdItem = reader.GetInt32("id_item_pedido"),
+                                    Modelo = reader.GetString("modelo_carro"),
+                                    Marca = reader.GetString("marca_carro"),
+                                    Quantidade = reader.GetInt32("quantidade"),
+                                    PrecoUnitario = reader.GetDecimal("preco_unitario"),
+                                };
+                                pedido.Itens.Add(item);
+                            }
+
+                            pedidos.Add(pedido);
+                        }
+                    }
+                }
+            }
+
+            return pedidos;
+        }
+
+        public PagamentoConfirmadoViewModel ObterDetalhesPedido(int idPedido)
+        {
+            var viewModel = new PagamentoConfirmadoViewModel();
+
+            using (var connection = new MySqlConnection(_conexaoMySQL))
+            {
+                connection.Open();
+
+                using (var command = new MySqlCommand("spObterDetalhesPedidoPorID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@p_idPedido", idPedido);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+
+                            viewModel.Pedido = new Pedido
+                            {
+                                IdPedido = reader.GetInt32("id_pedido"),
+                                DataPedido = reader.GetDateTime("data_pedido"),
+                                ValorTotal = reader.GetDecimal("valor_total"),
+                                StatusPedido = reader.GetString("status_pedido"),
+                            };
 
 
+                            do
+                            {
+                                if (!reader.IsDBNull(reader.GetOrdinal("id_item_pedido")))
+                                {
+                                    var item = new ItensPedido
+                                    {
+                                        IdItem = reader.GetInt32("id_item_pedido"),
+                                        IdCarro = reader.GetInt32("id_carro"),
+                                        Quantidade = reader.GetInt32("quantidade"),
+                                        PrecoUnitario = reader.GetDecimal("preco_unitario"),
+                                        Modelo = reader.GetString("modelo"),
+                                        Marca = reader.GetString("marca"),
+                                        Ano = reader.GetInt32("ano"),
+                                        Cor = reader.GetString("cor"),
+                                        Imagem = reader.GetString("imagem")
+                                    };
+                                    viewModel.Itens.Add(item);
+                                }
 
+                                if (reader.FieldCount > 10) 
+                                {
+                                    viewModel.EnderecoEntrega = new Endereco
+                                    {
+                                        Logradouro = reader.GetString("logradouro"),
+                                        CEP = reader.GetInt32("cep"),
+                                        BairroNome = reader.GetString("BairroNome"),
+                                        CidadeNome = reader.GetString("CidadeNome"),
+                                        UFNome = reader.GetString("UFNome")
+                                    };
+                                }
+                            } while (reader.Read());
+                        }
+                    }
+                }
+            }
+
+            return viewModel;
+        }
 
     }
 

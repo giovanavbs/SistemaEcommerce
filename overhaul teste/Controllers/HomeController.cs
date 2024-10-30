@@ -575,6 +575,30 @@ namespace overhaul_teste.Controllers
             var pedidos = _compraRepositorio.VerPedidos();
             return View(pedidos); 
         }
+
+        public IActionResult VerPedidosCliente()
+        {
+            int idCliente = Cliente.ClienteLogadoId;
+
+            var pedidos = _clienteRepositorio.VerPedidosCliente(idCliente);
+            return View(pedidos);
+        }
+
+
+        public IActionResult ExibirPagamentoConfirmado(int idPedido)
+        {
+            var viewModel = _clienteRepositorio.ObterDetalhesPedido(idPedido);
+
+            if (viewModel == null)
+            {
+                ViewBag.MensagemErro = "NAo foi possível encontrar os detalhes do pedido.";
+                return View("Erro");
+            }
+
+            return View("PagamentoConfirmado", viewModel);
+        }
+
+
     }
 
 }

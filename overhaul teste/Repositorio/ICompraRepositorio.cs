@@ -17,5 +17,7 @@ namespace overhaul_teste.Repositorio
         void CancelarPedido(int idPedido, int idCliente);
 
         List<Pedido> VerPedidos();
+
+        public Pedido ObterPedido(int idPedido);
     }
 }

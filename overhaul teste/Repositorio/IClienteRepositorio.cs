@@ -1,5 +1,6 @@
 ﻿using overhaul_teste.Models;
 using MySqlX.XDevAPI;
+using overhaul_teste.ViewModels;
 
 namespace overhaul_teste.Repositorio
 {
@@ -35,5 +36,9 @@ namespace overhaul_teste.Repositorio
         void InserirEnderecoRetirada(int idPedido, int idCliente);
 
         void InserirEnderecoAtualNaEntrega(Cliente cliente, int idPedido, int idCliente);
+
+        List<Pedido> VerPedidosCliente(int idCliente);
+
+        PagamentoConfirmadoViewModel ObterDetalhesPedido(int idPedido);
     }
 }

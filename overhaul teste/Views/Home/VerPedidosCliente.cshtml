@@ -1,0 +1,48 @@
+﻿@model List<overhaul_teste.Models.Pedido>
+
+<h2>Pedidos do Cliente</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>voce ainda não realizou nenhum pedido.</p>
+}
+else
+{
+    @foreach (var grupoPedido in Model.GroupBy(p => p.IdPedido))
+    {
+        var pedido = grupoPedido.First();
+
+        <div>
+            <h3>pedido #@pedido.IdPedido - @pedido.DataPedido.ToShortDateString()</h3>
+            <p>status: @pedido.StatusPedido</p>
+            <p>valor total: @pedido.ValorTotal.ToString("C")</p>
+
+            @if (pedido.StatusPedido == "pagamento concluido")
+            {
+                <form asp-action="ExibirPagamentoConfirmado" asp-controller="Home" method="get">
+                    <input type="hidden" name="idPedido" value="@pedido.IdPedido" />
+                    <button type="submit">ver detalhes da compra</button>
+                </form>
+            }
+            else if (pedido.StatusPedido == "aguardando pagamento")
+            {
+                <form asp-action="IrParaPagamento" asp-controller="Home" method="get">
+                    <input type="hidden" name="idPedido" value="@pedido.IdPedido" />
+                    <button type="submit">ir para pagamento</button>
+                </form>
+            }
+            else if (pedido.StatusPedido == "cancelado")
+            {
+                <p>pedido cancelado</p>
+            }
+
+            <h4>Itens do Pedido:</h4>
+            <ul>
+                @foreach (var item in grupoPedido.SelectMany(p => p.Itens))
+                {
+                    <li>Modelo: @item.Modelo, Marca: @item.Marca</li>
+                }
+            </ul>
+        </div>
+    }
+}
