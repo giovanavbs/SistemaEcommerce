@@ -598,6 +598,64 @@ namespace overhaul_teste.Controllers
             return View("PagamentoConfirmado", viewModel);
         }
 
+        public IActionResult VerTestDrivesCliente()
+        {
+            int idCliente = Cliente.ClienteLogadoId;
+
+            var testDrives = _testDriveRepositorio.ObterTestDrivesPorCliente(idCliente);
+            return View(testDrives);
+        }
+
+        [HttpPost]
+        public IActionResult ConcluirTestDrive(int idTest)
+        {
+            _testDriveRepositorio.AtualizarStatusTestDrive(idTest, "concluido");
+            return RedirectToAction("VerTestDrivesCliente"); 
+        }
+
+        [HttpPost]
+        public IActionResult CancelarTestDrive(int idTest)
+        {
+            _testDriveRepositorio.AtualizarStatusTestDrive(idTest, "cancelado");
+            return RedirectToAction("VerTestDrivesCliente"); 
+        }
+
+        [HttpGet]
+        public IActionResult RegistrarAvaliacao(int idPedido)
+        {
+
+            var avaliacao = new Avaliacao
+            {
+                IdPedido = idPedido,
+            };
+            return View(avaliacao);
+        }
+
+        [HttpPost]
+        public IActionResult RegistrarAvaliacao(Avaliacao avaliacao)
+        {
+            if (ModelState.IsValid)
+            {
+                
+                _compraRepositorio.InserirAvaliacao(avaliacao);
+
+                
+                var detalhesAvaliacao = _compraRepositorio.ObterDetalhesAvaliacao(avaliacao.IdPedido);
+
+                
+                return View("DetalhesPedido", detalhesAvaliacao);
+            }
+
+           
+            return View(avaliacao);
+        }
+
+        public IActionResult Logout()
+        {
+            _clienteRepositorio.Logout(); 
+            return RedirectToAction("Index"); 
+        }
+
 
     }
 

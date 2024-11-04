@@ -1,4 +1,5 @@
 ﻿using overhaul_teste.Models;
+using overhaul_teste.ViewModels;
 
 namespace overhaul_teste.Repositorio
 {
@@ -19,5 +20,13 @@ namespace overhaul_teste.Repositorio
         List<Pedido> VerPedidos();
 
         public Pedido ObterPedido(int idPedido);
+
+        // void InserirAvaliacao(int idPedido, int idCliente, string avaliacaoEscrita, decimal avaliacaoNota);
+
+        void InserirAvaliacao(Avaliacao avaliacao);
+
+        //List<AvaliacaoViewModel> ObterAvaliacaoPorPedido(int idPedido);
+
+        AvaliacaoViewModel ObterDetalhesAvaliacao(int idPedido);
     }
 }

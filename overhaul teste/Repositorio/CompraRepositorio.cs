@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using overhaul_teste.Models;
 using overhaul_teste.Repositorio;
+using overhaul_teste.ViewModels;
 using System.Data;
 
 public class CompraRepositorio : ICompraRepositorio
@@ -261,5 +262,76 @@ public class CompraRepositorio : ICompraRepositorio
 
         return pedido;
     }
+
+    public void InserirAvaliacao(Avaliacao avaliacao)
+    {
+        using (var connection = new MySqlConnection(_conexaoMySQL))
+        {
+            connection.Open();
+
+            string sql = "CALL spInserirAvaliacao(@id_pedido, @id_cliente, @avaliacao_escrita, @avaliacao_nota)";
+
+            using (var command = new MySqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id_pedido", avaliacao.IdPedido);
+                command.Parameters.AddWithValue("@id_cliente", avaliacao.IdCliente);
+                command.Parameters.AddWithValue("@avaliacao_escrita", avaliacao.AvaliacaoEscrita);
+                command.Parameters.AddWithValue("@avaliacao_nota", avaliacao.AvaliacaoNota);
+
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+
+
+    public AvaliacaoViewModel ObterDetalhesAvaliacao(int idPedido)
+    {
+        using (var connection = new MySqlConnection(_conexaoMySQL))
+        {
+            connection.Open();
+            string sql = "CALL spObterAvaliacaoPorPedido(@id_pedido)";
+
+            using (var command = new MySqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id_pedido", idPedido);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    
+                    var avaliacao = new AvaliacaoViewModel();
+                    avaliacao.ItensPedido = new List<ItensPedido>();
+
+                    while (reader.Read())
+                    {
+                        if (avaliacao.IdAvaliacao == 0) 
+                        {
+                            avaliacao.IdAvaliacao = reader.GetInt32("id_avaliacao");
+                            avaliacao.NomeCliente = reader.GetString("nome");
+                            avaliacao.SobrenomeCliente = reader.GetString("sobrenome");
+                            avaliacao.AvaliacaoEscrita = reader.GetString("avaliacao_escrita");
+                            avaliacao.AvaliacaoNota = reader.GetDecimal("avaliacao_nota");
+                            avaliacao.DataAvaliacao = reader.GetDateTime("data_avaliacao");
+                        }
+
+ 
+                        var item = new ItensPedido
+                        {
+                            Quantidade = reader.GetInt32("quantidade"),
+                            Marca = reader.GetString("marca"),
+                            Modelo = reader.GetString("modelo"),
+                            Ano = reader.GetInt32("ano")
+                        };
+                        avaliacao.ItensPedido.Add(item);
+                    }
+
+                    return avaliacao;
+                }
+            }
+        }
+    }
+
+
+
+
 
 }
