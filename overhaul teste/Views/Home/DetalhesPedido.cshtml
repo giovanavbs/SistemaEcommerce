@@ -1,0 +1,34 @@
+﻿@model overhaul_teste.ViewModels.AvaliacaoViewModel
+
+<h2>Detalhes da Avaliação</h2>
+
+<h3>Avaliação</h3>
+<p><strong>nome do cliente:</strong> @Model.NomeCliente @Model.SobrenomeCliente</p>
+<p><strong>avaliação escrita:</strong> @Model.AvaliacaoEscrita</p>
+<p><strong>nota:</strong> @Model.AvaliacaoNota</p>
+<p><strong>data da avaliação:</strong> @Model.DataAvaliacao.ToString("dd/MM/yyyy")</p>
+
+<h3>Itens do Pedido</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Ano</th>
+            <th>Quantidade</th>
+            <th>Preço Unitário</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ItensPedido)
+        {
+            <tr>
+                <td>@item.Modelo</td>
+                <td>@item.Marca</td>
+                <td>@item.Ano</td>
+                <td>@item.Quantidade</td>
+                <td>@item.PrecoUnitario.ToString("C")</td> 
+            </tr>
+        }
+    </tbody>
+</table>
