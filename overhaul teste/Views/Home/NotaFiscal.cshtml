@@ -1,0 +1,41 @@
+﻿@model overhaul_teste.Models.NotaFiscal
+
+<h2>Nota Fiscal</h2>
+
+<h3>Detalhes da Nota Fiscal</h3>
+<p><strong>ID da Nota Fiscal:</strong> @Model.IdNotaFiscal</p>
+<p><strong>Número da Nota:</strong> @Model.NumeroNota</p>
+<p><strong>Data de Emissão:</strong> @Model.DataEmissao.ToString("dd/MM/yyyy")</p>
+<p><strong>Valor Total:</strong> R$ @Model.ValorTotal</p>
+<p><strong>Forma de Pagamento:</strong> @Model.FormaPagamento</p>
+
+<h3>Detalhes do Cliente</h3>
+<p><strong>Nome:</strong> @Model.NomeCliente @Model.SobrenomeCliente</p>
+<p><strong>CPF:</strong> @Model.CpfCnpj</p>
+
+<h3>Detalhes do Pagamento</h3>
+<p><strong>ID do Pagamento:</strong> @Model.IdPagamento</p>
+
+<h3>Itens do Pedido</h3>
+@if (Model.Itens != null && Model.Itens.Count > 0)
+{
+    <ul>
+        @foreach (var item in Model.Itens)
+        {
+            <li>
+                <img src="@item.Imagem" alt="@item.Modelo" style="width: 100px; height: auto;" />
+                @item.Quantidade x @item.Modelo @item.Marca (Ano: @item.Ano, Cor: @item.Cor) - Preço Unitário: R$ @item.PrecoUnitario
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Nenhum item encontrado para este pedido.</p>
+}
+
+<!-- Botão para Download do PDF -->
+<form asp-action="GerarPdfNotaFiscal" method="post">
+    <input type="hidden" name="idPedido" value="@Model.IdPagamento" />
+    <button type="submit" class="btn btn-primary">Baixar Nota Fiscal (PDF)</button>
+</form>
