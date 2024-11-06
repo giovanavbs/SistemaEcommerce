@@ -132,7 +132,58 @@ namespace overhaul_teste.Repositorio
             return testDrives;
         }
 
+        public List<TestDrive> ObterTestDrivesPorCliente(int idCliente)
+        {
+            var testDrives = new List<TestDrive>();
 
+            using (var connection = new MySqlConnection(_conexaoMySQL))
+            {
+                connection.Open();
+
+                using (var command = new MySqlCommand("spMostrarTestDrivesPorCliente", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("cliente_id", idCliente);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var testDrive = new TestDrive
+                            {
+                                IdTest = reader.GetInt32("id_test"),
+                                ClienteNome = reader.GetString("cliente_nome"),
+                                ClienteCpf = reader.GetDecimal("cliente_cpf").ToString(),
+                                DataTest = reader.GetDateTime("data_test"),
+                                ModeloCarro = reader.GetString("carro_modelo"),
+                                MarcaCarro = reader.GetString("carro_marca"),
+                                AnoCarro = reader.GetInt32("carro_ano"),
+                                StatusTest = reader.GetString("status_test")
+                            };
+                            testDrives.Add(testDrive);
+                        }
+                    }
+                }
+            }
+
+            return testDrives;
+        }
+
+        public void AtualizarStatusTestDrive(int idTest, string novoStatus)
+        {
+            using (var connection = new MySqlConnection(_conexaoMySQL))
+            {
+                connection.Open();
+
+                using (var command = new MySqlCommand("UPDATE test_drive SET status_test = @status WHERE id_test = @idTest", connection))
+                {
+                    command.Parameters.AddWithValue("@status", novoStatus);
+                    command.Parameters.AddWithValue("@idTest", idTest);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
 
     }
 }

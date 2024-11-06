@@ -19,6 +19,8 @@ namespace overhaul_teste.Repositorio
         void ExcluirCarro(int idCarro);
 
         void AtualizarCarro(Carro carro);
+
+        List<Carro> ObterTop3CarrosMaisVendidos();
     }
 }
 

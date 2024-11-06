@@ -14,8 +14,8 @@ namespace overhaul_teste.Repositorio
         void Cadastrar(Cliente cliente);
 
         // atualizar Cliente
-        void Atualizar(Cliente cliente); 
-
+        //void Atualizar(Cliente cliente); 
+        void Atualizar(Cliente cliente, int idCliente);
 
         // cliente pelo id
         Cliente ObterCliente(int id); 
@@ -40,5 +40,7 @@ namespace overhaul_teste.Repositorio
         List<Pedido> VerPedidosCliente(int idCliente);
 
         PagamentoConfirmadoViewModel ObterDetalhesPedido(int idPedido);
+
+        void Logout();
     }
 }

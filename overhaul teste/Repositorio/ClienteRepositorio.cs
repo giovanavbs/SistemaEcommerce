@@ -147,7 +147,7 @@ namespace overhaul_teste.Repositorio
         }
 
         // alterar cliente
-        public void Atualizar(Cliente cliente)
+        /*public void Atualizar(Cliente cliente)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
@@ -158,6 +158,7 @@ namespace overhaul_teste.Repositorio
                 };
 
                 cmd.Parameters.Add("@vIdCliente", MySqlDbType.Int32).Value = cliente.Codigo;
+                cmd.Parameters.Add("@vNome", MySqlDbType.VarChar).Value = cliente.Nome;
                 cmd.Parameters.Add("@vSobrenome", MySqlDbType.VarChar).Value = cliente.Sobrenome;
                 cmd.Parameters.Add("@vEmail", MySqlDbType.VarChar).Value = cliente.Email;
                 cmd.Parameters.Add("@vSenha", MySqlDbType.VarChar).Value = cliente.Senha;
@@ -175,7 +176,38 @@ namespace overhaul_teste.Repositorio
                 cmd.ExecuteNonQuery();
                 conexao.Close();
             }
+        } */
+
+        public void Atualizar(Cliente cliente, int idCliente)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand(@"
+            UPDATE clientes 
+            SET nome = @vNome,
+                sobrenome = @vSobrenome,
+                email = @vEmail,
+                telefone = @vTelefone,
+                tipo_cliente = @vTipoCliente,
+                cpf_cnpj = @vCpfCnpj
+            WHERE id_cliente = @vIdCliente", conexao);
+
+                
+                cmd.Parameters.Add("@vIdCliente", MySqlDbType.Int32).Value = idCliente;
+                cmd.Parameters.Add("@vNome", MySqlDbType.VarChar).Value = cliente.Nome;
+                cmd.Parameters.Add("@vSobrenome", MySqlDbType.VarChar).Value = cliente.Sobrenome;
+                cmd.Parameters.Add("@vEmail", MySqlDbType.VarChar).Value = cliente.Email;
+                cmd.Parameters.Add("@vTelefone", MySqlDbType.Decimal).Value = cliente.Telefone;
+                cmd.Parameters.Add("@vTipoCliente", MySqlDbType.Enum).Value = cliente.TipoCliente;
+                cmd.Parameters.Add("@vCpfCnpj", MySqlDbType.Decimal).Value = cliente.CpfCnpj;
+
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
         }
+
+
 
         // obter um cliente pelo id
         public Cliente ObterCliente(int id)
@@ -517,6 +549,34 @@ namespace overhaul_teste.Repositorio
 
             return viewModel;
         }
+
+        public void Logout()
+        {
+            Cliente.ClienteLogadoId = 0;
+            Cliente.NivelAcesso = 0;
+
+            // zerar a instancia do cliente pra deslogar
+            var cliente = new Cliente
+            {
+                Codigo = 0,
+                Nome = null,
+                Sobrenome = null,
+                Telefone = null,
+                Email = null,
+                Senha = null,
+                TipoCliente = null,
+                CepCli = 0,
+                NumEnd = 0,
+                CompEnd = null,
+                Logradouro = null,
+                Bairro = null,
+                Cidade = null,
+                UF = null,
+                DataCadastro = DateTime.MinValue,
+                CpfCnpj = 0
+            };
+        }
+
 
     }
 

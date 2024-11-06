@@ -28,5 +28,11 @@ namespace overhaul_teste.Repositorio
         //List<AvaliacaoViewModel> ObterAvaliacaoPorPedido(int idPedido);
 
         AvaliacaoViewModel ObterDetalhesAvaliacao(int idPedido);
+
+        void InserirNotaFiscal(NotaFiscal notaFiscal);
+
+        (int IdPagamento, string FormaPagamento) ObterFormaPagamentoPorPedido(int idPedido);
+
+        NotaFiscal ObterNotaFiscalPorPedido(int idPedido);
     }
 }

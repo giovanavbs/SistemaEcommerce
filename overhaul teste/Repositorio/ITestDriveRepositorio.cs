@@ -11,5 +11,9 @@ namespace overhaul_teste.Repositorio
         int ObterTestDriveRecenteID(int idCliente);
 
         List<TestDrive> ObterTodosTestDrives();
+
+        List<TestDrive> ObterTestDrivesPorCliente(int idCliente);
+
+        void AtualizarStatusTestDrive(int idTest, string novoStatus);
     }
 }

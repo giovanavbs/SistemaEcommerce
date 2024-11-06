@@ -330,6 +330,157 @@ public class CompraRepositorio : ICompraRepositorio
         }
     }
 
+    public (int IdPagamento, string FormaPagamento) ObterFormaPagamentoPorPedido(int idPedido)
+    {
+        using (var connection = new MySqlConnection(_conexaoMySQL))
+        {
+            connection.Open();
+
+            string sql = "CALL spObterFormaPagamentoPorPedido(@pedido_id)";
+
+            using (var command = new MySqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@pedido_id", idPedido);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        int idPagamento = reader.GetInt32("id_pagamento");
+                        string formaPagamento = reader.GetString("forma_pagamento");
+                        return (idPagamento, formaPagamento);
+                    }
+                    else
+                    {
+                        throw new Exception("Forma de pagamento não encontrada para o pedido.");
+                    }
+                }
+            }
+        }
+    }
+
+    public void InserirNotaFiscal(NotaFiscal notaFiscal)
+    {
+        using (var connection = new MySqlConnection(_conexaoMySQL))
+        {
+            connection.Open();
+
+            string sql = "INSERT INTO NotaFiscal (id_pagamento, numero_nota, data_emissao, valor_total) VALUES (@id_pagamento, @numero_nota, @data_emissao, @valor_total)";
+
+            using (var command = new MySqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id_pagamento", notaFiscal.IdPagamento);
+                command.Parameters.AddWithValue("@numero_nota", notaFiscal.NumeroNota);
+                command.Parameters.AddWithValue("@data_emissao", notaFiscal.DataEmissao);
+                command.Parameters.AddWithValue("@valor_total", notaFiscal.ValorTotal);
+
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public NotaFiscal ObterNotaFiscalPorPedido(int idPedido)
+    {
+        using (var connection = new MySqlConnection(_conexaoMySQL))
+        {
+            connection.Open();
+
+            
+            string sqlNotaFiscal = @"
+        SELECT nf.id_nota_fiscal, nf.id_pagamento, nf.numero_nota, nf.data_emissao, nf.valor_total, fp.forma_pagamento 
+        FROM NotaFiscal nf
+        JOIN FormaPagamento fp ON nf.id_pagamento = fp.id_pedido
+        WHERE fp.id_pedido = @pedido_id";
+
+            NotaFiscal notaFiscal = null;
+
+            using (var command = new MySqlCommand(sqlNotaFiscal, connection))
+            {
+                command.Parameters.AddWithValue("@pedido_id", idPedido);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        notaFiscal = new NotaFiscal
+                        {
+                            IdNotaFiscal = reader.GetInt32("id_nota_fiscal"),
+                            IdPagamento = reader.GetInt32("id_pagamento"),
+                            NumeroNota = reader.GetString("numero_nota"),
+                            DataEmissao = reader.GetDateTime("data_emissao"),
+                            ValorTotal = reader.GetDecimal("valor_total"),
+                            FormaPagamento = reader.GetString("forma_pagamento"),
+                            Itens = new List<ItensPedido>()
+                        };
+                    }
+                    else
+                    {
+                        throw new Exception("Nota fiscal não encontrada para o pedido.");
+                    }
+                }
+            }
+
+            // pegar os itens do pedido
+            string sqlItensPedido = @"
+        SELECT ip.id_item_pedido, ip.id_carro, ip.quantidade, ip.preco_unitario, c.modelo, c.marca, c.ano, c.cor, c.imagem
+        FROM itens_pedidos ip
+        JOIN carros c ON ip.id_carro = c.id_carro
+        WHERE ip.id_pedido = @pedido_id";
+
+            using (var command = new MySqlCommand(sqlItensPedido, connection))
+            {
+                command.Parameters.AddWithValue("@pedido_id", idPedido);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var item = new ItensPedido
+                        {
+                            IdItem = reader.GetInt32("id_item_pedido"),
+                            IdCarro = reader.GetInt32("id_carro"),
+                            Quantidade = reader.GetInt32("quantidade"),
+                            PrecoUnitario = reader.GetDecimal("preco_unitario"),
+                            Modelo = reader.GetString("modelo"),
+                            Marca = reader.GetString("marca"),
+                            Ano = reader.GetInt32("ano"),
+                            Cor = reader.GetString("cor"),
+                            Imagem = reader.GetString("imagem")
+                        };
+                        notaFiscal.Itens.Add(item);
+                    }
+                }
+            }
+
+            // detalhes do cliente
+            string sqlCliente = @"
+        SELECT c.id_cliente, c.nome, c.sobrenome, c.cpf_cnpj
+FROM clientes c
+WHERE c.id_cliente = @codigo_cliente";
+
+            using (var command = new MySqlCommand(sqlCliente, connection))
+            {
+                command.Parameters.AddWithValue("@codigo_cliente", Cliente.ClienteLogadoId);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        notaFiscal.NomeCliente = reader.GetString("Nome");
+                        notaFiscal.SobrenomeCliente = reader.GetString("Sobrenome");
+                        notaFiscal.CpfCnpj = reader.GetDecimal("cpf_cnpj");
+                    }
+                    else
+                    {
+                        throw new Exception("Cliente não encontrado.");
+                    }
+                }
+            }
+
+            return notaFiscal;
+        }
+    }
+
 
 
 

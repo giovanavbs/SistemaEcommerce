@@ -254,6 +254,57 @@ namespace overhaul_teste.Repositorio
             }
         }
 
+        public List<Carro> ObterTop3CarrosMaisVendidos()
+        {
+            List<Carro> carrosMaisVendidos = new List<Carro>();
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+               
+                string query = @"
+            SELECT c.id_carro, c.modelo, c.marca, c.preco, c.id_categoria, COUNT(ip.id_carro) AS vendas
+            FROM carros c
+            INNER JOIN itens_pedidos ip ON c.id_carro = ip.id_carro
+            GROUP BY c.id_carro
+            ORDER BY vendas DESC
+            LIMIT 3;
+        ";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexao);
+
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        
+                        string categoria = dr["id_categoria"] switch
+                        {
+                            1 => "Híbrido", 
+                            2 => "Elétrico", 
+                            _ => "n tem" 
+                        };
+
+                        Carro carro = new Carro
+                        {
+                            Id = Convert.ToInt32(dr["id_carro"]),
+                            Modelo = Convert.ToString(dr["modelo"]),
+                            Marca = Convert.ToString(dr["marca"]),
+                            Preco = Convert.ToDecimal(dr["preco"]),
+                            Categoria = categoria, 
+                        };
+                        carrosMaisVendidos.Add(carro);
+                    }
+                }
+
+                conexao.Close();
+            }
+
+            return carrosMaisVendidos;
+        }
+
+
 
     }
 }
