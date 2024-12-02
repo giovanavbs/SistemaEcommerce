@@ -10,100 +10,344 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overhaul</title>
+    <link rel="stylesheet" href="src/css/detalhes.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/home.css" />
+
+    <style>
+        body {
+            background-color: #202020;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            background-color: #202020;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            gap: 10px;
+        }
+
+        .thumbnail img {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .main-image img {
+            width: 550px;
+            padding: 10px;
+        }
+
+        .product-details {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+            .product-details p {
+                color: #fff;
+            }
+
+            .product-details .nome-carro,
+            .marca-carro,
+            .avaliacao-carro,
+            .cor-carro {
+                font-size: 20px;
+            }
+
+            .product-details hr {
+                border: 0.1rem solid #fff;
+                width: 90%;
+            }
+
+            .product-details .preco {
+                font-size: 25px;
+                color: #fff;
+            }
+
+        .container-detalhes {
+            justify-content: space-between;
+            display: flex;
+            width: 90%;
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .container-detalhes select {
+                padding-left: 20px;
+                width: 200px;
+                height: 55px;
+                border: none;
+                color: #fff;
+                border-radius: 5px;
+                background-color: #2D2D2D;
+                box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+            }
+
+            .container-detalhes .qtd {
+                display: flex;
+                flex-direction: row;
+                margin-left: 10px;
+                border: none;
+                text-align: center;
+            }
+
+        .carousel {
+            display: none;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #FFF;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .color-opcoes {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .color {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 90%;
+            justify-content: space-between;
+        }
+
+        .btn-add, .btn-comprar {
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            white-space: nowrap;
+            color: #fff;
+            border-radius: 5px;
+            background-color: #2D2D2D;
+            box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+        }
+
+
+        .description {
+            text-align: justify;
+        }
+
+            .description p {
+                color: #fff;
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+
+            .description .description-titulo {
+                font-size: 24px;
+                font-weight: bold;
+                padding-bottom: 20px;
+            }
+
+        .d-hr {
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-top: 40px;
+        }
+
+        .cores {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cores-escolha {
+            display: flex;
+            flex-direction: row;
+            margin-left: 10px;
+        }
+
+        .cor {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+
+        .cor-vermelha {
+            background-color: #a52a2a;
+        }
+
+        .cor-azul {
+            background-color: #0000ff;
+        }
+
+        .cor-branca {
+            background-color: #ffffff;
+        }
+
+        .cor-preta {
+            background-color: #000000;
+        }
+
+        .cor-prata {
+            background-color: #c0c0c0;
+        }
+    </style>
+
 </head>
 <body>
-    <section class="overhaul-section">
-        <div class="aaaa">
-            <!-- imagens do carro -->
-            <div class="outras-fotos">
-                <img src="@Model.Imagem" alt="imagem carro">
-                <img src="@Model.Imagem" alt="imagem carro">
-                <img src="@Model.Imagem" alt="imagem carro">
-                <img src="@Model.Imagem" alt="imagem carro">
+
+    <div class="product-container">
+        <div class="image-gallery">
+            <div class="thumbnail">
+                <img src="~/images/@Model.Imagem" alt="Carro thumbnail 1" />
             </div>
-
-            <div class="principal">
-                <img src="@Model.Imagem" alt="car">
+            <div class="thumbnail">
+                <img src="~/images/@Model.Imagem" alt="Carro thumbnail 2" />
             </div>
+            <div class="thumbnail">
+                <img src="~/images/@Model.Imagem" alt="Carro thumbnail 3" />
+            </div>
+            <div class="thumbnail">
+                <img src="~/images/@Model.Imagem" alt="Carro thumbnail 4" />
+            </div>
+        </div>
 
-            <div class="produto-info">
-                <h1>@Model.Modelo</h1>
-                <p>Marca: @Model.Marca</p>
-                <div class="estrelas">
-                    <span>5.0 ★★★★★</span>
-                </div>
-                <div class="preco">
-                    <span>A partir de R$ @Model.Preco</span>
-                    <p>à vista no Pix (10% off)</p>
-                </div>
+        <div class="main-image">
+            <img src="~/images/@Model.Imagem" alt="Carro principal" />
+        </div>
 
-                <p>Carregador: @Model.Carregador</p>
+        <div class="carousel">
+            <button class="carousel-btn prev" onclick="changeSlide(-1)">
+                &#10094;
+            </button>
+            <div class="carousel-images">
+                <img src="~/images/@Model.Imagem"
+                     alt="Carro principal"
+                     class="carousel-slide" />
+                <img src="~/images/@Model.Imagem"
+                     alt="Carro thumbnail 1"
+                     class="carousel-slide" />
+                <img src="~/images/@Model.Imagem"
+                     alt="Carro thumbnail 2"
+                     class="carousel-slide" />
+                <img src="~/images/@Model.Imagem"
+                     alt="Carro thumbnail 3"
+                     class="carousel-slide" />
+            </div>
+            <button class="carousel-btn next" onclick="changeSlide(1)">
+                &#10095;
+            </button>
+        </div>
+
+        <div class="product-details">
+            <p class="nome-carro">Nome: @Model.Modelo</p>
+            <p class="marca-carro"><strong>Marca:</strong> @Model.Marca</p>
+            <p class="avaliacao-carro"><strong>Avaliação:</strong> 5.0 ★★★★★</p>
+            <hr style="border: 1px solid #fff; width: 90%" />
+            <strong><p class="preco">A partir de R$ @Model.Preco</p></strong>
+            <strong> <p class="desconto">à vista no Pix (10% off)</p></strong>
+
+            <div class="container-detalhes">
 
                 <div class="cores">
-                    <span>Cor:</span>
-                    <div class="cores-escolha">
-                        <div class="cor cor-vermelha" data-cor="vermelho"></div>
-                        <div class="cor cor-azul" data-cor="azul"></div>
-                        <div class="cor cor-branca" data-cor="branco"></div>
-                        <div class="cor cor-preta" data-cor="preto"></div>
-                        <div class="cor cor-prata" data-cor="prata"></div>
+                    <div><strong><p class="cor-carro">Cor:</p></strong><br /></div>    
+                    <div class="color-opcoes">
+                        <span class="color" style="background-color: #a57a65"></span>
+                        <span class="color" style="background-color: #ffffff"></span>
+                        <span class="color" style="background-color: #2d2e83"></span>
                     </div>
                 </div>
+            </div>
 
-                <div class="quantidade">
-                    <label for="quantidade">Quantidade:</label>
-                    <select id="quantidade" name="quantidade">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
 
-                <div class="botoes">
-                    <!-- carrinho -->
-                    @if (Cliente.ClienteLogadoId == 0) 
-                    {
-                        <button><a href="#" class="comprar-agora" data-toggle="modal" data-target="#myModal">
+            <div class="buttons">
+                <!-- carrinho -->
+                @if (Cliente.ClienteLogadoId == 0)
+                {
+                    <button>
+                        <a href="#" class="btn-add" data-toggle="modal" data-target="#myModal">
                             Adicionar ao Carrinho
-                        </a></button>
-                    }
-                    else
+                        </a>
+                    </button>
+                }
+                else
+                {
+                    @using (Html.BeginForm("AdicionarItem", "Home", "Carrinho", FormMethod.Post))
                     {
-                        @using (Html.BeginForm("AdicionarItem", "Home", "Carrinho", FormMethod.Post))
-                        {
-                            <input type="hidden" name="id" value="@Model.Id" />
-                            <input type="hidden" name="quantidade" value="1" />
-                            <button type="submit" class="comprar-agora">
-                                Adicionar ao Carrinho
-                            </button>
-                        }
-                    }
-
-                    @if (Cliente.ClienteLogadoId == 0) 
-                    {
-                        <button><a href="#" class="test-drive" data-toggle="modal" data-target="#myModal">
-                            Marcar Test Drive
-                        </a></button>
-                    }
-                    else
-                    {
-                        <button class="test-drive" onclick="window.location.href='@Url.Action("MarcarTestDrive", "Home", new { id = Model.Id })'">
-                            Marcar Test Drive
+                        <input type="hidden" name="id" value="@Model.Id" />
+                        <input type="hidden" name="quantidade" value="1" />
+                        <button type="submit" class="btn-add">
+                            Adicionar ao Carrinho
                         </button>
                     }
-                </div>
+                }
 
+                @if (Cliente.ClienteLogadoId == 0)
+                {
+                    <button>
+                        <a href="#" class="btn-comprar" data-toggle="modal" data-target="#myModal">
+                            Marcar Test Drive
+                        </a>
+                    </button>
+                }
+                else
+                {
+                    <button class="btn-comprar" onclick="window.location.href='@Url.Action("MarcarTestDrive", "Home", new { id = Model.Id })'">
+                        Marcar Test Drive
+                    </button>
+                }
             </div>
         </div>
+        <div class="description">
+            <p class="description-titulo">Descrição:</p>
+            <p>
+                @Model.Descricao
+            </p>
 
-        <div class="descricao">
-            <p>Descrição:</p>
-            <p>@Model.Descricao</p>
+            <p>Categoria: @Model.Categoria</p>
         </div>
+    </div>
+    <div class="d-hr">
+        <hr style=" width: 100%;  border: 0.1rem solid #fff;">
 
-        <p>Categoria: @Model.Categoria</p>
+    </div>
 
-    </section>
+    <!-- chatttttttoooooo-->
+    <!-- chatttttttoooooo-->
+
 
     <script>
         // script das cores
@@ -129,5 +373,8 @@
             });
         });
     </script>
+
+    <script src="src/js/menu-lateral.js"></script>
+    <script src="src/js/script.js"></script>
 </body>
 </html>

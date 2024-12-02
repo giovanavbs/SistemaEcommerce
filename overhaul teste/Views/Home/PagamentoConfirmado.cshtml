@@ -1,41 +1,238 @@
 ﻿@model overhaul_teste.ViewModels.PagamentoConfirmadoViewModel
 
-<h2>Pagamento Confirmado</h2>
+<div class="container-pedido">
 
+    <div class="itens-list">
+        <strong><h3 style="color: #fff">Itens do Pedido</h3></strong>
 
-<h3>Detalhes do Pedido</h3>
-<p><strong>ID do Pedido:</strong> @Model.Pedido.IdPedido</p>
-<p><strong>Status do Pedido:</strong> @Model.Pedido.StatusPedido</p>
-<p><strong>Valor Total:</strong> R$ @Model.Pedido.ValorTotal</p>
-
-<h3>Itens do Pedido</h3>
-@if (Model.Itens != null && Model.Itens.Count > 0)
-{
-    <ul>
-        @foreach (var item in Model.Itens)
+        @if (Model.Itens != null && Model.Itens.Count > 0)
         {
-            <li>
-                <img src="@item.Imagem" alt="@item.Modelo" style="width: 100px; height: auto;" />
-                @item.Quantidade x @item.Modelo @item.Marca (Ano: @item.Ano, Cor: @item.Cor) - Preço Unitário: R$ @item.PrecoUnitario
-            </li>
+            <div class="itens-list">
+                @foreach (var item in Model.Itens)
+                {
+                    <div class="item-card">
+                        <div class="item-image">
+                            <img src="~/images/@item.Imagem" alt="@item.Modelo" class="imagem-produto" />
+                        </div>
+                        <div class="item-info">
+                            <div class="item-details">
+                                <p><strong>@item.Quantidade x @item.Modelo @item.Marca (Ano: @item.Ano, Cor: @item.Cor)</strong></p>
+                                <p>Preço Unitário: R$ @item.PrecoUnitario</p>
+                                <p><strong>Chega em: </strong><span id="dataEntrega">@DateTime.Now.AddDays(30).ToString("dd/MM/yyyy")</span> no local: @Model.EnderecoEntrega.Logradouro, @Model.EnderecoEntrega.BairroNome, @Model.EnderecoEntrega.CidadeNome, @Model.EnderecoEntrega.CEP, @Model.EnderecoEntrega.UFNome.</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
         }
-    </ul>
-}
-else
-{
-    <p>Nenhum item encontrado para este pedido.</p>
-}
+        else
+        {
+            <p>Nenhum item encontrado para este pedido.</p>
+        }
+    </div>
 
-<h3>Endereço de Entrega</h3>
-@if (Model.EnderecoEntrega != null)
-{
-    <p><strong>Logradouro:</strong> @Model.EnderecoEntrega.Logradouro</p>
-    <p><strong>CEP:</strong> @Model.EnderecoEntrega.CEP</p>
-    <p><strong>Bairro:</strong> @Model.EnderecoEntrega.BairroNome</p>
-    <p><strong>Cidade:</strong> @Model.EnderecoEntrega.CidadeNome</p>
-    <p><strong>UF:</strong> @Model.EnderecoEntrega.UFNome</p>
-}
-else
-{
-    <p>nao foi possível acessar o endereço de entrega</p>
-}
+    <div class="container-resumo-pedido">
+        <div class="container-finalizar-pedido">
+            <strong><p style="color: #fff">Pagamento Concluido:</p></strong>
+            <p>
+                Seu pedido foi concluído e está sendo preparado para entrega.
+            </p>
+        </div>
+        <hr class="hr-resumo-pedido" />
+        <div class="info-resumo-pedido">
+            <strong><p style="color: #fff">Detalhes do Pedido:</p></strong>
+
+            <p class="frete">ID do pedido:&nbsp; @Model.Pedido.IdPedido</p>
+            <p>Status do pedido:&nbsp; @Model.Pedido.StatusPedido</p>
+            <p>Valor Total:&nbsp; @Model.Pedido.ValorTotal</p>
+            <br />
+            <p>A data de entrega está sujeita a alterações por fatores externos envolvendo importação e terceiros.</p>
+
+            <hr />
+        </div>
+    </div>
+</div>
+
+<br />
+<div style="display: flex; gap: 10px;">
+    <!-- avaliar -->
+    <form asp-action="RegistrarAvaliacao" method="post">
+        <input type="hidden" name="idPedido" value="@Model.Pedido.IdPedido" />
+        <button type="submit" class="btns">Avaliar Compra</button>
+    </form>
+
+    <!-- gerar nota fiscal -->
+    <form asp-action="GerarNotaFiscal" method="post">
+        <input type="hidden" name="idPedido" value="@Model.Pedido.IdPedido" />
+        <button type="submit" class="btns">Gerar Nota Fiscal</button>
+    </form>
+</div>
+
+<style>
+
+    body {
+        background-color: #202020;
+    }
+
+    .container-pedido {
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        margin: 20px;
+        /*! width:  !00%; */
+        max-width: 1300px;
+    }
+
+    .itens-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 600px;
+        /*! margin-left: 20px; */ /* foi puramente pra n ficar mt meh visualmente(n ajudou mt perdao */
+    }
+
+    .item-card {
+        display: flex;
+        background-color: #2D2D2D;
+        padding: 15px;
+        border-radius: 8px;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .item-image img {
+        width: 150px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .item-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .item-details {
+        color: #fff;
+    }
+
+        .item-details p {
+            margin: 5px 0;
+        }
+
+    .endereco {
+        background-color: #2D2D2D;
+        padding: 20px;
+        border-radius: 8px;
+        color: #fff;
+        margin-top: 20px;
+        max-width: 400px;
+    }
+
+        .endereco p {
+            color: #fff;
+        }
+
+    .item-info p {
+        color: #fff;
+    }
+
+    #dataEntrega {
+        color: #FFD700;
+    }
+
+    .info-resumo-pedido p {
+        color: #fff;
+    }
+
+    .container-resumo-pedido {
+        background-color: #2d2d2d;
+        box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+        width: 30%;
+        padding: 10px;
+        /*! height: max-content; */
+        border-radius: 10px;
+        margin-top: 80px;
+        /*! margin-left: 200px; */
+    }
+
+    .container-finalizar-pedido {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /*! align-items: center; */
+        /*! width: 90%; */
+        /*! margin-top: 10px; */
+        /*! background-color: aqua; */
+        margin-left: 20px;
+    }
+
+        .container-finalizar-pedido button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #202020;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .container-finalizar-pedido p {
+            margin-top: 20px;
+            width: 80%;
+            /*! text-align: center; */
+            color: #fff;
+        }
+
+    .info-resumo-pedido {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+        .info-resumo-pedido hr {
+            width: 100%;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+
+    .hr-resumo-pedido {
+        margin-left: 20px;
+        margin-top: 20px;
+        width: 90%;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+    }
+
+    .btns {
+        height: 40px;
+        padding: 10px 20px;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+        background-color: #202020;
+        box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+        cursor: pointer;
+        white-space: nowrap;
+        transition: 0.3s;
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let dataEntregaElement = document.getElementById('dataEntrega');
+        let dataEntrega = new Date();
+        dataEntrega.setDate(dataEntrega.getDate() + 30);
+        let dia = String(dataEntrega.getDate()).padStart(2, '0');
+        let mes = String(dataEntrega.getMonth() + 1).padStart(2, '0');
+        let ano = dataEntrega.getFullYear();
+        dataEntregaElement.textContent = `${dia}/${mes}/${ano}`;
+    });
+</script>

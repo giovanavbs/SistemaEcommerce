@@ -336,7 +336,7 @@ public class CompraRepositorio : ICompraRepositorio
         {
             connection.Open();
 
-            string sql = "CALL spObterFormaPagamentoPorPedido(@pedido_id)";
+            string sql = "CALL spObterFormaPagamento(@pedido_id)";
 
             using (var command = new MySqlCommand(sql, connection))
             {

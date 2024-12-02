@@ -1,0 +1,163 @@
+﻿@model string
+
+@{
+    string codigoBarras = ViewBag.CodigoBarras as string;
+}
+
+<style>
+
+    .container-pagamento{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #202020;
+    }
+
+    .codigo-barras {
+        background-color: #333;
+        padding: 15px;
+        border-radius: 5px;
+        color: #f0f0f0;
+        word-wrap: break-word;
+        white-space: normal;
+        cursor: pointer;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+        .codigo-barras:active {
+            background-color: #444;
+        }
+
+    .barcode-container {
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .barcode-container h4 {
+            color: #f0f0f0;
+            margin-bottom: 10px;
+        }
+
+    .btn-gerarboleto {
+        background-color: #8e22e6;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn-gerarboleto:hover {
+            background-color: #0056b3;
+        }
+
+    #barcode p {
+        color: #fff;
+    }
+</style>
+
+<div class="container-pagamento">
+    <div style="background: #2d2d2d; display: flex; flex-direction: column;align-items: center;border-radius: 20px; margin: 30px 0px;padding: 30px;" class="conteudo-pagamento-principal">
+        <h2 style="color: #fff;" class="titulo-pagamento">Pagamento via Boleto</h2>
+
+        <div class="codigo-barras" onclick="copyCode()">
+            <strong>Em caso de erro, copie o código abaixo:</strong>
+            <p id="codigoBarrasText" style="color: #fff; margin-top: 15px;">@codigoBarras</p>
+        </div>
+
+        <div class="barcode-container">
+            <h4>Leia o código de barras abaixo:</h4>
+            <p id="carregando" style="display: none; color: #fff;">Gerando código de barras...</p>
+            <svg id="barcode" style="display: none;"></svg>
+        </div>
+
+        <div>
+            <h4 style="color: #fff;">Confirme a visualização do boleto clicando no botão abaixo:</h4>
+            <form asp-action="@(ViewBag.IdPedido == null ? "ConfirmarEndereco" : "ConfirmarEndereco2")" method="post" style="display: flex;/*! align-items: center; */justify-content: center;">
+                <input type="hidden" name="codigoBarras" value="@codigoBarras" />
+                <button type="submit" class="btn-pagamento" style="margin-top: 20px; margin-bottom: 20px;color: #fff;padding: 10px 20px;border: none;border-radius: 5px;cursor: pointer;transition: background-color 0.3s;background-color: #28a745;border: none;" >Ver Detalhes da Compra</button>
+            </form>
+        </div>
+
+        <div style="color: #fff;" class="instrucoes-pagamento">
+            <hr>
+            <h4 style="margin-top: 20px;">Como pagar com Boleto?</h4>
+            <ol style="padding-left: 15px;">
+                <li style="margin-left: -2px;">Copie o código de barras ou escaneie diretamente pelo aplicativo do banco;</li>
+                <li>Confirme as informações do boleto;</li>
+                <li>Finalize o pagamento no aplicativo do seu banco ou em um caixa eletrônico;</li>
+                <li>O boleto pode demorar até 3 dias para confirmar o pagamento.</li>
+            </ol>
+        </div>
+
+        <div>
+            <form asp-action="GerarPdfBoleto" method="post">
+                <input type="hidden" name="idPedido" value="@ViewBag.IdPedido" />
+                <input type="hidden" name="codigoBarras" value="@codigoBarras" />
+                <button type="submit" class="btn-gerarboleto" style="margin-top: 20px;">Ver Boleto Completo</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode/dist/JsBarcode.all.min.js"></script>
+
+<script>
+    // só mostrar o codgio de barras depois de 2s
+    function generateBarcode(codigoBarras) {
+        const carregando = document.getElementById("carregando");
+        const barcodeElement = document.getElementById("barcode");
+
+        carregando.style.display = "block";
+
+        setTimeout(() => {
+            JsBarcode("#barcode", codigoBarras, {
+                format: "CODE128",
+                lineColor: "#000",
+                width: 2,
+                height: 100,
+                displayValue: true
+            });
+
+            carregando.style.display = "none";
+            barcodeElement.style.display = "block";
+        }, 2000);
+    }
+
+    // ver s eo codigo de barras existe mesmo (ele fica com mesmo que o codigo SEMPRE exista)
+    const codigoBarras = "@codigoBarras";
+    if (codigoBarras && codigoBarras.length > 0) {
+        generateBarcode(codigoBarras);
+    } else {
+        Swal.fire({
+            title: 'Erro!',
+            text: 'Ocorreu um erro ao gerar o código.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+    }
+
+    // copiar o cod barras
+    function copyCode() {
+        var text = document.getElementById("codigoBarrasText").innerText;
+        var textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        alert("codigo de barras copiado para a area de transferência!");
+    }
+</script>

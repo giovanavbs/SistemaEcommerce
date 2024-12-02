@@ -38,7 +38,8 @@ namespace overhaul_teste.Repositorio
                             Ano = Convert.ToInt32(dr["ano"]),
                             Preco = Convert.ToDecimal(dr["preco"]),
                             Categoria = Convert.ToString(dr["categoria"]),
-                            Carregador = Convert.ToString(dr["carregador"])  
+                            Carregador = Convert.ToString(dr["carregador"]),
+                            Imagem = Convert.ToString(dr["imagem"])
                         };
 
                         carros.Add(carro);
@@ -120,7 +121,7 @@ namespace overhaul_teste.Repositorio
                 cmd.Parameters.AddWithValue("@vIdCategoria", carro.Categoria);
                 cmd.Parameters.AddWithValue("@vCarregador", carro.Carregador);
                 cmd.Parameters.AddWithValue("@vDescricao", carro.Descricao);
-                cmd.Parameters.AddWithValue("@vImagem", carro.Imagem);
+                cmd.Parameters.AddWithValue("@vImagem", "carro12.png");
                 cmd.Parameters.AddWithValue("@vCor", carro.Cor);
 
                 cmd.ExecuteNonQuery();
@@ -224,7 +225,7 @@ namespace overhaul_teste.Repositorio
                 cmd.Parameters.AddWithValue("p_id_categoria", carro.Categoria);
                 cmd.Parameters.AddWithValue("p_carregador", carro.Carregador);
                 cmd.Parameters.AddWithValue("p_descricao", carro.Descricao);
-                cmd.Parameters.AddWithValue("p_imagem", carro.Imagem);
+                cmd.Parameters.AddWithValue("p_imagem", "carro12.png"); // esta fixo pq ele ta com fogo pra inserir o real nome da img(funciona no de adicionar mas n no de alterar)
                 cmd.Parameters.AddWithValue("p_cor", carro.Cor);
 
                 cmd.ExecuteNonQuery();
@@ -264,7 +265,7 @@ namespace overhaul_teste.Repositorio
 
                
                 string query = @"
-            SELECT c.id_carro, c.modelo, c.marca, c.preco, c.id_categoria, COUNT(ip.id_carro) AS vendas
+            SELECT c.id_carro, c.modelo, c.imagem, c.marca, c.preco, c.id_categoria, COUNT(ip.id_carro) AS vendas
             FROM carros c
             INNER JOIN itens_pedidos ip ON c.id_carro = ip.id_carro
             GROUP BY c.id_carro
@@ -290,6 +291,7 @@ namespace overhaul_teste.Repositorio
                         {
                             Id = Convert.ToInt32(dr["id_carro"]),
                             Modelo = Convert.ToString(dr["modelo"]),
+                            Imagem = Convert.ToString(dr["imagem"]),
                             Marca = Convert.ToString(dr["marca"]),
                             Preco = Convert.ToDecimal(dr["preco"]),
                             Categoria = categoria, 

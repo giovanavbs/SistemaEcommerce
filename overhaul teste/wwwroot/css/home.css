@@ -1,0 +1,271 @@
+.banner {
+    display: flex;
+    justify-content: left;
+}
+
+.banner .banner-text {
+    margin: 15px;
+    text-align: left;
+    padding: 180px 0px;
+    width: 600px;
+}
+
+.banner .banner-text h1 {
+    font-size: 45px;
+    color: #fff;
+}
+
+.banner .banner-text p {
+    font-size: 20px;
+    color: #ffffffb7;
+    margin: 18px 0;
+}
+
+/*mais-vendidos*/
+
+.mais-vendidos {
+    background-color: #202020;
+    padding-bottom: 54px;
+}
+
+/* img news e link ver tudo */
+.mais-vendidos .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* por enquanto vou deixar aq o wrap depois jogo para baixo */
+}
+
+.mais-vendidos .container img {
+    margin-top: 50px;
+    padding-bottom: 20px;
+    width: 350px;
+
+}
+
+.mais-vendidos .container a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #202020;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: solid 1px #fff;
+    cursor: pointer;
+    margin-top: 80px;
+}
+
+/* fim img news e link ver tudo */
+
+/* cards dos mais vendidos  */
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.mais-vendidos .card-item {
+    margin-bottom: 20px;
+    margin: 15px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 350px;
+    transition: 0.3s;
+}
+
+.mais-vendidos .card-item img {
+    border-radius: 0%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.mais-vendidos-descri {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+.mais-vendidos-descri a{
+    color: #fff;
+}
+
+/* ver tudo cards mobile */
+.all-mobile {
+    display: none;
+}
+
+.mais-vendidos .card-item .mais-vendidos-descri {
+    color: #f0f0f0;
+    margin-top: 20px;
+}
+
+/* ação de foco imagem em teste*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-conteudo {
+    margin: auto;
+    margin-top: 60px;
+    display: block;
+    width: 80%;
+    max-width: 400px;
+}
+
+.caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+.fechar {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* animacao zoom */
+.modal-conteudo {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* fim cards dos mais vendidos  */
+
+.eletrificacao {
+    padding-bottom: 54px;
+    background-color: #fff;
+
+}
+
+.eletrificacao h3 {
+    text-align: center;
+}
+
+.eletrificacao p {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cards-eletrificacao {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.eletrificacao .card-item-eletrificacao {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.219);
+    margin: 15px;
+    border-radius: 30px;
+    max-width: 480px;
+}
+
+.eletrificacao .card-item-eletrificacao:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.eletrificacao .card-item-eletrificacao h3 {
+    text-align: start;
+    font-size: 30px;
+    margin-bottom: 30px;
+    padding: 0px 40px 0px 40px;
+}
+
+.eletrificacao .card-item-eletrificacao p {
+    text-align: start;
+    padding: 0px 20px 0px 40px;
+}
+
+.eletrificacao .card-item-eletrificacao a {
+    text-align: start;
+    /*color; #202020;*/
+    padding: 0px 20px 0px 40px;
+}
+
+    .eletrificacao .card-item-eletrificacao img {
+        margin-top: 50px;
+        border-radius: 0%;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+
+
+/* maracas parceiras */
+.clientes {
+    background-color: #202020;
+    padding-bottom: 134px;
+    padding-top: 80px;
+}
+
+.clientes h3 {
+    text-align: center;
+    font-weight: 600;
+    color: white;
+}
+
+.clientes p {
+    text-align: center;
+    letter-spacing: 2px;
+    color: white;
+    font-weight: lighter;
+    margin-top: 30px;
+}
+
+.clientes .container div {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.clientes div {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.clientes div img {
+    margin: 20px 10px 0px 10px;
+}
+/* fim maracas parceiras */
+

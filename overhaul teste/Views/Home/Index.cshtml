@@ -1,84 +1,113 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="~/css/style.css" />
+<link rel="stylesheet" href="~/css/home.css" />
+<link rel="stylesheet" href="~/css/media-query.css" />
+<header style="background-image: url('/images/background.png');">
 
-<div class="slide">
-    <img src="~/images/car-background.jpg" alt="carro">
-    <div class="slide-conteudo">
+<section class="banner">
+    <div class="banner-text">
         <h1>Comece sua aventura elétrica com a OverHaul</h1>
         <p>Revolucionando sua Experiência de Condução!</p>
     </div>
-</div>
-
-<section class="mais-vendidos">
-    <div class="mais-vendidos-header">
-        <h2>Mais vendidos</h2>
-        <button type="button" class="ver-tudo-btn" onclick="window.location.href='@Url.Action("Carros", "Home")'">Ver Tudo</button>
-    </div>
-
-    <div class="mais-vendidos-carros">
-        <div class="top-carros">
-            <img src="~/images/car1.jpg" alt="Carro 1">
-            <div class="top-carros-info">
-                <p>Marca</p>
-                <p>Nome</p>
-                <p>100% elétrico</p>
-                <p>A partir de R$ 300.950</p>
-                <a href="#">Mais Detalhes ></a>
-            </div>
-        </div>
-        <div class="top-carros">
-            <img src="~/images/car2.jpg" alt="Carro 2">
-            <div class="top-carros-info">
-                <p>Marca</p>
-                <p>Nome</p>
-                <p>100% elétrico</p>
-                <p>A partir de R$ 300.950</p>
-                <a href="#">Mais Detalhes ></a>
-            </div>
-        </div>
-        <div class="top-carros">
-            <img src="~/images/car3.jpg" alt="Carro 3">
-            <div class="top-carros-info">
-                <p>Marca</p>
-                <p>Nome</p>
-                <p>100% elétrico</p>
-                <p>A partir de R$ 300.950</p>
-                <a href="#">Mais Detalhes ></a>
-            </div>
-        </div>
-    </div>
 </section>
 
-<section class="electrificacao">
-    <h2>Descubra a eletrificação</h2>
-    <div class="electrificacao-tipo">
-        <div class="tipo">
+    <!-- mais vendidos -->
+    <section class="mais-vendidos">
+        <!-- parte de cima  -->
+        <div class="container">
+            <img src="@Url.Content("~/images/img-news.png")" alt="news - mais vendidos" />
+            <a class="all" href="@Url.Action("Carros", "Home")">VER TUDO</a>
+        </div>
+        <!-- parte de cima end -->
+
+    <div class="cards">
+        @foreach (var carro in Model)
+        {
+            <div class="card-item">
+                <img class="imagem-clicavel" src="~/images/@carro.Imagem" alt="@carro.Modelo" />
+                <p class="mais-vendidos-descri">Marca: @carro.Marca</p>
+                <p class="mais-vendidos-descri">Modelo: @carro.Modelo</p>
+                <p class="mais-vendidos-descri">A partir de R$ @carro.Preco.ToString("F2")</p>
+                <p class="mais-vendidos-descri">
+                    <a href="@Url.Action("Detalhes", "Home", new { id = carro.Id })">Mais Detalhes ></a>
+                </p>
+            </div>
+        }
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="fechar">&times;</span>
+        <img class="modal-conteudo" id="imagem-ampliada" />
+        <div id="caption"></div>
+    </div>
+
+
+
+    <a class="all-mobile" href="@Url.Action("Carros", "Home")">VER TUDO</a>
+</section>
+<!-- end mais vemdidos -->
+
+<!-- eletrificação CARD 2  -->
+<section class="eletrificacao">
+    <div class="container">
+        <h3>Descubra a eletrificação</h3>
+        <p>
+            Conheça nossos veículos de última geração descubra as vantagens
+            diárias de conduzir um carro elétrico.
+        </p>
+    </div>
+    <div class="cards-eletrificacao">
+        <!-- card item 1  -->
+        <div class="card-item-eletrificacao">
             <h3>Carros 100% elétricos</h3>
-            <p>Os nossos carros 100% elétricos oferecem uma condução sem emissões sem comprometer a autonomia e a potência.</p>
-            <a href="#">Carros 100% elétricos ></a>
-            <img src="~/images/carro-eletrico.jpg" alt="Carro Elétrico">
+            <p>
+                Os nossos carros 100% elétricos oferecem uma condução sem emissões
+                sem comprometer a autonomia e a potência.
+            </p>
+            <a href="@Url.Action("Carros", "Home")">Carros 100% elétrico ></a>
+            <img src="@Url.Content("~/images/carro-card-2.png")" alt="Carro Elétrico" />
         </div>
-        <div class="tipo">
+        <!-- end card item 1 -->
+        <!-- card item 2  -->
+        <div class="card-item-eletrificacao">
             <h3>Carros híbridos plug-in</h3>
-            <p>Os nossos carros híbridos plug-in oferecem uma condução eficiente combinada com a flexibilidade de um motor a combustão.</p>
-            <a href="#">Carros híbridos plug-in ></a>
-            <img src="~/images/carro-hibrido.jpg" alt="Carro Híbrido">
+            <p>
+                Os nossos carros 100% elétricos oferecem uma condução sem emissões
+                sem comprometer a autonomia e a potência.
+            </p>
+            <a href="@Url.Action("Carros", "Home")">Carros híbridos plug-in ></a>
+                <img src="@Url.Content("~/images/carro-card-2.png")" alt="Carro Híbrido" />
+        </div>
+        <!-- end card item 2 -->
+    </div>
+</section>
+<!-- end eletrificação CARD 2 -->
+
+<!-- nosso parceiros -->
+<section class="clientes">
+    <div class="container">
+        <h3>Carros de marcas parceiras</h3>
+        <p>
+            Na OverHaul, você encontra os melhores carros elétricos e híbridos das
+            marcas mais renomadas do<br />
+            mercado automotivo. Explore nossa seleção e descubra veículos que
+            combinam inovação, <br />sustentabilidade e performance de marcas
+            líderes mundiais.
+        </p>
+        <div>
+            <img src="@Url.Content("~/images/bmw.png")" alt="BMW" />
+                <img src="@Url.Content("~/images/audi.png")" alt="Mercedes" />
+                <img src="@Url.Content("~/images/mercedes.png")" alt="Nissan" />
+                <img src="@Url.Content("~/images/nissan.png")" alt="Toyota" />
+                <img src="@Url.Content("~/images/toyota.png")" alt="Audi" />
         </div>
     </div>
 </section>
+<!-- end nossos parceiros -->
 
-<section class="parceiros">
-    <h2>Carros de marcas parceiras</h2>
-    <p>Na OverHaul, você encontra os melhores carros elétricos e híbridos das marcas mais renomadas do mercado automotivo. Explore nossa seleção e descubra veículos que combinam inovação, sustentabilidade e performance de marcas líderes mundiais.</p>
-    <div class="logos-parceiros">
-        <img src="~/images/bmw.png" alt="BMW">
-        <img src="~/images/mercedes.png" alt="Mercedes">
-        <img src="~/images/nissan.png" alt="Nissan">
-        <img src="~/images/toyota.png" alt="Toyota">
-        <img src="~/images/audi.png" alt="Audi">
-    </div>
-</section>
-
-
-}
+<script src="~/js/script.js"></script>
+<script src="~/js/modal-iniciar.js"></script>
+<script src="~/js/menu-lateral.js"></script>

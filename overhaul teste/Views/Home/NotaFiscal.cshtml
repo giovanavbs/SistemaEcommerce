@@ -1,41 +1,153 @@
 ﻿@model overhaul_teste.Models.NotaFiscal
 
-<h2>Nota Fiscal</h2>
+<div class="container-nota-fiscal">
+    <h2>Nota Fiscal</h2>
 
-<h3>Detalhes da Nota Fiscal</h3>
-<p><strong>ID da Nota Fiscal:</strong> @Model.IdNotaFiscal</p>
-<p><strong>Número da Nota:</strong> @Model.NumeroNota</p>
-<p><strong>Data de Emissão:</strong> @Model.DataEmissao.ToString("dd/MM/yyyy")</p>
-<p><strong>Valor Total:</strong> R$ @Model.ValorTotal</p>
-<p><strong>Forma de Pagamento:</strong> @Model.FormaPagamento</p>
+    <div class="container-detalhes-nota">
+        <h4>Detalhes da Nota Fiscal</h4>
+        <p><strong>ID da Nota Fiscal:</strong> @Model.IdNotaFiscal</p>
+        <p><strong>Número da Nota:</strong> @Model.NumeroNota</p>
+        <p><strong>Data de Emissão:</strong> @Model.DataEmissao.ToString("dd/MM/yyyy")</p>
+        <p><strong>Valor Total:</strong> R$ @Model.ValorTotal</p>
+        <!--<p class="forma-pagamento"><strong>Forma de Pagamento:</strong> Model.FormaPagamento</p>-->
 
-<h3>Detalhes do Cliente</h3>
-<p><strong>Nome:</strong> @Model.NomeCliente @Model.SobrenomeCliente</p>
-<p><strong>CPF:</strong> @Model.CpfCnpj</p>
+    </div>
 
-<h3>Detalhes do Pagamento</h3>
-<p><strong>ID do Pagamento:</strong> @Model.IdPagamento</p>
+    <div class="container-detalhes-cliente">
+        <h4>Detalhes do Cliente</h4>
+        <p><strong>Nome:</strong> @Model.NomeCliente @Model.SobrenomeCliente</p>
+        <p><strong>CPF:</strong> @Model.CpfCnpj</p>
+    </div>
 
-<h3>Itens do Pedido</h3>
-@if (Model.Itens != null && Model.Itens.Count > 0)
-{
-    <ul>
-        @foreach (var item in Model.Itens)
-        {
-            <li>
-                <img src="@item.Imagem" alt="@item.Modelo" style="width: 100px; height: auto;" />
-                @item.Quantidade x @item.Modelo @item.Marca (Ano: @item.Ano, Cor: @item.Cor) - Preço Unitário: R$ @item.PrecoUnitario
-            </li>
+    <div class="container-detalhes-pagamento">
+        <h3>Detalhes do Pagamento</h3>
+        <p><strong>ID do Pagamento:</strong> @Model.IdPagamento</p>
+        <p class="forma-pagamento"><strong>Forma de Pagamento:</strong> @Model.FormaPagamento</p>
+    </div>
+
+    <h3>Itens do Pedido</h3>
+    @if (Model.Itens != null && Model.Itens.Count > 0)
+    {
+        <div class="itens-list">
+            @foreach (var item in Model.Itens)
+            {
+                <div class="item-card">
+                    <div class="item-image">
+                        <img src="~/images/@item.Imagem" alt="@item.Modelo" class="imagem-produto" />
+                    </div>
+                    <div class="item-info">
+                        <p><strong>@item.Quantidade x @item.Modelo @item.Marca (Ano: @item.Ano, Cor: @item.Cor)</strong></p>
+                        <p>Preço Unitário: R$ @item.PrecoUnitario</p>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>Nenhum item encontrado para este pedido.</p>
+    }
+
+    <!-- btn download do pdf nf -->
+    <form asp-action="GerarPdfNotaFiscal" method="post">
+        <input type="hidden" name="idPedido" value="@Model.IdPagamento" />
+        <button type="submit" class="btns">Baixar Nota Fiscal (PDF)</button>
+    </form>
+</div>
+<style>
+    body {
+        background-color: #202020;
+        color: #f0f0f0;
+    }
+
+    .container-nota-fiscal {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #2d2d2d;
+        border-radius: 8px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+        .container-nota-fiscal h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
         }
-    </ul>
-}
-else
-{
-    <p>Nenhum item encontrado para este pedido.</p>
-}
 
-<!-- Botão para Download do PDF -->
-<form asp-action="GerarPdfNotaFiscal" method="post">
-    <input type="hidden" name="idPedido" value="@Model.IdPagamento" />
-    <button type="submit" class="btn btn-primary">Baixar Nota Fiscal (PDF)</button>
-</form>
+    .container-detalhes-nota, .container-detalhes-cliente, .container-detalhes-pagamento {
+        margin-bottom: 15px;
+        padding: 15px;
+        background-color: #333;
+        border-radius: 8px;
+    }
+
+        .container-detalhes-nota p, .container-detalhes-cliente p, .container-detalhes-pagamento p {
+            margin: 5px 0;
+            color: #f0f0f0;
+        }
+
+    .forma-pagamento {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%; 
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+
+    .itens-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 100%;
+        margin: 20px 0;
+    }
+
+    .item-card {
+        display: flex;
+        background-color: #2D2D2D;
+        padding: 15px;
+        border-radius: 8px;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .item-image img {
+        width: 100px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .item-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+        .item-info p {
+            color: #fff;
+            margin: 5px 0;
+        }
+
+    .btns {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #202020;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+    }
+
+        .btns:hover {
+            background-color: #333;
+        }
+</style>
+

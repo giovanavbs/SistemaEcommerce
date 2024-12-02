@@ -1,14 +1,157 @@
 ﻿@model overhaul_teste.Models.TestDrive
 
-<h1>Test Drive Confirmado</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Drive Confirmado</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <style>
+        body {
+        background-color: #202020;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+      .test-drive {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-<p>Seu test drive foi agendado com sucesso!</p>
-<h2>Detalhes do Test Drive</h2>
+      .conteudo {
+        width: 90%;
+        max-width: 900px;
+        margin-top: 10px;
+        background-color: #2d2d2d;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
 
-<p><strong>Carro:</strong> @Model.ModeloCarro</p>
-<p><strong>Marca:</strong> @Model.MarcaCarro</p>
-<p><strong>Cor:</strong> @Model.CorCarro</p>
-<p><strong>Preço:</strong> R$ @Model.PrecoCarro</p>
-<p><strong>Data e Hora do Test Drive:</strong> @Model.DataTest.ToString("dd/MM/yyyy HH:mm")</p>
+      .header {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
 
-<a href="@Url.Action("Carros", "Home")">voltar para a lista de carros</a>
+      .header p {
+        color: #fff;
+      }
+
+      .car-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .car-info img {
+        max-width: 100%;
+        border-radius: 8px;
+      }
+
+      .car-details {
+        text-align: left;
+        width: 100%;
+        max-height: max-content;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .car-details h2 {
+        margin: 0;
+        font-size: 25px;
+        color: #fff;
+      }
+
+      .car-details p {
+        margin: 4px 0;
+        color: #fff;
+        text-align: justify;
+      }
+
+      .actions {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .actions button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #9820cb;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+
+      .actions button:hover {
+        background-color: #8b00db;
+      }
+
+      /*media (min-width: 600px) {
+        .car-info {
+          flex-direction: row;
+        }
+        .car-details {
+          max-width: 50%;
+        }
+      }
+
+      media (max-width: 563px) {
+        .date-select {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding-top: 20px;
+        }*/
+      
+    </style>
+</head>
+<body>
+
+    <section class="test-drive">
+        <div class="header">
+            <p>Test Drive Confirmado&nbsp;&nbsp;&nbsp;<span class="check-list">✔</span></p>
+            <p>Seu test drive foi agendado com sucesso!</p>
+        </div>
+        <br />
+        <br />
+        <div class="conteudo">
+          <div class="car-info">
+            <img src="~/images/@Model.ImagemCarro" alt="Imagem do carro" />
+  
+            <div class="car-details">
+              <h2>@Model.ModeloCarro</h2>
+              <p><strong>Marca:</strong> @Model.MarcaCarro</p>
+              <p><strong>Cor:</strong> @Model.CorCarro</p>
+              <p><strong>Preço:</strong> R$ @Model.PrecoCarro</p>
+              <h2>Detalhes Teste Drive</h2>
+                    <p><strong>Data e Hora do Test Drive:</strong> @Model.DataTest</p>
+
+            </div>
+          </div>
+          <div class="actions">
+            <a href="@Url.Action("Carros", "Home")">
+                <button>Voltar</button>
+            </a>
+          </div>
+        </div>
+      </section>
+</body>
+</html>

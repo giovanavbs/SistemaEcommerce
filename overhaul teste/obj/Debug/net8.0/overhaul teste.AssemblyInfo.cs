@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("overhaul teste")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44bb741a2a2ca8134185a1ad9d4f04c2214ed3ba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+883e78728320ed8b46ca5e40f555b75f841ddad7")]
 [assembly: System.Reflection.AssemblyProductAttribute("overhaul teste")]
 [assembly: System.Reflection.AssemblyTitleAttribute("overhaul teste")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

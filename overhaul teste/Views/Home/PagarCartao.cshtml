@@ -1,64 +1,465 @@
 ﻿@model List<overhaul_teste.Models.Cartao>
 
-<h2>Cartões Cadastrados</h2>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/nossos-carros.css" />
+    <link rel="stylesheet" href="~/css/media-query.css" />
 
-@if (Model != null && Model.Count > 0)
-{
-    <form method="post" asp-action="SelecionarCartao">
-        <select name="idCartao" required>
-            <option value="">Selecione um cartão</option>
-            @foreach (var cartao in Model)
-            {
-                <option value="@cartao.IdCartao">@cartao.NumeroCartao - @cartao.NomeTitular - Válido até: @cartao.Validade</option>
+    <style>
+
+        * {
+            text-transform: uppercase;
+        }
+
+
+        .conteudo {
+            margin: 20px auto;
+            max-width: 600px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            /*! max-height: max-content; */
+            /*! height: 200px; */
+        }
+
+        .conteudo-1 {
+            margin: 20px auto;
+            max-width: 500px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+        }
+
+        .conteudo form {
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+        }
+
+        .conteudo-1 form {
+            background: #fff;
+            border-radius: 5px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .conteudo form .caixa-input {
+            margin-top: 20px;
+        }
+
+        .conteudo-1 form .caixa-input {
+            margin-top: 20px;
+        }
+
+        .conteudo form .caixa-input span {
+            display: block;
+            color: #999;
+            padding-bottom: 5px;
+        }
+
+        .conteudo-1 form .caixa-input span {
+            display: block;
+            color: #999;
+            padding-bottom: 5px;
+        }
+
+        .conteudo form .caixa-input input,
+        .conteudo form .caixa-input select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            color: #444;
+        }
+
+        .conteudo-1 form .caixa-input input,
+        .conteudo-1 form .caixa-input select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            color: #444;
+        }
+
+        .conteudo form .btn-enviar,
+        #btnAdicionarCartao {
+            width: 100%;
+            background: #202020;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 20px;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s linear;
+        }
+
+        .conteudo-1 form .btn-enviar,
+        #btnAdicionarCartao {
+            width: 100%;
+            background: #202020;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 20px;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s linear;
+        }
+
+            .conteudo form .btn-enviar:hover,
+            #btnAdicionarCartao:hover {
+                letter-spacing: 2px;
+                opacity: 0.8;
             }
-        </select>
-        <button type="submit">Usar Cartão Selecionado</button>
-    </form>
-}
-else
-{
-    <p>Nenhum cartão encontrado.</p>
-}
 
-<h3>Adicionar Novo Cartão</h3>
-<button id="btnAdicionarCartao">Adicionar Cartão</button>
+            .conteudo-1 form .btn-enviar:hover,
+            #btnAdicionarCartao:hover {
+                letter-spacing: 2px;
+                opacity: 0.8;
+            }
 
-<div id="formNovoCartao" style="display:none;">
-    <form method="post" asp-action="AdicionarCartao">
-        <input type="hidden" name="idCliente" value="@Cliente.ClienteLogadoId" /> <!-- id do cliente escondido passado no futuro -->
-        <div>
-            <label>Numero do Cartão:</label>
-            <input type="text" name="NumeroCartao" required />
-        </div>
-        <div>
-            <label>Nome do Titular:</label>
-            <input type="text" name="NomeTitular" required />
-        </div>
-        <div>
-            <label>Validade (MM/AAAA):</label>
-            <input type="text" name="Validade" required />
-        </div>
-        <div>
-            <label>CVV:</label>
-            <input type="text" name="CVV" required />
-        </div>
-        <div>
-            <label>Bandeira:</label>
-            <input type="text" name="Bandeira" required />
-        </div>
-        <button type="submit">Adicionar Cartão</button>
-    </form>
-</div>
+        .conteudo .container-cartao {
+            margin: 20px auto;
+            height: 250px;
+            width: 400px;
+            position: relative;
+        }
 
-@section Scripts {
+            .conteudo .container-cartao .frente,
+            .conteudo .container-cartao .verso {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: #202020;
+                border-radius: 5px;
+                backface-visibility: hidden;
+                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+                transform: perspective(1000px) rotateY(0deg);
+                transition: transform 0.4s ease-out;
+                padding: 20px;
+            }
+
+            .conteudo .container-cartao .verso {
+                transform: perspective(1000px) rotateY(180deg);
+            }
+
+            .conteudo .container-cartao .frente .imagem img {
+                height: 50px;
+            }
+
+            .conteudo .container-cartao .verso .faixa {
+                background: #000;
+                width: 100%;
+                margin: 10px 0;
+                height: 50px;
+            }
+
+        .select-card {
+            padding: 15px;
+            width: 100%;
+            font-size: revert-layer;
+            border: none;
+            border-radius: 10px;
+            font-family: "Poppins", sans-serif;
+            background-color: #e3e3e3;
+        }
+
+        .conteudo form .caixa-flexivel {
+            display: flex;
+            gap: 15px;
+            color: #000;
+        }
+
+        .nome-titular-cartao {
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .numero-cartao-box {
+            color: #fff;
+            font-size: 25px;
+        }
+
+        .imagem {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0px;
+        }
+
+        .caixa {
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-left: 290px;
+            margin-top: 10px;
+        }
+
+        .caixa-cvv {
+            color: #000;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background-color: #fff;
+            padding-left: 330px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteudo-1">
+        <!-- Exibição de cartões cadastrados -->
+        <h2>Cartões Cadastrados</h2>
+        @if (Model != null && Model.Count > 0)
+        {
+            <form method="post" asp-action="SelecionarCartao">
+                <select style="width: 100%;background: #202020;/*! margin-top: 20px; */padding: 10px;font-size: 15px;color: #fff;border-radius: 10px;cursor: pointer;transition: 0.2s linear;" name="idCartao" id="idCartao" required onchange="mostrarPopupCVV()">
+                    <option value="">Selecione um cartão</option>
+                    @foreach (var cartao in Model)
+                    {
+                        <option value="@cartao.IdCartao">@cartao.NumeroCartao - @cartao.NomeTitular - Válido até: @cartao.Validade</option>
+                    }
+                </select>
+
+                    <!-- modal de CVV -->
+                <div id="modalCvv" class="modal" style="display:none; padding-top: 0px;">
+                    <div class="modal-content">
+                        <span style="margin-top: -8px;" class="close" onclick="fecharModal()">&times;</span>
+                        <label for="cvv">Digite seu CVV.</label>
+                        <input type="text" name="cvv" id="cvv" class="form-control" style="width: 100%;padding: 10px;font-size: 16px;border: 1px solid #20202091;border-radius: 6px;background-color: #FFF;color: #000;box-sizing: border-box;" required maxlength="3" oninput="validarCVV()" />
+
+                        <!-- lista de instruções do CVV -->
+                        <ul class="cvv-instrucao">
+                            <li style="margin-top: 10px;" id="criterio-tamanho">Deve conter exatamente 3 dígitos numéricos.</li>
+                        </ul>
+
+                        <span id="mensagem-erro-cvv" class="text-danger" style="display:none; margin-top: 8px;">CVV inválido!</span>
+                        <button type="submit" class="btn-enviar" id="btn-confirmar" disabled>Confirmar</button>
+                    </div>
+                </div>
+                </form>
+
+        }
+        else
+        {
+            <p>Nenhum cartão encontrado.</p>
+        }
+    </div>
+
+    <div class="conteudo">
+        <!-- Formulário para adicionar um novo cartão -->
+        <h2>Adicionar Novo Cartão</h2>
+        <button id="btnAdicionarCartao" class="btn-enviar">Adicionar Cartão</button>
+
+        <div id="formNovoCartao" style="display: none;">
+            <div class="container-cartao">
+                <div class="frente">
+                    <div class="imagem">
+                        <img src="~/images/chip.png" alt="Chip" />
+                        <img src="~/images/visa.png" alt="Visa" />
+                    </div>
+                    <div class="numero-cartao-box">#### #### #### ####</div>
+                    <div class="caixa-flexivel">
+                        <div class="">
+                            <div class="nome-titular-cartao"></div>
+                        </div>
+                        <div class="caixa">
+                            <span>Expira</span>
+                            <div class="validade">
+                                <span class="mes-exp">MM</span> /
+                                <span class="ano-exp">AA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="verso">
+                    <div class="faixa"></div>
+                    <div class="caixa-1">
+                        <span style="color:#fff;">CVV</span>
+                        <div class="caixa-cvv"></div>
+                    </div>
+                </div>
+            </div>
+            <form method="post" asp-action="AdicionarCartao">
+                <input type="hidden" name="idCliente" value="@Cliente.ClienteLogadoId" />
+                <div class="caixa-input">
+                    <label>Número do Cartão:</label>
+                    <input type="text" name="NumeroCartao" class="input-numero-cartao" required />
+                </div>
+                <div class="caixa-input">
+                    <label>Nome do Titular:</label>
+                    <input type="text" name="NomeTitular" class="input-titular-cartao" required />
+                </div>
+                <div class="caixa-flexivel">
+                    <div class="caixa-input">
+                        <label>Validade (MM/AA):</label>
+                        <input type="text" name="Validade" required />
+                    </div>
+                    <div class="caixa-input">
+                        <label>CVV:</label>
+                        <input type="text" name="CVV" class="input-cvv" required />
+                    </div>
+                    <div class="caixa-input">
+                        <label>Bandeira:</label>
+                        <input type="text" name="Bandeira" required />
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-enviar">Adicionar Cartão</button>
+            </form>
+        </div>
+    </div>
+
     <script>
-        document.getElementById("btnAdicionarCartao").onclick = function() {
+        // Exibe/oculta o formulário de novo cartão
+        document.getElementById("btnAdicionarCartao").onclick = function () {
             var form = document.getElementById("formNovoCartao");
-            if (form.style.display === "none") {
-                form.style.display = "block";
-            } else {
-                form.style.display = "none";
-            }
+            form.style.display = form.style.display === "none" ? "block" : "none";
+        };
+
+        // Atualiza número do cartão
+        document.querySelector(".input-numero-cartao").oninput = () => {
+            let input = document.querySelector(".input-numero-cartao").value.replace(/\D/g, "").replace(/(\d{4})(?=\d)/g, "$1 ");
+            document.querySelector(".input-numero-cartao").value = input;
+            document.querySelector(".numero-cartao-box").innerText = input;
+        };
+
+        // Atualiza titular do cartão
+        document.querySelector(".input-titular-cartao").oninput = () => {
+            document.querySelector(".nome-titular-cartao").innerText = document.querySelector(".input-titular-cartao").value;
+        };
+
+        // Atualiza CVV
+        document.querySelector(".input-cvv").oninput = () => {
+            let input = document.querySelector(".input-cvv").value.replace(/\D/g, "").substring(0, 3);
+            document.querySelector(".caixa-cvv").innerText = input;
+        };
+
+        // Efeitos de rotação (CVV)
+        document.querySelector(".input-cvv").onmouseenter = () => {
+            document.querySelector(".frente").style.transform = "perspective(1000px) rotateY(-180deg)";
+            document.querySelector(".verso").style.transform = "perspective(1000px) rotateY(0deg)";
+        };
+
+        document.querySelector(".input-cvv").onmouseleave = () => {
+            document.querySelector(".frente").style.transform = "perspective(1000px) rotateY(0deg)";
+            document.querySelector(".verso").style.transform = "perspective(1000px) rotateY(180deg)";
         };
     </script>
-}
+
+    <style>
+        .cvv-instrucao li {
+            color: red;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+            .cvv-instrucao li.valid {
+                color: green;
+            }
+
+    </style>
+
+
+    <script>
+        // confirmar o cvv quando o cartao for selecionado
+        function mostrarPopupCVV() {
+            var selectCartao = document.getElementById('idCartao');
+            var modalCvv = document.getElementById('modalCvv');
+
+            if (selectCartao.value !== "") {
+                modalCvv.style.display = 'block';
+            }
+        }
+
+        function fecharModal() {
+            var modalCvv = document.getElementById('modalCvv');
+            modalCvv.style.display = 'none';
+        }
+
+        // fechar o modal quando clciar fora
+        window.onclick = function (event) {
+            var modalCvv = document.getElementById('modalCvv');
+            if (event.target == modalCvv) {
+                modalCvv.style.display = 'none';
+            }
+        }
+
+        function validarCVV() {
+            const cvv = document.getElementById("cvv").value;
+            const criterioTamanho = document.getElementById("criterio-tamanho");
+            const criterioObrigatorio = document.getElementById("criterio-obrigatorio");
+            const mensagemErro = document.getElementById("mensagem-erro-cvv");
+            const botaoConfirmar = document.getElementById("btn-confirmar");
+
+            const digitos = /^\d{3}$/.test(cvv);
+
+            criterioTamanho.classList.toggle("valid", digitos);
+            criterioTamanho.style.color = digitos ? "green" : "red";
+
+            const todosCriteriosAtendidos = digitos;
+
+            if (todosCriteriosAtendidos) {
+                mensagemErro.style.display = "none";
+                botaoConfirmar.disabled = false;
+            } else {
+                mensagemErro.style.display = "block";
+                botaoConfirmar.disabled = true;
+            }
+        }
+    </script>
+
+    <style>
+        /* css capenga perdao */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            float: right;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    </style>
+</body>
+</html>

@@ -130,7 +130,7 @@ namespace overhaul_teste.Repositorio
                 cmd.Parameters.Add("@vSenha", MySqlDbType.VarChar).Value = cliente.Senha;
                 cmd.Parameters.Add("@vTelefone", MySqlDbType.Decimal).Value = cliente.Telefone;
                 cmd.Parameters.Add("@vTipoCliente", MySqlDbType.Enum).Value = cliente.TipoCliente;
-                cmd.Parameters.Add("@vCepCli", MySqlDbType.Int32).Value = cliente.CepCli;
+                cmd.Parameters.Add("@vCepCli", MySqlDbType.Int32).Value = 09185780;
                 cmd.Parameters.Add("@vNumEnd", MySqlDbType.Int32).Value = cliente.NumEnd;
                 cmd.Parameters.Add("@vCompEnd", MySqlDbType.VarChar).Value = cliente.CompEnd;
                 cmd.Parameters.Add("@vLogradouro", MySqlDbType.VarChar).Value = cliente.Logradouro;

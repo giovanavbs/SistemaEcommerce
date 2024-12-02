@@ -1,57 +1,140 @@
 ﻿@model List<overhaul_teste.Models.TestDrive>
 
-@{
-    ViewData["Title"] = "Test Drives Agendados";
-}
-
-<h2>Test Drives Agendados</h2>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Cliente</th>
-            <th>CPF/CNPJ</th>
-            <th>Modelo</th>
-            <th>Marca</th>
-            <th>Ano</th>
-            <th>Data do Test Drive</th>
-            <th>Status</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var testDrive in Model)
-        {
-            <tr>
-                <td>@testDrive.IdTest</td>
-                <td>@testDrive.ClienteNome</td>
-                <td>@testDrive.ClienteCpf</td>
-                <td>@testDrive.ModeloCarro</td>
-                <td>@testDrive.MarcaCarro</td>
-                <td>@testDrive.AnoCarro</td>
-                <td>@testDrive.DataTest.ToString("dd/MM/yyyy HH:mm")</td>
-                <td>@testDrive.StatusTest</td>
-                <td>
-                    <!-- concluido -->
-                    <form asp-action="ConcluirTestDrive" method="post" style="display:inline;">
-                        <input type="hidden" name="idTest" value="@testDrive.IdTest" />
-                        <button type="submit" class="btn btn-success" 
-                            @if (testDrive.StatusTest == "concluido" || testDrive.StatusTest == "cancelado") { <text>disabled</text> }>
-                            Concluir
-                        </button>
-                    </form>
-
-                    <!-- cancelar -->
-                    <form asp-action="CancelarTestDrive" method="post" style="display:inline;">
-                        <input type="hidden" name="idTest" value="@testDrive.IdTest" />
-                        <button type="submit" class="btn btn-danger" 
-                            @if (testDrive.StatusTest == "cancelado" || testDrive.StatusTest == "concluido") { <text>disabled</text> }>
-                            Cancelar
-                        </button>
-                    </form>
-                </td>
-            </tr>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testes Drives Agendados</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+    <style>
+        body {
+            background-color: #202020;
         }
-    </tbody>
-</table>
+        .todos-carros {
+            background-color: #202020;
+            color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .carros {
+            width: 90%;
+            max-width: 1600px;
+            background-color: #2d2d2d;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin-top: 30px;
+        }
+        .carros h2 {
+            text-align: center;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        thead {
+            background-color: #444444;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #555;
+        }
+        th {
+            color: #ccc;
+            font-weight: bold;
+        }
+        tbody tr:hover {
+            background-color: #444;
+        }
+        button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button.alterar {
+            background-color: #0000cd;
+            color: #fff;
+            margin-right: 5px;
+        }
+        button.excluir {
+            background-color: #b22222;
+            color: #fff;
+        }
+        /*media (max-width: 600px) {
+            th, td {
+                padding: 8px 5px;
+                font-size: 14px;
+            }*/
+            button {
+                padding: 6px 8px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <section class="todos-carros">
+        <div class="carros">
+            <h2>Test Drives Agendados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>CPF/CNPJ</th>
+                        <th>Modelo</th>
+                        <th>Marca</th>
+                        <th>Ano</th>
+                        <th>Data do Test Drive</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var testDrive in Model)
+                    {
+                        <tr>
+                            <td>@testDrive.IdTest</td>
+                            <td>@testDrive.ClienteNome</td>
+                            <td>@testDrive.ClienteCpf</td>
+                            <td>@testDrive.ModeloCarro</td>
+                            <td>@testDrive.MarcaCarro</td>
+                            <td>@testDrive.AnoCarro</td>
+                            <td>@testDrive.DataTest.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>@testDrive.StatusTest</td>
+                            <td>
+                                <!-- concluir -->
+                                <form asp-action="ConcluirTestDrive" method="post" style="display:inline;">
+                                    <input type="hidden" name="idTest" value="@testDrive.IdTest" />
+                                    <button type="submit" class="alterar" 
+                                        @if (testDrive.StatusTest == "concluido" || testDrive.StatusTest == "cancelado") { <text>disabled</text> }>
+                                        Concluir
+                                    </button>
+                                </form>
+
+                                <!-- cancelar -->
+                                <form asp-action="CancelarTestDrive" method="post" style="display:inline;">
+                                    <input type="hidden" name="idTest" value="@testDrive.IdTest" />
+                                    <button type="submit" class="excluir" 
+                                        @if (testDrive.StatusTest == "cancelado" || testDrive.StatusTest == "concluido") { <text>disabled</text> }>
+                                        Cancelar
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>

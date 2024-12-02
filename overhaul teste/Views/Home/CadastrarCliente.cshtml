@@ -4,224 +4,376 @@
     ViewData["Title"] = "Cadastrar Cliente";
 }
 
-<style>
-    section.cadastro-section {
-        font-family: Arial, sans-serif;
-        background-color: #F3F4F6;
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Cadastro</title>
+
+    <style>
+      .cadastro {
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 60px 0;
-    }
+        background-color: #2020200c;
+        padding-top: 20px;
+      }
 
-    .container {
-        background-color: white;
-        padding: 40px;
-        border-radius: 8px;
-        max-width: 800px;
+      .conteudo {
         width: 100%;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    }
+        max-width: 600px;
+        padding: 20px;
+        margin-bottom: 30px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.238);
+      }
 
-    .cadastro-section h1 {
+      h1 {
+        margin-top: 10px;
         text-align: center;
-        font-size: 28px;
-        font-weight: bold;
+        font-size: 24px;
         margin-bottom: 20px;
-        color: #000;
-    } 
+        color: #333;
+      }
 
-    h4 {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color: #000;
-    }
+      h2 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+      }
 
-    .form-row {
+      .formulario {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         gap: 20px;
-    }
+      }
 
-    .form-column {
-        flex: 1;
-    }
+      .informacoes-pessoais,
+      .informacoes-endereco {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        flex-direction: column;
+        background-color: #fff;
+        justify-content: center;
+        width: 100%;
+        max-width: 600px;
+      }
 
-    .form-group {
-        margin-bottom: 15px;
-    }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      select {
+        flex: 1 1 48%;
 
-    input.form-control {
-        padding: 12px;
+        width: 100%;
+        padding: 10px;
         font-size: 16px;
-        border: 2px solid #E5E7EB;
+        border: 1px solid #f7f9fc;
         border-radius: 6px;
-        background-color: #F3F4F6;
-        outline: none;
-        transition: all 0.3s ease;
-    }
+        background-color: #f7f9fc;
+        color: #333;
+        box-sizing: border-box;
+      }
 
-        input.form-control:focus {
-            border-color: #6366F1;
-            background-color: #E0E7FF;
-        }
+      .senha-instrucao {
+        flex: 1 1 100%;
+        font-size: 12px;
+        margin-left: 15px;
+        color: #666;
+        list-style-type: decimal;
+        margin-top: 5px;
+      }
 
-    .btn-primary {
-        background-color: #1D4ED8;
-        color: white;
-        padding: 12px;
+      button {
+        padding: 10px;
         font-size: 16px;
         border: none;
-        border-radius: 6px;
+        border-radius: 5px;
         cursor: pointer;
-        transition: all 0.3s ease;
-    }
+        color: #fff;
+        background-color: #9820cb;
+        transition: 0.3s;
+      }
 
-        .btn-primary:hover {
-            background-color: white;
-            color: #1D4ED8;
-            border: 2px solid #1D4ED8;
-        }
+      button:hover {
+        background-color: #8b00db;
+        opacity: 0.9;
+      }
 
-    .btn-toggle {
+      .btn{
         padding: 10px 20px;
-        border: 2px solid #E5E7EB;
-        border-radius: 6px;
-        background-color: white;
-        color: #000;
+        background-color: #8e22e6;
+        border: none;
+        border-radius: 5px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        font-weight: bold;
+        color: #fff;
+        transition: 0.3s;
+        width: 100%;
+      }
+
+
+    .btn:hover {
+        background-color: #8b00db;
+        opacity: 0.9;
     }
 
-        .btn-toggle.active {
-            background-color: #1D4ED8;
-            color: white;
-            border-color: #1D4ED8;
-        }
-
-        .btn-toggle:hover {
-            border-color: #6366F1;
-        }
-
-    .hidden {
-        display: none;
+    .btn-login-cadastro a{
+        color: #8e22e6;
     }
-</style>
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+          flex: 1 1 100%;
+        }
+      }
+    </style>
 
 <main role="main">
-    <section class="cadastro-section">
-        <div class="container">
-            <h1>Cadastrar Cliente</h1>
-            <form asp-action="CadastrarCliente">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <div class="form-row">
-                    <div class="form-column">
-                        <h4>Informações Pessoais</h4>
-                        <div class="form-group">
-                            <label asp-for="Nome" class="control-label"></label>
-                            <input asp-for="Nome" class="form-control" />
-                            <span asp-validation-for="Nome" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Sobrenome" class="control-label"></label>
-                            <input asp-for="Sobrenome" class="form-control" />
-                            <span asp-validation-for="Sobrenome" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Telefone" class="control-label"></label>
-                            <input asp-for="Telefone" class="form-control" />
-                            <span asp-validation-for="Telefone" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Email" class="control-label"></label>
-                            <input asp-for="Email" class="form-control" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Senha" class="control-label"></label>
-                            <input asp-for="Senha" type="password" class="form-control" />
-                            <span asp-validation-for="Senha" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="TipoCliente" class="control-label"></label>
-                            <div>
-                                <button type="button" class="btn-toggle" id="pf-btn" onclick="setTipoCliente('pf')">Pessoa Física</button>
-                                <button type="button" class="btn-toggle" id="pj-btn" onclick="setTipoCliente('pj')">Pessoa Jurídica</button>
-                                <input type="hidden" id="TipoCliente" name="TipoCliente" />
-                            </div>
-                            <span asp-validation-for="TipoCliente" class="text-danger"></span>
-                        </div>
+    <section class="cadastro cadastro-section">
+        <div class="conteudo">
+            <h1>Cadastre-se abaixo</h1>
+            <form asp-action="CadastrarCliente" class="formulario" onsubmit="return validarCampos()">
+                <h2>Informações Pessoais</h2>
+                <div class="informacoes-pessoais">
+                    <div class="form-group">
+                        <label asp-for="Nome" class="control-label">Nome:</label><br>
+                        <input asp-for="Nome" class="form-control" placeholder="Digite o seu nome" />
+                        <span asp-validation-for="Nome" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="CpfCnpj" class="control-label"></label>
-                        <input asp-for="CpfCnpj" class="form-control" />
+                        <label asp-for="Sobrenome" class="control-label">Sobrenome:</label><br>
+                        <input asp-for="Sobrenome" class="form-control" placeholder="Digite o seu Sobrenome" />
+                        <span asp-validation-for="Sobrenome" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CpfCnpj" class="control-label">CPF ou CNPJ:</label><br>
+                        <input asp-for="CpfCnpj" class="form-control" placeholder="Digite seu CPF/CNPJ" />
                         <span asp-validation-for="CpfCnpj" class="text-danger"></span>
                     </div>
 
+                    <!-- <div class="form-group">
+                         <label asp-for="TipoCliente" class="control-label">Tipo Cliente:</label>
+                         <div>
+                             <button type="button" class="btn" id="pf-btn" onclick="setTipoCliente('pf')">Pessoa Física</button>
+                             <button type="button" class="btn" id="pj-btn" onclick="setTipoCliente('pj')">Pessoa Jurídica</button>
+                             <input type="hidden" id="TipoCliente" name="TipoCliente" />
+                         </div>
+                         <span asp-validation-for="TipoCliente" class="text-danger"></span>
+                     </div> -->
+                    <label asp-for="TipoCliente" class="control-label">Tipo Cliente:</label>
+                    <select id="tipoCliente">
+                        <option value="TipoCliente" name="TipoCliente">Tipo de cliente</option>
+                        <option id="pf-btn" onclick="setTipoCliente('pf')" value="pessoaFisica">Pessoa Física</option>
+                        <option id="pj-btn" onclick="setTipoCliente('pj')" value="pessoaJuridica">Pessoa Jurídica</option>
+                    </select>
+                
 
-                    <div class="form-column">
-                        <h4>Informações de Endereço</h4>
-                        <div class="form-group">
-                            <label asp-for="CepCli" class="control-label"></label>
-                            <input asp-for="CepCli" class="form-control" />
-                            <span asp-validation-for="CepCli" class="text-danger"></span>
-                        </div>
+                    <div class="form-group">
+                        <label asp-for="Telefone" class="control-label"></label>:<br>
+                        <input asp-for="Telefone" type="text" class="form-control" placeholder="Digite o seu telefone" />
+                        <span asp-validation-for="Telefone" class="text-danger"></span>
+                    </div>
 
-                        <div class="form-group">
-                            <label asp-for="NumEnd" class="control-label"></label>
-                            <input asp-for="NumEnd" class="form-control" />
-                            <span asp-validation-for="NumEnd" class="text-danger"></span>
-                        </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>:<br>
+                        <input asp-for="Email" type="email" class="form-control" placeholder="Digite o seu Email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
 
-                        <div class="form-group">
-                            <label asp-for="CompEnd" class="control-label"></label>
-                            <input asp-for="CompEnd" class="form-control" />
-                            <span asp-validation-for="CompEnd" class="text-danger"></span>
-                        </div>
+                    <div class="form-group">
+                        <label asp-for="Senha" class="control-label">Senha:</label><br>
+                       
+                        <input asp-for="Senha" id="senha" type="password" class="form-control" placeholder="Digite uma senha" oninput="validarSenha()" />
 
-                        <div class="form-group">
-                            <label asp-for="Logradouro" class="control-label"></label>
-                            <input asp-for="Logradouro" class="form-control" />
-                            <span asp-validation-for="Logradouro" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Bairro" class="control-label"></label>
-                            <input asp-for="Bairro" class="form-control" />
-                            <span asp-validation-for="Bairro" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Cidade" class="control-label"></label>
-                            <input asp-for="Cidade" class="form-control" />
-                            <span asp-validation-for="Cidade" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="UF" class="control-label"></label>
-                            <input asp-for="UF" class="form-control" />
-                            <span asp-validation-for="UF" class="text-danger"></span>
-                        </div>
+                        <ul class="senha-instrucao">
+                            <li id="criterio-longo">Longa: com letras, números e símbolos.</li>
+                            <li id="criterio-complexo">Complexa: não seja óbvia.</li>
+                            <li id="criterio-pratica">Prática: lembrar dela com facilidade.</li>
+                        </ul>
+                        <span asp-validation-for="Senha" class="text-danger"></span>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                <h2>Informações de Endereço</h2>
+                <div class="informacoes-endereco">
+
+                    <div>
+                        <label for="cep">CEP:</label><br>
+                        <input type="text" id="cep" name="cep" maxlength="8" onkeyup="buscarEndereco()" placeholder="Digite o CEP" />
+                        <!--<button type="button" onclick="buscarEndereco()">Buscar Endereço</button>-->
+
+                        <!--aviso: cep bugou pra enviar provavelmente pq é usado no metodo js antes de enviar, por enquanto vo alterar manualmente apos inserção-->
+                    </div>
+
+                    <div>
+                        <label for="logradouro">Logradouro:</label><br>
+                        <input type="text" id="logradouro" name="logradouro" readonly />
+                    </div>
+                    <div>
+                        <label for="bairro">Bairro:</label><br>
+                        <input type="text" id="bairro" name="bairro" readonly />
+                    </div>
+                    <div>
+                        <label for="cidade">Cidade:</label><br>
+                        <input type="text" id="cidade" name="cidade" readonly />
+                    </div>
+                    <div>
+                        <label for="uf">Estado:</label><br>
+                        <input type="text" id="uf" name="uf" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="NumEnd" class="control-label">Número de Endereço:</label><br>
+                        <input asp-for="NumEnd" type="text" class="form-control" placeholder="numero do endereço" id="numero" />
+                        <span asp-validation-for="NumEnd" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CompEnd" class="control-label">Complemento:</label><br>
+                        <input asp-for="CompEnd" class="form-control" placeholder="complemento" />
+                        <span asp-validation-for="CompEnd" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="submit" value="Cadastrar" class="btn" />
+                    </div>
+
+                    <div class="btn-login-cadastro">
+                        <a href="@Url.Action("Login", "Home")">Já possui login? Clique aqui!</a>
+                    </div>
                 </div>
             </form>
         </div>
     </section>
 </main>
+
+<script>
+    function buscarEndereco() {
+        var cep = document.getElementById('cep').value;     // algumas aterações no metodo por frescura do asp.net (DE NOVO)
+
+        if (cep.length === 8) {
+
+            var url = `https://viacep.com.br/ws/${cep}/json/`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.erro) {
+                        alert("cep invalido");
+                    } else {
+
+                        document.getElementById('logradouro').value = data.logradouro;
+                        document.getElementById('bairro').value = data.bairro;
+                        document.getElementById('cidade').value = data.localidade;
+                        document.getElementById('uf').value = data.uf;
+
+
+                        document.getElementById('cep').value = cep;
+                    }
+                })
+                .catch(error => {
+                    alert("Erro ao buscar o CEP.");
+                });
+        }
+    }
+
+      function validarSenha() {
+        const senha = document.getElementById("senha").value;
+        const criterioLongo = document.getElementById("criterio-longo");
+        const criterioComplexo = document.getElementById("criterio-complexo");
+        const criterioPratica = document.getElementById("criterio-pratica");
+
+        const contemLetra = /[a-zA-Z]/.test(senha);
+        const contemNumero = /[0-9]/.test(senha);
+        const contemSimbolo = /[!#$%^&*(),.?":{}|<>]/.test(senha); // tive que tirar o arroba tbm
+        const senhaLonga = senha.length >= 8;
+
+        const senhasObvias = [
+          "",
+          "123456",
+          "senha",
+          "abcdefghijklmnopqrstuvwxyz",
+          "1234567890",
+          "111111",
+        ];
+        const senhaComplexa = !senhasObvias.includes(senha.toLowerCase());
+        const repeteCaractere = /^(.)\1+$/.test(senha);
+
+        criterioLongo.style.color =
+          senhaLonga && contemLetra && contemNumero && contemSimbolo
+            ? "green"
+            : "red";
+        criterioComplexo.style.color = senhaComplexa ? "green" : "red";
+        criterioPratica.style.color =
+          senhaLonga && !repeteCaractere ? "green" : "red";
+
+        const criteriosAtendidos =
+          criterioLongo.style.color === "green" &&
+          criterioComplexo.style.color === "green" &&
+          criterioPratica.style.color === "green";
+
+        document.getElementById("mensagem-erro").style.display =
+          criteriosAtendidos ? "none" : "block";
+      }
+
+      function validarCampos() {
+        let valido = true;
+
+        const camposObrigatorios = [
+          { id: "nome", erroId: "erro-nome", mensagem: "Nome é obrigatório." },
+          {
+            id: "sobrenome",
+            erroId: "erro-sobrenome",
+            mensagem: "Sobrenome é obrigatório.",
+          },
+          {
+            id: "telefone",
+            erroId: "erro-telefone",
+            mensagem: "Telefone inválido.",
+          },
+          { id: "email", erroId: "erro-email", mensagem: "Email inválido." },
+          {
+            id: "cpfCnpj",
+            erroId: "erro-cpfCnpj",
+            mensagem: "CPF/CNPJ inválido.",
+          },
+          {
+            id: "tipoCliente",
+            erroId: "erro-tipoCliente",
+            mensagem: "Selecione um tipo de cliente.",
+          },
+        ];
+
+        camposObrigatorios.forEach((campo) => {
+          const elemento = document.getElementById(campo.id);
+          const valor = elemento.value.trim();
+          const mensagemErro = document.getElementById(campo.erroId);
+          if (
+            valor === "" ||
+            (campo.id === "telefone" && !/^\d{10,11}$/.test(valor)) ||
+            (campo.id === "email" && !/^\S+<\S+\.\S+$/.test(valor)) || // aqui tive que tirar o arroba, voltar pra resolver depois
+            (campo.id === "cpfCnpj" && !/^\d{11,14}$/.test(valor))
+          ) {
+            mensagemErro.style.display = "block";
+            valido = false;
+          } else {
+            mensagemErro.style.display = "none";
+          }
+        });
+
+        validarSenha();
+        return (
+          valido &&
+          document.getElementById("mensagem-erro").style.display === "none"
+        );
+      }
+    </script>
+
 
 <script>
     function setTipoCliente(tipo) {

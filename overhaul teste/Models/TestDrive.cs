@@ -22,8 +22,9 @@
             public string ClienteNome { get; set; }
             public string ClienteCpf { get; set; }
 
-            // carro
-            public string ModeloCarro { get; set; }
+        // carro
+        public string ImagemCarro { get; set; }
+        public string ModeloCarro { get; set; }
             public string MarcaCarro { get; set; }
             public int AnoCarro { get; set; }  
             public string CorCarro { get; set; }

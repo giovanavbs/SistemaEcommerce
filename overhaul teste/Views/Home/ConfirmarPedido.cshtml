@@ -1,30 +1,136 @@
-﻿@if (Model.Itens != null && Model.Itens.Count > 0)
-{
-    <ul>
-        @foreach (var item in Model.Itens)
-        {
-            <li>
-                <img src="@item.Imagem" alt="@item.Modelo" style="width: 100px; height: auto;" />
-                @item.Quantidade x @item.Modelo @item.Marca (Ano: @item.Ano, Cor: @item.Cor) - Preço Unitário: @item.PrecoUnitario
-            </li>
+﻿<style>
+    body {
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+    }
+
+    .container-pedido {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #2d2d2d;
+        border-radius: 8px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+        .container-pedido h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
         }
-    </ul>
 
-    <p><strong>Valor Total do Pedido:</strong> R$ @Model.ValorTotal</p>
+    .lista-itens {
+        list-style-type: none;
+        padding: 0;
+        margin: 20px 0;
+    }
 
-    <div>
-        <form asp-action="CancelarPedido" method="post">
-            <input type="hidden" name="idPedido" value="@Model.IdPedido" />
-            <button type="submit" class="btn btn-danger">Cancelar Pedido</button>
-        </form>
+    .item-pedido {
+        display: flex;
+        align-items: center;
+        background-color: #333;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        color: #fff; 
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
 
-        <form asp-action="IrParaPagamento" method="get">
-            <input type="hidden" name="idPedido" value="@Model.IdPedido" />
-            <button type="submit" class="btn btn-success">Realizar Pagamento</button>
-        </form>
-    </div>
-}
-else
-{
-    <p>nenhum item encontrado para este pedido.</p>
-}
+    .item-pedido p{
+        color: #fff;
+    }
+
+    .item-imagem {
+        margin-right: 15px;
+    }
+
+    .item-detalhes {
+        flex: 1;
+    }
+
+    .valor-total {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #f0f0f0;
+        text-align: right;
+    }
+
+    .botoes-acoes {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .btn-cancelar {
+        background-color: #dc3545;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn-cancelar:hover {
+            background-color: #c82333;
+        }
+
+    .btn-pagar {
+        background-color: #28a745;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn-pagar:hover {
+            background-color: #218838;
+        }
+
+    .mensagem-nenhum-item {
+        color: #f0f0f0;
+        text-align: center;
+    }
+</style>
+
+<div class="container-pedido">
+    <h2>Detalhes do Pedido</h2>
+
+    @if (Model.Itens != null && Model.Itens.Count > 0)
+    {
+        <ul class="lista-itens">
+            @foreach (var item in Model.Itens)
+            {
+                <li class="item-pedido">
+                    <div class="item-imagem">
+                        <img src="~/images/@item.Imagem" alt="@item.Modelo" style="width: 100px; height: auto; border-radius: 5px;" />
+                    </div>
+                    <div class="item-detalhes">
+                        <p>@item.Quantidade x @item.Modelo @item.Marca (Ano: @item.Ano, Cor: @item.Cor) - Preço Unitário: R$ @item.PrecoUnitario</p>
+                    </div>
+                </li>
+            }
+        </ul>
+
+        <p class="valor-total"><strong>Valor Total do Pedido:</strong> R$ @Model.ValorTotal</p>
+
+        <div class="botoes-acoes">
+            <form asp-action="CancelarPedido" method="post">
+                <input type="hidden" name="idPedido" value="@Model.IdPedido" />
+                <button type="submit" class="btn-cancelar">Cancelar Pedido</button>
+            </form>
+
+            <form asp-action="IrParaPagamento" method="get">
+                <input type="hidden" name="idPedido" value="@Model.IdPedido" />
+                <button type="submit" class="btn-pagar">Realizar Pagamento</button>
+            </form>
+        </div>
+    }
+    else
+    {
+        <p class="mensagem-nenhum-item">Nenhum item encontrado para este pedido.</p>
+    }
+</div>

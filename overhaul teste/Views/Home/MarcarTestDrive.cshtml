@@ -9,28 +9,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overhaul</title>
+    <title>TestDrive</title>
+        <link rel="stylesheet" href="~/css/style.css">
+    <style>
+        body {
+        background-color: #202020;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+      .test-drive {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .conteudo {
+        width: 90%;
+        max-width: 900px;
+        margin-top: 10px;
+        background-color: #2d2d2d;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+
+      .header {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+
+      .car-info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .car-info img {
+        max-width: 100%;
+        border-radius: 8px;
+      }
+
+      .car-details {
+        text-align: left;
+        width: 100%;
+        max-height: max-content;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .car-details h2 {
+        margin: 0;
+        font-size: 25px;
+        color: #fff;
+      }
+
+      .car-details p {
+        margin: 4px 0;
+        color: #fff;
+        text-align: justify;
+      }
+
+      .actions {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .actions button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #9820cb;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+
+      .actions button:hover {
+        background-color: #8b00db;
+      }
+
+      .date-select {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+      .date-select input[type="datetime-local"] {
+        padding: 10px;
+        margin: 10px;
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #444;
+        border-radius: 5px;
+        outline: none;
+        appearance: none;
+      }
+
+      .date-select input[type="datetime-local"]::placeholder {
+        color: #b5b5b5; /* Cor do texto placeholder */
+      }
+
+      .date-select input[type="datetime-local"]:focus {
+        border-color: #666;
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+      }
+
+      /*media (min-width: 600px) {
+        .car-info {
+          flex-direction: row;
+        }
+        .car-details {
+          max-width: 50%;
+        }
+      }
+      media (max-width: 563px) {
+        .date-select{
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding-top: 20px;
+        }*/
+      }
+    </style>
 </head>
 <body>
-    <h1>Marcar Test Drive - @Model.Modelo</h1>
 
-    <div>
-        <p>Marca: @Model.Marca</p>
-        <p>Cor: @Model.Cor</p>
-        <p>Preço: R$ @Model.Preco</p>
-        <p>Descrição: @Model.Descricao</p>
-    </div>
+        <section class="test-drive">
+            <div class="header">Marcar Test Drive - @Model.Modelo</div>
+            <div class="conteudo">
+                <div class="car-info">
+                    <img src="~/images/@Model.Imagem" alt="Imagem do carro" />
+                    <div class="car-details">
+                        <h2>@Model.Modelo</h2>
+                        <p>Marca: @Model.Marca</p>
+                        <p>Cor: @Model.Cor</p>
+                        <p>Preço: R$ @Model.Preco</p>
+                        <p>Descrição: @Model.Descricao</p>
+                    </div>
+                </div>
 
-    <form method="post" action="@Url.Action("InserirTestDrive", "Home")">
-        <input type="hidden" name="id_cliente" value="@Cliente.ClienteLogadoId" />
-        <input type="hidden" name="id_carro" value="@Model.Id" />
 
-        <label for="data_test">Escolha a data e hora do test drive:</label>
-        <input type="datetime-local" id="data_test" name="data_test" required />
+                <form method="post" action="@Url.Action("InserirTestDrive", "Home")">
+                    <input type="hidden" name="id_cliente" value="@Cliente.ClienteLogadoId" />
+                    <input type="hidden" name="id_carro" value="@Model.Id" />
 
-        <button type="submit">Marcar Test Drive</button>
-    </form>
+                <div class="date-select">
+                    <label for="data_test">Escolha a data e hora do test drive:</label>
+                    <input type="datetime-local" id="data_test" name="data_test" required />
+                </div>
+                    <div class="actions">
+                        <button type="submit">Marcar Test Drive</button>
+                        <a href="@Url.Action("Carros", "Home")">
+                            <button type="button">Voltar</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </section>
 
-    <a href="@Url.Action("Carros", "Home")">voltar para a lista de carros</a>
-</body>
+     
+    </body>
 </html>

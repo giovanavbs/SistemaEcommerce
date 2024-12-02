@@ -1,12 +1,335 @@
-﻿<h2>Escolha o Método de Pagamento</h2>
-<div>
-    <form asp-action="PagarCartao" method="get">
-        <input type="hidden" name="idPedido" value="@ViewBag.IdPedido" />
-        <button type="submit" class="btn btn-primary">Pagar com Cartão</button>
-    </form>
+﻿<link rel="stylesheet" href="~/css/style.css" />
+<style>
 
-    <form asp-action="PagarPix" method="get">
-        <input type="hidden" name="idPedido" value="@ViewBag.IdPedido" />
-        <button type="submit" class="btn btn-secondary">Pagar com Pix</button>
-    </form>
+    body {
+        background-color: #202020;
+    }
+
+    .main {
+        display: flex;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .container-checkout {
+        width: 60%;
+        margin-top: 20px;
+        margin-left: 50px;
+        overflow: hidden;
+        height: max-content;
+    }
+
+    h2 {
+        color: #ccc;
+        margin-bottom: 10px;
+    }
+
+    .cabecalho-secao {
+        font-weight: bold;
+        cursor: pointer;
+        color: #fff;
+        font-size: 25px;
+        margin: 20px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    .conteudo-secao {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+        .conteudo-secao.oculto {
+            display: none;
+        }
+
+    .grupo-input {
+        background-color: #2d2d2d;
+        display: flex;
+        flex-direction: column;
+        margin-left: 40px;
+        height: max-content;
+        padding-left: 30px;
+        max-width: 1100px;
+    }
+
+    #grupo-input-estado {
+        padding-bottom: 20px;
+    }
+
+    label {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        color: #fff;
+        font-weight: bold;
+        margin-left: 5%;
+    }
+
+    .grupo-input .label-pagamento {
+        margin-top: 0;
+        display: flex;
+        margin-left: 0px;
+        align-items: center;
+    }
+
+        .grupo-input .label-pagamento img {
+            margin-left: 10px;
+        }
+
+    .grupo-input .titulo-tipo-pagamento {
+        font-size: 15px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        color: #fff;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .grupo-input .label-pagamento p {
+        margin-left: 15px;
+        color: #fff;
+    }
+
+    input[type="text"],
+    input[type="tel"] {
+        width: 80%;
+        padding: 8px;
+        margin-left: 5%;
+        margin-bottom: 5px;
+        border: none;
+        border-radius: 4px;
+        background-color: #202020;
+        color: #fff;
+        box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+    }
+
+    .conteudo-secao button {
+        width: 50%;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        margin-left: 40px;
+        border-radius: 4px;
+        background-color: #202020;
+        box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .container-resumo-pedido {
+        background-color: #2d2d2d;
+        box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+        width: 30%;
+        padding: 10px;
+        margin-top: 110px;
+        margin-left: 30px;
+        height: max-content;
+        border-radius: 10px;
+    }
+
+    .container-finalizar-pedido {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+        .container-finalizar-pedido button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #202020;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .container-finalizar-pedido p {
+            margin-top: 20px;
+            width: 80%;
+            text-align: center;
+            color: #fff;
+        }
+
+    .info-resumo-pedido {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+        .info-resumo-pedido hr {
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+
+    .hr-resumo-pedido {
+        margin-left: 20px;
+        margin-top: 20px;
+        width: 90%;
+        border: 1px solid #ccc;
+    }
+
+    #secao-revisao {
+        background-color: #2d2d2d;
+        padding-bottom: 40px;
+        margin-left: 20px;
+    }
+
+    .conteudo-secao-revisao {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -30px;
+    }
+
+    .conteudo-secao-data {
+        font-weight: bold;
+        cursor: pointer;
+        color: #fff;
+        font-size: 18px;
+        margin: 20px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+    }
+
+    .conteudo-secao-revisao img {
+        margin-top: 40px;
+        border-radius: 0%;
+        width: 30%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin-left: 40px;
+    }
+
+    .conteudo-secao-info {
+        margin-left: 30px;
+        width: 100%;
+    }
+
+        .conteudo-secao-info p {
+            color: #fff;
+        }
+
+    .info-resumo-pedido p {
+        color: #fff;
+    }
+
+    #grupo-input-boleto {
+        padding-bottom: 20px;
+    }
+
+    /* problemas  muy problemas*/
+
+
+    /* problemas  muy problemas*/
+</style>
+
+
+<!-- nessa versao vc precisa clicar no selecionar metodo pra aparecer as formas de pagamento -->
+<div>
+    <div class="cabecalho-secao" onclick="alternarSecao('secao-pagamento')">
+        &nbsp;&nbsp;Selecione um método de pagamento
+    </div>
+    <div class="conteudo-secao" id="secao-pagamento">
+        <div class="grupo-input">
+            <p class="titulo-tipo-pagamento">Pix</p>
+            <label class="label-pagamento">
+                <form asp-action="PagarPix" method="get" style="display: flex;align-items: center;">
+                    <input type="hidden" name="idPedido" value="@ViewBag.IdPedido" />
+                    <input type="radio" name="pagamento" value="pix" onclick="this.form.submit()" />
+                    <img src="~/images/pix.png" alt="Pix" />
+                    <p>O código Pix gerado para o pagamento é válido por 30 minutos após a finalização do pedido.</p>
+                </form>
+            </label>
+        </div>
+
+        <div class="grupo-input">
+            <p class="titulo-tipo-pagamento">Cartão de crédito</p>
+            <label class="label-pagamento">
+                <form asp-action="PagarCartao" method="get" style="display: flex;align-items: center;;">
+                    <input type="hidden" name="idPedido" value="@ViewBag.IdPedido" />
+                    <input type="radio" name="pagamento" value="cartao" onclick="this.form.submit()" />
+                    <img src="~/images/cartao-credito.png" alt="Cartão de crédito" />
+                    <p>A OverHaul aceita várias bandeiras de cartão de crédito.</p>
+                </form>
+            </label>
+        </div>
+
+        <!-- por enquanto nao tem boleto, talvez no futuro -->
+        <div class="grupo-input" id="grupo-input-boleto">
+            <p class="titulo-tipo-pagamento">Boleto</p>
+            <label class="label-pagamento">
+                <form asp-action="PagarBoleto" method="get" style="display: flex;align-items: center;">
+                    <input type="hidden" name="idPedido" value="@ViewBag.IdPedido" />
+                    <input type="radio" name="pagamento" value="boleto" onclick="this.form.submit()" />
+                    <img class="img-boleto" src="~/images/boleto.png" alt="Boleto" />
+                    <p>O boleto pode ser pago digitalmente pelo código de barras ou pessoalmente pelo PDF.</p>
+                </form>
+            </label>
+        </div>
+    </div>
 </div>
+
+        <script>
+    function alternarSecao(idSecao) {
+        const secao = document.getElementById(idSecao);
+        secao.classList.toggle("oculto");
+    }
+
+    function irParaPagamento() {
+        document.getElementById("secao-endereco").classList.add("oculto");
+        document.getElementById("secao-pagamento").classList.remove("oculto");
+    }
+
+    // chama o arquivo do cartao como voce vai brincar com isso nao é problema meu!!
+    function exibirFormularioCartao() {
+        window.location.href = "cartao.html";
+    }
+
+    function irParaRevisao() {
+        document.getElementById("revisao-nome").innerText =
+            document.getElementById("nome").value;
+        document.getElementById("revisao-telefone").innerText =
+            document.getElementById("telefone").value;
+
+        const endereco = `${document.getElementById("endereco").value}, ${document.getElementById("numero").value
+            }, ${document.getElementById("bairro").value}, ${document.getElementById("cidade").value
+            } - ${document.getElementById("estado").value}`;
+        document.getElementById("revisao-endereco").innerText = endereco;
+
+        const metodoPagamento = document.querySelector(
+            'input[name="pagamento"]:checked'
+        ).value;
+        document.getElementById("revisao-pagamento").innerText =
+            metodoPagamento === "cartao"
+                ? "Cartão de Crédito"
+                : metodoPagamento === "pix"
+                    ? "Pix"
+                    : "Boleto";
+
+        document.getElementById("secao-pagamento").classList.add("oculto");
+        document.getElementById("secao-revisao").classList.remove("oculto");
+    }
+
+    window.onload = function () {
+        document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+            radio.checked = false;
+        });
+    };
+
+    function finalizarPedido() {
+        alert("Pedido finalizado com sucesso!");
+    }
+        </script>

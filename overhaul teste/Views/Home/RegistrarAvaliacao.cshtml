@@ -1,20 +1,111 @@
 ﻿@model overhaul_teste.Models.Avaliacao
 
-<h2>Avalie sua Compra</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avalie sua Compra</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: #202020;
+            color: #fff;
+        }
 
-<form asp-action="RegistrarAvaliacao" method="post">
-    <input type="hidden" name="IdPedido" value="@Model.IdPedido" />
-    <input type="hidden" name="IdCliente" value="@Model.IdCliente" />
+        .avaliar-compra {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #202020;
+            color: #f0f0f0;
+        }
 
-    <div class="form-group">
-        <label for="AvaliacaoNota">nota:</label>
-        <input type="number" step="0.1" min="0" max="5" name="AvaliacaoNota" class="form-control" required />
-    </div>
+        .container-avaliacao {
+            width: 90%;
+            max-width: 600px;
+            background-color: #2d2d2d;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
 
-    <div class="form-group">
-        <label for="AvaliacaoEscrita">comentario:</label>
-        <textarea name="AvaliacaoEscrita" class="form-control" rows="4"></textarea>
-    </div>
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #666;
+            padding-bottom: 10px;
+        }
 
-    <button type="submit" class="btn btn-success">Enviar Avaliação</button>
-</form>
+        .form-avaliacao {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background-color: #202020;
+            font-size: 15px;
+            border: none;
+            padding: 8px;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #555;
+            color: #f0f0f0;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+            button[type="submit"]:hover {
+                background-color: #666;
+            }
+    </style>
+</head>
+<body>
+
+    <section class="avaliar-compra">
+        <div class="container-avaliacao">
+            <h2>Avalie sua Compra</h2>
+
+            <form asp-action="RegistrarAvaliacao" method="post" class="form-avaliacao">
+                <input type="hidden" name="IdPedido" value="@Model.IdPedido" />
+                <input type="hidden" name="IdCliente" value="@Model.IdCliente" />
+
+                <div class="form-group">
+                    <label for="AvaliacaoNota">Nota:</label>
+                    <input type="number" step="0.1" min="0" max="5" name="AvaliacaoNota" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="AvaliacaoEscrita">Comentário:</label>
+                    <textarea name="AvaliacaoEscrita" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success">Enviar Avaliação</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,116 +1,71 @@
-﻿
-section.login-section {
-    font-family: Arial, sans-serif;
-    background-color: #F5F5F5;
+.conteudo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     margin: 0;
-}
-
-.container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-}
-
-h3.subtitle-doc {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+  }
+  .container-login {
+    width: 450px;
+    padding: 20px;
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
+  }
+  .container-login h2 {
     margin-bottom: 20px;
-    color: #000;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-input.form-control {
-    padding: 12px;
-    font-size: 16px;
-    border: 2px solid #E5E7EB;
-    border-radius: 6px;
-    background-color: #F3F4F6;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-    input.form-control:focus {
-        border-color: #6366F1;
-        background-color: #E0E7FF;
-    }
-
-/* botão de login */
-button.btn-primary {
-    background-color: #1D4ED8;
-    color: white;
-    padding: 12px;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-    button.btn-primary:hover {
-        background-color: #1E40AF;
-    }
-
-a {
-    color: #6366F1;
-    text-decoration: none;
+    
+    color: #333;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #D8DCFF;
+    border: 1px solid #ddd;
     font-size: 14px;
+  }
+  .link-esqueci-senha {
     display: block;
-    text-align: center;
-    margin-top: 10px;
-}
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-button.btn-primary,
-a {
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  .link-esqueci-senha:hover {
+    text-decoration: underline;
+  }
+  .container-login .botao-login {
     width: 100%;
-}
-
-.card-title {
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #000;
-}
-
-/* botão de criar conta */
-a.btn-link {
-    background-color: #FFF;
-    border: 2px solid #1D4ED8;
-    color: #1D4ED8;
-    padding: 12px;
+    padding: 10px;
     font-size: 16px;
-    border-radius: 6px;
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-    a.btn-link:hover {
-        background-color: #E0E7FF;
-    }
-
-a[href*="Esqueci minha senha"] {
-    text-align: right;
-    display: block;
-    margin-bottom: 20px;
-}
+    color: white;
+    background-color: #004de6;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-top: 10px;
+  }
+  .botao-login:hover {
+    background-color: #007bdf;
+  }
+  .link-criar-conta {
+    display: flex;
+    letter-spacing: 1px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #0F3596;
+    font-weight: bold;
+    font-size: medium;
+    color: #0F3596;
+    height: 40px;
+    border-radius: 5px;
+  }

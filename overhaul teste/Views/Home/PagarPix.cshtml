@@ -1,22 +1,181 @@
-﻿@model string // modelo pra receber o cod pix gerado na controller
+﻿@model string
 
 @{
-    ViewData["Title"] = "Pagamento via Pix";
+    string codigoPix = ViewBag.CodigoPix as string;
 }
+<style>
+    body {
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
 
-<h2>@ViewData["Title"]</h2>
+    .container-pagamento {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #2d2d2d;
+        border-radius: 8px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        text-align: center;
+    }
 
-<div class="alert alert-info">
-    <h3>Código Pix:</h3>
-    <p>@Model</p> <!-- exibir o codigo -->
+    .titulo-pagamento {
+        color: #f0f0f0;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .codigo-pix {
+        background-color: #333;
+        padding: 15px;
+        border-radius: 5px;
+        color: #f0f0f0;
+        font-size: 14px;
+        margin-bottom: 20px;
+        word-wrap: break-word; 
+        white-space: normal;
+        cursor: pointer; 
+    }
+
+        .codigo-pix:active {
+            background-color: #444; 
+        }
+
+    .qrcode-container {
+        margin: 20px auto;
+        padding: 20px;
+        /*background-color: #333;*/
+        border-radius: 8px;
+        width: fit-content; 
+    }
+
+        .qrcode-container h4 {
+            color: #f0f0f0;
+            margin-bottom: 10px;
+        }
+
+    .valor-pedido {
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        margin: 10px 0;
+    }
+
+    .instrucoes-pagamento {
+        color: #f0f0f0;
+        font-size: 14px;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .btn-pagamento {
+        background-color: #28a745;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn-pagamento:hover {
+            background-color: #218838;
+        }
+
+    #qrcode p{
+        color: #fff;
+    }
+</style>
+
+<div class="container-pagamento">
+    <h2 class="titulo-pagamento">Pagamento via Pix</h2>
+
+    <div class="codigo-pix" onclick="copyCode()">
+        <strong style="color; #fff;">Em caso de erro copie o codigo abaixo:</strong>
+        <p id="codigoPixText" style="color: #fff;margin-top: 15px;">@codigoPix</p> <!-- codigo pix -->
+    </div>
+
+    <div class="qrcode-container">
+        <h4>Leia o QR Code abaixo</h4>
+        <div id="qrcode"></div> <!-- qrcode -->
+    </div>
+
+    <div>
+        <h4>Confirme seu pagamento clicando no botão abaixo:</h4>
+        <form asp-action="@(ViewBag.IdPedido == null ? "ConfirmarEndereco" : "ConfirmarEndereco2")" method="post">
+            <input type="hidden" name="codigoPix" value="@codigoPix" />
+            <button type="submit" class="btn-pagamento" style="margin-top: 20px;margin-bottom: 20px;">Pagamento Concluído</button>
+        </form>
+    </div>
+
+    <div class="instrucoes-pagamento">
+        <hr>
+        <h4 style="margin-top: 20px;">Como pagar com Pix?</h4>
+        <ol style="padding-left: 15px;">
+            <li style="margin-left: -2px;">Entre no aplicativo da sua instituição financeira e acesse o ambiente Pix;</li>
+            <li>Escolha a opção de Ler o QR Code;</li>
+            <li>Escaneie o QR Code;</li>
+            <li>Verifique as informações e efetue o pagamento.</li>
+        </ol>
+    </div>
 </div>
 
-<div>
-    <h4>Confirme seu pagamento clicando no botão abaixo:</h4>
-    <form asp-action="@(ViewBag.IdPedido == null ? "ConfirmarEndereco" : "ConfirmarEndereco2")" method="post">
-        <input type="hidden" name="codigoPix" value="@Model" /> <!-- guardar o cod pix ao clicar -->
-        <button type="submit" class="btn btn-success">Pagamento Concluído</button> <!-- como a lógica de pagamento não é real, botão pra confirmar -->
-    </form>
+<!-- biblioteca do qrcode -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-</div>
 
+<script>
+    function generateQRCode(codigoPix) {
+        document.getElementById("qrcode").innerHTML = "<p>gerando qr code...</p>";
+
+        // 2s pra gerar o qrcode
+        setTimeout(function () {
+            document.getElementById("qrcode").innerHTML = ""; 
+            new QRCode(document.getElementById("qrcode"), {
+                text: codigoPix,
+                width: 256,
+                height: 256,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }, 2000);
+    }
+
+    generateQRCode("@codigoPix"); // gerando
+</script>
+
+
+<script>
+    // copiar pix
+    function copyCode() {
+        var text = document.getElementById("codigoPixText").innerText;
+        var textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        alert("codigo pix copiado para a area de transferência!");
+    }
+</script>
+
+<script>
+    // popup pagamento concluido
+    document.querySelector('.btn-pagamento').addEventListener('click', function (e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'pagamento concluído com sucesso!',
+            text: 'seu pagamento foi processado com sucesso',
+            icon: 'success',
+            confirmButtonText: 'ok'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                this.closest('form').submit(); 
+            }
+        });
+    });
+</script>

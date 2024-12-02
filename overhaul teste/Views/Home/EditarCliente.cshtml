@@ -1,81 +1,168 @@
 ﻿@model overhaul_teste.Models.Cliente
 
-<div>
-    <h2>Editar Cliente</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Cliente</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <style>
 
-    <form asp-action="EditarCliente">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div>
-            <label>Nome:</label>
-            <input type="text" asp-for="Nome" required />
+        body {
+            background-color: #202020;
+            color: #fff;
+        }
+
+        .editar-cliente {
+            font-family: Arial, sans-serif;
+            background-color: #202020;
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .form-editar-cliente {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-editar {
+            width: 90%;
+            max-width: 1200px;
+            background-color: #2d2d2d;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #666;
+            padding-bottom: 10px;
+        }
+
+        .form-editar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+            .imagem-preview input {
+                display: none;
+            }
+
+        .input-group {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+            .input-group input,
+            .input-group select,
+            .input-group textarea {
+                background-color: #202020;
+                font-size: 15px;
+                border: none;
+                padding: 10px;
+                color: #fff;
+                border-radius: 4px;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+        textarea {
+            grid-column: span 2;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #555;
+            color: #f0f0f0;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .btn-editar {
+            padding: 10px 20px;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            background-color: #202020;
+            box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: 0.3s;
+            font-size: 16px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="editar-cliente">
+        <div class="container-editar">
+            <h2>Editar Cliente</h2>
+
+            <form asp-action="EditarCliente" class="form-editar-cliente">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="input-group">
+                    <div>
+                        <label>Nome:</label>
+                        <input type="text" asp-for="Nome" required />
+                    </div>
+
+                    <div>
+                        <label>Sobrenome:</label>
+                        <input type="text" asp-for="Sobrenome" required />
+                    </div>
+
+                    <div>
+                        <label>Email:</label>
+                        <input type="email" asp-for="Email" required />
+                    </div>
+
+                    <div>
+                        <label>Telefone:</label>
+                        <input type="tel" asp-for="Telefone" required />
+                    </div>
+
+
+
+                    <div>
+                        <label>CPF/CNPJ:</label>
+                        <input type="text" asp-for="CpfCnpj" required />
+                    </div>
+                    <div>
+                        <label>Tipo de Cliente:</label>
+                        <select asp-for="TipoCliente">
+                            <option value="pf">Pessoa Física</option>
+                            <option value="pj">Pessoa Jurídica</option>
+                        </select>
+                    </div>
+                </div>
+            <div>
+                <input type="submit" value="Atualizar Informações" class="btn-editar" />
+            </div>
+            </form>
         </div>
+    </section>
 
-        <div>
-            <label>Sobrenome:</label>
-            <input type="text" asp-for="Sobrenome" required />
-        </div>
-
-        <div>
-            <label>Email:</label>
-            <input type="email" asp-for="Email" required />
-        </div>
-
-        <div>
-            <label>Telefone:</label>
-            <input type="tel" asp-for="Telefone" required />
-        </div>
-
-        <div>
-            <label>Tipo de Cliente:</label>
-            <select asp-for="TipoCliente">
-                <option value="pf">Pessoa Física</option>
-                <option value="pj">Pessoa Jurídica</option>
-            </select>
-        </div>
-
-        <div>
-            <label>CEP:</label>
-            <input type="text" asp-for="CepCli" required />
-        </div>
-
-        <div>
-            <label>Número do Endereço:</label>
-            <input type="number" asp-for="NumEnd" required />
-        </div>
-
-        <div>
-            <label>Complemento:</label>
-            <input type="text" asp-for="CompEnd" />
-        </div>
-
-        <div>
-            <label>Logradouro:</label>
-            <input type="text" asp-for="Logradouro" required />
-        </div>
-
-        <div>
-            <label>Bairro:</label>
-            <input type="text" asp-for="Bairro" required />
-        </div>
-
-        <div>
-            <label>Cidade:</label>
-            <input type="text" asp-for="Cidade" required />
-        </div>
-
-        <div>
-            <label>UF:</label>
-            <input type="text" asp-for="UF" required maxlength="2" />
-        </div>
-
-        <div>
-            <label>CPF/CNPJ:</label>
-            <input type="text" asp-for="CpfCnpj" required />
-        </div>
-
-        <div>
-            <input type="submit" value="Alterar" class="btn btn-success" />
-        </div>
-    </form>
-</div>
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success">@TempData["MensagemSucesso"]</div>
+    }
+</body>
+</html>

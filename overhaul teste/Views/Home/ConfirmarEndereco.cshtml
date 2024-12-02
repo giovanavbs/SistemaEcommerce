@@ -1,66 +1,507 @@
 ﻿@model Cliente
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro Cliente</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <script src="~/js/script.js"></script>
 
-<h2>Confirmação de Entrega</h2>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <style>
 
-<h4>Escolha a forma de entrega:</h4>
+        body {
+            background-color: #202020;
+        }
 
-<form method="post" asp-action="InserirEnderecoRetirada">
-    <button type="submit" name="enderecoSelecionado" value="retirada">Retirar na Concessionária</button>
-</form>
+        .main {
+            display: flex;
+            padding: 20px;
+            width: 100%;
+        }
 
-<form method="post" asp-action="InserirEnderecoAtual" id="formUsarEnderecoAtual" style="display: none;">
-    <button type="submit" name="enderecoSelecionado" value="atual">Confirmar Endereço Atual</button>
-</form>
+        .container-checkout {
+            width: 60%;
+            margin-top: 20px;
+            margin-left: 50px;
+            overflow: hidden;
+            height: max-content;
+        }
 
-<button type="button" id="btnUsarEnderecoAtual">Usar Endereço Atual</button>
+        h2 {
+            color: #ccc;
+            margin-bottom: 10px;
+        }
 
-<!-- exibir endereço atual(do cli) ao clicar -->
-<div id="enderecoAtual" style="display: none;">
-    <h5>Endereço Atual</h5>
-    <p>@Model.Logradouro, @Model.NumEnd - @Model.Bairro</p>
-    <p>@Model.Cidade - @Model.UF, CEP: @Model.CepCli</p>
-</div>
+        .cabecalho-secao {
+            font-weight: bold;
+            cursor: pointer;
+            color: #fff;
+            font-size: 25px;
+            margin: 20px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
 
-<button type="button" id="btnNovoEndereco">Inserir Novo Endereço</button>
+        .conteudo-secao {
+            display: block;
+            margin-bottom: 20px;
+        }
 
-<!-- form pra inserir novo endereço ao clicar no botao -->
-<form method="post" asp-action="ConfirmarEnderecoEntrega">
-    <div id="novoEnderecoForm" style="display: none;">
-        <h5>Insira um Novo Endereço</h5>
-        <label for="CepCli">CEP:</label>
-        <input type="text" id="CepCli" name="CepCli" required />
+            .conteudo-secao.oculto {
+                display: none;
+            }
 
-        <label for="Logradouro">Logradouro:</label>
-        <input type="text" id="Logradouro" name="Logradouro" required />
+        .grupo-input {
+            /*! background-color: #2d2d2d; */
+            display: flex;
+            flex-direction: column;
+            /* margin-left: 20px;*/
+            height: max-content;
+        }
 
-        <label for="Bairro">Bairro:</label>
-        <input type="text" id="Bairro" name="Bairro" required />
+        #grupo-input-estado {
+            padding-bottom: 20px;
+        }
 
-        <label for="Cidade">Cidade:</label>
-        <input type="text" id="Cidade" name="Cidade" required />
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #fff;
+            font-weight: bold;
+            margin-left: 5%;
+        }
 
-        <label for="UF">UF:</label>
-        <input type="text" id="UF" name="UF" required maxlength="2" />
+        .grupo-input .label-pagamento {
+            margin-top: 0;
+            display: flex;
+            margin-left: 0px;
+            align-items: center;
+        }
 
-        <label for="NumEnd">Número:</label>
-        <input type="text" id="NumEnd" name="NumEnd" required />
+            .grupo-input .label-pagamento img {
+                margin-left: 10px;
+            }
 
-        <label for="CompEnd">Complemento:</label>
-        <input type="text" id="CompEnd" name="CompEnd" />
+        .grupo-input .titulo-tipo-pagamento {
+            font-size: 15px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            color: #fff;
+            font-weight: bold;
+        }
 
-        <button type="submit" name="enderecoSelecionado" value="novo">Usar Novo Endereço</button>
-    </div>
-</form>
+        .grupo-input .label-pagamento p {
+            margin-left: 15px;
+            color: #fff;
+        }
 
-<script>
-    // mostrar endereço atual
-    document.getElementById("btnUsarEnderecoAtual").onclick = function () {
-        document.getElementById("enderecoAtual").style.display = "block";
-        document.getElementById("formUsarEnderecoAtual").style.display = "block";
-    };
+        input[type="text"],
+        input[type="tel"] {
+            width: 80%;
+            padding: 8px;
+            margin-left: 5%;
+            margin-bottom: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: #202020;
+            color: #fff;
+            box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+        }
 
-    // mostrar form do novo endereço
-    document.getElementById("btnNovoEndereco").onclick = function () {
-        document.getElementById("novoEnderecoForm").style.display = "block";
-    };
-</script>
+        .conteudo-secao button {
+            width: 50%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            margin-left: 40px;
+            border-radius: 4px;
+            background-color: #202020;
+            box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .container-resumo-pedido {
+            background-color: #2d2d2d;
+            box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+            width: 30%;
+            padding: 10px;
+            /*! margin-top: 110px; */
+            margin-left: 30px;
+            height: max-content;
+            border-radius: 10px;
+        }
+
+        .container-finalizar-pedido {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+            .container-finalizar-pedido button {
+                width: 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 4px;
+                background-color: #202020;
+                color: #fff;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .container-finalizar-pedido p {
+                margin-top: 20px;
+                width: 80%;
+                text-align: center;
+                color: #fff;
+            }
+
+        .info-resumo-pedido {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+            .info-resumo-pedido hr {
+                width: 100%;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+
+        .hr-resumo-pedido {
+            margin-left: 20px;
+            margin-top: 20px;
+            width: 90%;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        #secao-revisao {
+            /*! background-color: #2d2d2d; */
+            /*! padding-bottom: 40px; */
+            margin-left: 0px;
+        }
+
+        .conteudo-secao-revisao {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -30px;
+        }
+
+        .conteudo-secao-data {
+            font-weight: bold;
+            cursor: pointer;
+            color: #fff;
+            font-size: 18px;
+            margin: 20px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .conteudo-secao-revisao img {
+            margin-top: 40px;
+            border-radius: 0%;
+            width: 30%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+            margin-left: 40px;
+        }
+
+        .conteudo-secao-info {
+            margin-left: 30px;
+            width: 100%;
+        }
+
+            .conteudo-secao-info p {
+                color: #fff;
+            }
+
+        .info-resumo-pedido p {
+            color: #fff;
+        }
+
+        #grupo-input-boleto {
+            padding-bottom: 20px;
+        }
+
+        /* problemas  muy problemas*/
+
+        header h4 {
+            color: white;
+        }
+
+
+
+        #enderecoAtual{
+            display: block;
+            color: #fff;
+            margin-left: 40px;
+            margin-top: 30px;
+        }
+
+        #enderecoAtual p {
+            color: #fff;
+        }
+
+            #enderecoAtual h5 {
+                color: #fff;
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+
+              <!-- <h4>Escolha seu endereço de entrega! temos 3 formas de entrega</h4> -->
+
+    </header>
+
+    <section class="main">
+        <div class="container-checkout">
+            <!-- 1 endereço novo -->
+            <div class="container-endereco">
+                <div class="cabecalho-secao"
+                     onclick="alternarSecao('secao-endereco')">
+                    1&nbsp;&nbsp;Insira um novo endereço de entrega&nbsp<i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="conteudo-secao" id="secao-endereco">
+                    <form method="post" asp-action="ConfirmarEnderecoEntrega">
+                        <button type="button" id="btnNovoEndereco">Adicionar Novo Endereço</button> 
+                        <div id="novoEnderecoForm" style="display: none;">
+
+                            <div class="grupo-input">
+                                <label for="CepCli">CEP:</label>
+                                <input type="text" id="cep" name="CepCli" placeholder="Digite o CEP" maxlength="9" onblur="buscarEndereco()" required />
+                            </div>
+
+                            <div class="grupo-input">
+                                <label for="Logradouro">Endereço</label>
+                                <input type="text" id="endereco" name="Logradouro" placeholder="Rua, Av., etc." required />
+                            </div>
+
+                            <div class="grupo-input">
+                                <label for="Bairro">Bairro</label>
+                                <input type="text" id="bairro" name="Bairro" required />
+                            </div>
+
+                            <div class="grupo-input">
+                                <label for="Cidade">Cidade</label>
+                                <input type="text" id="cidade" name="Cidade" required />
+                            </div>
+
+                            <div class="grupo-input" id="grupo-input-estado">
+                                <label for="UF">Estado</label>
+                                <input type="text" id="estado" name="UF" maxlength="2" required />
+                            </div>
+
+                            <div class="grupo-input">
+                                <label for="NumEnd">Número da residência</label>
+                                <input type="text" id="numero" name="NumEnd" required />
+                            </div>
+
+                            <div class="grupo-input">
+                                <label for="CompEnd">Complemento</label>
+                                <input type="text" id="CompEnd" name="CompEnd" />
+                            </div>
+
+                            <div class="grupo-input">
+                                <label for="pais">País/Região</label>
+                                <input type="text" id="campo-desabilitado" value="Brasil" disabled />
+                            </div>
+
+                         
+                            <button type="submit" name="enderecoSelecionado" value="novo">Usar Novo Endereço/Ir para Pagamento</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+                    <!-- 2 retirar na concessionaria -->
+                    <div>
+            <div class="cabecalho-secao"
+                 onclick="alternarSecao('secao-pagamento')">
+                    2&nbsp;&nbsp Retire seu carro na Overhaul&nbsp<i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="conteudo-secao oculto" id="secao-pagamento">
+                <div class="grupo-input">
+        
+            <form method="post" asp-action="InserirEnderecoRetirada">
+                <button type="submit" name="enderecoSelecionado" value="retirada">Retirar na Concessionária</button>
+            </form>
+    
+        </div>
+        </<div>
+            </div>
+            </div>
+
+            <!-- endereço atual-->
+            <div>
+                <div class="cabecalho-secao" onclick="alternarSecao('secao-revisao')">
+                        3&nbsp;&nbsp;Receba seu carro no endereço atual&nbsp<i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="conteudo-secao oculto" id="secao-revisao">
+                    <form method="post" asp-action="InserirEnderecoAtual" id="formUsarEnderecoAtual" style="display: none;">
+                        <button type="submit" name="enderecoSelecionado" value="atual">Confirmar Endereço Atual</button>
+                    </form>
+
+                    <button type="button" id="btnUsarEnderecoAtual">Usar Endereço Atual</button>
+
+                    <!-- exibir endereço atual(do cli) ao clicar -->
+                    <div id="enderecoAtual" style="display: none;">
+                        <h5>Endereço Atual</h5>
+                        <p>@Model.Logradouro, @Model.NumEnd - @Model.Bairro</p>
+                        <p>@Model.Cidade - @Model.UF, CEP: @Model.CepCli</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="container-resumo-pedido">
+                <div class="container-finalizar-pedido">
+                    <p>
+                        Ao fazer seu pedido, você concorda com as Condições de Uso da
+                        OverHaul.
+                    </p>
+                </div>
+                <hr class="hr-resumo-pedido" />
+                <div class="info-resumo-pedido">
+                    <strong><p style="color: #fff">Frete Calculado com base no CEP:</p></strong>
+                    <p>O frete está sujeito a alterações por fatores externos envolvendo importação e terceiros.</p>
+                    <br />
+                    <p class="frete">Frete:&nbsp;--</p>
+                    <hr />
+                </div>
+            </div>
+            
+
+    </section>
+
+    <script>
+        // funxaozinha d validacao do cep!!!!
+        function buscarEndereco() {
+            const cep = document.getElementById("cep").value.replace(/\D/g, "");
+            if (cep.length !== 8) {
+                alert("CEP inválido!");
+                return;
+            }
+
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.erro) {
+                        alert("CEP não encontrado!");
+                        return;
+                    }
+                    document.getElementById("endereco").value = data.logradouro;
+                    document.getElementById("bairro").value = data.bairro;
+                    document.getElementById("cidade").value = data.localidade;
+                    document.getElementById("estado").value = data.uf;
+
+                    calcularFrete(cep);
+                })
+                .catch((error) => console.error("Erro ao buscar o CEP:", error));
+        }
+
+        // caluclar e exibir o frete
+        function calcularFrete(cep) {
+// provavelmente tem API pra isso, ir atras depois
+            let frete = 0;
+
+            // exemplo bem meh temporario
+            if (cep.startsWith("010") || cep.startsWith("020")) {
+                frete = 1000; 
+            } else if (cep.startsWith("200") || cep.startsWith("210")) {
+                frete = 2000; 
+            } else {
+                frete = 1500; 
+            }
+
+            // exibir
+            document.querySelector(".info-resumo-pedido .frete").innerText = `Frete: R$ ${frete.toFixed(2)}`;
+            //document.querySelector(".info-resumo-pedido .total").innerText = `Total: R$ ${frete.toFixed(2)}`; 
+        }
+
+        function alternarSecao(idSecao) {
+            const secao = document.getElementById(idSecao);
+            secao.classList.toggle("oculto");
+        }
+
+        function irParaPagamento() {
+            document.getElementById("secao-endereco").classList.add("oculto");
+            document.getElementById("secao-pagamento").classList.remove("oculto");
+        }
+
+        // chama o arquivo do cartao como voce vai brincar com isso nao é problema meu!! (eu te odeio.) "eu sei q vc me amakkkk"
+       
+       /* function exibirFormularioCartao() {
+            window.location.href = "cartao.html";
+        } */
+
+        function irParaRevisao() {
+            document.getElementById("revisao-nome").innerText =
+                document.getElementById("nome").value;
+            document.getElementById("revisao-telefone").innerText =
+                document.getElementById("telefone").value;
+
+            const endereco = `${document.getElementById("endereco").value}, ${document.getElementById("numero").value
+                }, ${document.getElementById("bairro").value}, ${document.getElementById("cidade").value
+                } - ${document.getElementById("estado").value}`;
+            document.getElementById("revisao-endereco").innerText = endereco;
+
+            const metodoPagamento = document.querySelector(
+                'input[name="pagamento"]:checked'
+            ).value;
+            document.getElementById("revisao-pagamento").innerText =
+                metodoPagamento === "cartao"
+                    ? "Cartão de Crédito"
+                    : metodoPagamento === "pix"
+                        ? "Pix"
+                        : "Boleto";
+
+            document.getElementById("secao-pagamento").classList.add("oculto");
+            document.getElementById("secao-revisao").classList.remove("oculto");
+        }
+
+        window.onload = function () {
+            document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+                radio.checked = false;
+            });
+        };
+
+        function finalizarPedido() {
+            alert("Pedido finalizado com sucesso!");
+        }
+    </script>
+
+    <script>
+        // mostrar endereço atual
+        document.getElementById("btnUsarEnderecoAtual").onclick = function () {
+            document.getElementById("enderecoAtual").style.display = "block";
+            document.getElementById("formUsarEnderecoAtual").style.display = "block";
+            this.style.display = "none"; // esconder o btn mostrar endereço atuaç
+
+            document.querySelector(".info-resumo-pedido .frete").innerText = `Frete: grátis! ao utilizar seu endereço original ou solicitar entrega na concessionaria, a Overhaul oferece um desconto exclusivo no frete.`;
+        };
+
+        // mostrar form do novo endereço
+        document.getElementById("btnNovoEndereco").onclick = function () { // ainda deixei o btn pq ele tava com fogo pra monstrar o form só com o id da div
+            document.getElementById("novoEnderecoForm").style.display = "block";
+        };
+    </script>
+</body>
+</html>
+

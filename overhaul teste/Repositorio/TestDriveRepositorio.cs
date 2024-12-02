@@ -61,7 +61,8 @@ namespace overhaul_teste.Repositorio
                                 ModeloCarro = reader.GetString("modelo_carro"),
                                 MarcaCarro = reader.GetString("marca_carro"),
                                 CorCarro = reader.GetString("cor_carro"),
-                                PrecoCarro = reader.GetDecimal("preco_carro")
+                                PrecoCarro = reader.GetDecimal("preco_carro"),
+                                ImagemCarro = reader.GetString("imagem_carro"),
                             };
                         }
                     }

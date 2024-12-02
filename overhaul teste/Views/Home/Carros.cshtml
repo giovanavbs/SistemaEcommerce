@@ -1,78 +1,165 @@
-﻿@model IEnumerable<overhaul_teste.Models.Carro>
+﻿@model overhaul_teste.ViewModels.CarrosViewModel
 
 @{
     ViewData["Title"] = "Nossos Carros";
 }
 
-<div class="carros-section">
-    <h1>Nossos Carros</h1>
+<head>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/nossos-carros.css">
+    <link rel="stylesheet" href="~/css/media-query.css">
+    <title>Nossos Carros</title>
+    <style>
+    </style>
+</head>
 
-    <div class="row">
-        <div class="col-md-3">
-            <div class="filtros">
-                <div class="buscar">
-                    <input type="text" placeholder="Pesquisar" class="form-imput">
-                </div>
-                <div class="form-label">
-                    <label for="fabricante">Fabricante:</label>
-                    <input type="text" id="fabricante" class="form-imput">
-                </div>
-                <div class="form-label">
-                    <label for="modelo">Modelo do Carro:</label>
-                    <input type="text" id="modelo" class="form-imput">
-                </div>
-                <div class="form-label">
-                    <label for="anoDe">Ano Inicial:</label>
-                    <input type="text" id="anoDe" class="form-imput">
-                </div>
-                <div class="form-label">
-                    <label for="anoAte">Ano Final:</label>
-                    <input type="text" id="anoAte" class="form-imput">
-                </div>
-                <div class="form-label">
-                    <label for="precoDe">Preço De:</label>
-                    <input type="text" id="precoDe" class="form-imput">
-                </div>
-                <div class="form-label">
-                    <label for="precoAte">Preço Até:</label>
-                    <input type="text" id="precoAte" class="form-imput">
-                </div>
-            </div>
-        </div>
+<body style="background-color: #202020;">
+    <div class="container-cars">
+        <img src="~/images/nossos-carros.png" alt="news - mais vendidos " />
+    </div>
 
-        <div class="col-md-9">
-            <div class="ordenar-section">
-                <span>Ordenar Por:</span>
-                <button class="ordenar-btn">Preço</button>
-                <button class="ordenar-btn">Ano</button>
-                <button class="ordenar-btn">Marca</button>
-                <button class="ordenar-btn">Modelo</button>
-            </div>
+    <main>
+        <aside>
+            <form method="get" action="@Url.Action("Carros", "Home")">
+                <input type="text" id="pesquisa" name="pesquisa" placeholder="Pesquisar" />
+
+                <label for="fabricante">Fabricante:</label>
+                <select id="fabricante" name="fabricante">
+                    <option value="">Selecione Marca</option> <!-- as opçoes estao escritas no lugar de pegar do banco(foreach) pq o asp nao aceita c# no value do option por motivos desconhecidos (talvez veja isso depois -->
+                    <option value="BYD">BYD</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="BMW">BMW</option>
+                </select>
+
+                <label for="modelo">Modelo:</label>
+                <select id="modelo" name="modelo">
+                    <option value="">Selecione modelo</option>
+                    <option value="Prius">Prius</option>
+                    <option value="Civic Hybrid">Civic Hybrid</option>
+                    <option value="Corolla Hybrid">Corolla Hybrid</option>
+                    <option value="Insight Hybrid">Corolla Hybrid</option>
+                    <option value="Auris Hybrid">Auris Hybrid</option>
+                    <option value="Leaf">Leaf</option>
+                    <option value="BYD Dolphin">Dolphin</option>
+                </select>
+
+                <label for="anoDe">Ano De:</label>
+                <select id="anoDe" name="anoDe">
+                    <option value="">De</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                </select>
+
+                <label for="anoAte">Ano Até:</label>
+                <select id="anoAte" name="anoAte">
+                    <option value="">Até</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+
+                <label for="precoDe">Preço De:</label>
+                <select id="precoDe" name="precoDe">
+                    <option value="">De</option>
+                    <option value="50000">R$ 50.000</option>
+                    <option value="80000">R$ 80.000</option>
+                    <option value="100000">R$ 100.000</option>
+                </select>
+
+                <label for="precoAte">Preço Até:</label>
+                <select id="precoAte" name="precoAte">
+                    <option value="">Até</option>
+                    <option value="100000">R$ 100.000</option>
+                    <option value="80000">R$ 80.000</option>
+                    <option value="60000">R$ 60.000</option>
+                </select>
+
+                <label for="ordenarPor">Ordenar por:</label>
+                <select id="ordenarPor" name="ordenarPor">
+                    <option value="">Selecione</option>
+                    <option value="nome-asc">Nome - A a Z</option>
+                    <option value="nome-desc">Nome - Z a A</option>
+                    <option value="preco-asc">Preço - Menor para Maior</option>
+                    <option value="preco-desc">Preço - Maior para Menor</option>
+                    <option value="ano-asc">Ano - Mais Antigo</option>
+                    <option value="ano-desc">Ano - Mais Novo</option>
+                </select>
+
+                <button id="buscar" type="submit">Buscar</button>
+            </form>
+        </aside>
 
 
-            <div class="lista-carros">
-                @foreach (var carro in Model)
-                {
-                    <div class="carro">
-                        <img src="@carro.Imagem" alt="@carro.Modelo">
-                        <div class="carro-detalhes">
-                            <p><strong>Nome:</strong> @carro.Modelo</p>
-                            <p><strong>Marca:</strong> @carro.Marca</p>
-                            <p><strong>Ano:</strong> @carro.Ano</p>
-                            <p><strong>A partir de R$ </strong> @carro.Preco.ToString("F2")</p>
-                            <a href="@Url.Action("Detalhes", "Home", new { id = carro.Id })" class="mais-detalhes">Mais Detalhes ></a>
-                        </div>
+
+        <section class="car-list">
+            @foreach (var carro in Model.Carros)
+            {
+                <div class="car-item">
+                    <img src="~/images/@carro.Imagem" alt="Imagem do carro" class="car-image" />
+                    <div class="car-details">
+                        <h2>@carro.Modelo</h2>
+                        <p><strong>Preço:</strong> R$ @carro.Preco.ToString("F2")</p>
+                        <p><strong>Marca:</strong> @carro.Marca</p>
+                        <p><strong>Ano:</strong> @carro.Ano</p>
+                        <p><strong>Modelo:</strong> @carro.Categoria</p>
+
+
+                        <a href="@Url.Action("Detalhes", "Home", new { id = carro.Id })" class="details-button">
+                            <button>Mais Detalhes ></button>
+                        </a>
                     </div>
-                }
-            </div>
-
-            <div class="paginas-section">
-                <div class="paginas">
-                    <button class="pgn-btn">1</button>
-                    <button class="pgn-btn">2</button>
-                    <button class="pgn-btn">></button>
                 </div>
-            </div>
+            }
+        </section>
+    </main>
+
+    <!-- paginação FINALMENTE -->
+    <!-- Paginação -->
+    <div class="conteudo-paginacao">
+        <div class="pagination">
+            @if (Model.PaginaAtual > 1)
+            {
+                <a asp-action="Carros" asp-route-pagina="@(Model.PaginaAtual - 1)" class="page-button">Anterior</a>
+            }
+
+            @for (int i = 1; i <= Model.TotalPaginas; i++)
+            {
+                if (i == Model.PaginaAtual)
+                {
+                    <span class="page-button active">@i</span>
+                }
+                else
+                {
+                    <a asp-action="Carros" asp-route-pagina="@i" class="page-button">@i</a>
+                }
+            }
+
+            @if (Model.PaginaAtual < Model.TotalPaginas)
+            {
+                <a asp-action="Carros" asp-route-pagina="@(Model.PaginaAtual + 1)" class="page-button">Próximo</a>
+            }
         </div>
     </div>
-</div>
+
+    <!-- Carros Mais Vendidos --> 
+    <!-- ta com o mesmo css dos carros de cima!! adicionei o metodo bonitinho só pra vc conseguir estilizar se quiser ja que tinha no prototipo -->
+
+
+
+</body>
+
+<script src="~/js/script.js"></script>
+<script src="~/js/modal-iniciar.js"></script>
+<script src="~/js/menu-lateral.js"></script>

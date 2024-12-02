@@ -2,152 +2,237 @@
 
 @{
     ViewData["Title"] = "Carrinho";
+
     decimal total = 0;
 }
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <link href="~/css/carrinho.css" rel="stylesheet" />
 
-<div class="container">
-    <section id="order">
-        <br />
-        <h2 class="title-doc">Carrinho de compras</h2>
+<style>
 
-        <div id="code_cart">
-            <div class="card p-3">
-                @if (!Model.Any())
-                {
-                    <div class="empty-cart">
-                        <p>Carrinho está vazio</p>
-                    </div>
-                }
-                else
-                {
-                    <table class="table table-hover shopping-cart-wrap">
-                        <thead class="text-muted">
-                            <tr>
-                                <th scope="col">Produto</th>
-                                <th scope="col" width="120">Quantidade</th>
-                                <th scope="col" width="120">Subtotal</th>
-                                <th scope="col" width="200" class="text-end">Ação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
-                                var subTotal = item.QuantidadeProd * Convert.ToDecimal(item.Preco);
-                                total += subTotal;
-                                <tr>
-                                    <td>
-                                        <figure class="media">
-                                            <div class="img-wrap">
-                                                <img alt="Imagem" src="@item.Imagem" class="img-fluid" style="width: 80px; height: 80px; object-fit: cover;">
-                                            </div>
-                                            <figcaption class="media-body">
-                                                <h6 class="title text-truncate">@item.Modelo</h6>
-                                                <dl class="dlist-inline small">
-                                                    <dt>Marca:</dt>
-                                                    <dd>@item.Marca</dd>
-                                                    <dt>Ano:</dt>
-                                                    <dd>@item.Ano</dd>
-                                                    <dt>Cor:</dt>
-                                                    <dd>@item.Cor</dd>
-                                                </dl>
-                                            </figcaption>
-                                        </figure>
-                                    </td>
-                                   
-                                    <td>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                @if (item.QuantidadeProd > 1)
-                                                {
-                                                    @using (Html.BeginForm("DiminuirItem", "Home", FormMethod.Post))
-                                                    {
-                                                        <input type="hidden" name="id" value="@item.IdCarro">
-                                                        <input type="hidden" name="quantidade" value="1">
-                                                        <button type="submit" class="btn btn-default btn-acao-primario">-</button>
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    <button type="button" class="btn btn-default btn-acao-primario" onclick="confirmRemove('@item.IdCarro')">-</button>
-                                                }
-                                            </div>
-                                            <input type="text" class="form-control text-center" value="@item.QuantidadeProd">
-                                            <div class="input-group-append">
-                                                @if (item.QuantidadeProd > item.QuantidadeProd)
-                                                {
-                                                    @using (Html.BeginForm("AdicionarItem", "Home", FormMethod.Post))
-                                                    {
-                                                        <input type="hidden" name="id" value="@item.IdCarro">
-                                                        <input type="hidden" name="QuantidadeProd" value="1">
-                                                        <button type="submit" class="btn btn-default btn-acao-primario">+</button>
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    <button type="button" class="btn btn-default btn-acao-primario" disabled>+</button>
-                                                }
-                                            </div>
-                                        </div>
-                                    </td>
 
-                                    <td>
-                                        <div class="price-wrap">
-                                            <var class="price">@subTotal.ToString("C")</var>
-                                        </div>
-                                    </td>
-                                    <td class="text-end">
-                                        <button class="btn btn-outline-danger" onclick="confirmRemove('@item.IdCarro')">× Remover</button>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                    <div class="total-value">
-                        Valor Total: @total.ToString("C")
-                    </div>
-                }
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #202020;
+        margin: 0;
+    }
+
+    .carrinho {
+        font-family: Arial, sans-serif;
+        color: #fff;
+        padding: 20px;
+        margin: 0 auto;
+        /*! max-width: max-content; */
+        border-radius: 8px;
+        width: 80%;
+    }
+
+    .titulo-carrinho img {
+        width: 300px;
+    }
+
+    .carrinho .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .itens {
+        background-color: #2D2D2D;
+        flex: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        padding: 20px;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+        overflow: hidden;
+        flex-wrap: wrap;
+    }
+
+    .imagem-produto {
+        width: 280px;
+        max-width: 100%;
+    }
+
+    .titulo-carrinho {
+        width: 350px;
+    }
+
+    .info-produto {
+        flex: 1;
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 8px;
+        height: 35vh;
+        flex-wrap: wrap;
+    }
+
+    .acoes {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .quantidade, .btn-excluir, .btn-fechar-pedido {
+        height: 40px;
+        padding: 10px 20px;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+        background-color: #202020;
+        box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+        cursor: pointer;
+        white-space: nowrap;
+        transition: 0.3s;
+    }
+
+    .btn-fechar-pedido {
+        /*! margin-top: 20px; */
+        width: 100%;
+    }
+
+    .resumo {
+        background-color: #2D2D2D;
+        padding: 20px;
+        border-radius: 8px;
+        /*! max-width: max-content; */
+        width: 100%;
+        /*! display: flex; */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-preco {
+        color: #fff;
+        width: 100%;
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #2D2D2D;
+    }
+
+        .info-preco p {
+            font-size: 15px;
+            color: #fff;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+    .subtotal p {
+        color: #fff;
+        margin-top: 20px;
+        margin-left: 380px;
+    }
+</style>
+
+<section class="carrinho">
+    <div class="titulo-carrinho">
+        <img src="~/images/img-carrinho.png" alt="Imagem do carrinho">
+    </div>
+    <div class="container">
+        @if (!Model.Any())
+
+        {
+            <div class="empty-cart">
+                <p style="color: #fff; font-size: 20px;">O carrinho está vazio.</p>
             </div>
-        </div>
-    </section>
-    <br />
-</div>
+        }
 
-<div class="container" id="checkout-button">
-    <br />
-    <div class="row">
-        <div class="col-md-12 text-center">
-            Deseja adicionar outro item? <a asp-controller="Home" asp-action="Index">Clique aqui</a> para continuar
-        </div>
-        <br />
-        <div class="offset-md-4 col-md-4" style="display: @(!Model.Any() ? "none" : "block")">
+        else
+
+        {
+            @foreach (var item in Model)
+
+            {
+
+                var subTotal = item.QuantidadeProd * Convert.ToDecimal(item.Preco);
+
+                total += subTotal;
+                <div class="itens">
+                    <div class="item">
+                        <img src="~/images/@item.Imagem" alt="Imagem do carro" class="imagem-produto" />
+                        <div class="info-produto">
+                            <div class="nome-produto">Modelo: @item.Modelo</div>
+                            <div class="preco-produto">Preço: @subTotal.ToString("C")</div>
+                            <div class="caracteristica-produto">Cor: @item.Cor</div>
+                            <div class="modelo-produto">Marca: @item.Marca</div>
+                            <div class="acoes">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        @if (item.QuantidadeProd > 1)
+
+                                        {
+                                            @using (Html.BeginForm("DiminuirItem", "Home", FormMethod.Post))
+
+                                            {
+                                                <input type="hidden" name="id" value="@item.IdCarro">
+                                            
+                                                <input style="width: 100%;padding: 5px;border-radius: 10px;border: 1px solid rgba(0, 0, 0, 0.3);color: #444;max-width: 200px;" type="hidden" name="quantidade" value="1">
+
+                                            }
+                                        }
+
+                                        else
+
+                                        {
+                                            <!-- <button type="button" class="btn-acao-primario" onclick="confirmRemove('@item.IdCarro')">-</button> -->
+                                        }
+                                    </div>
+                                    <span>Quantidade</span>
+                                    <input style="padding: 10px;/*! margin: 10px; */background-color: #333;color: #fff;border: 1px solid #444;border-radius: 5px;outline: none;appearance: none;" type="text" class="form-control text-center" value="@item.QuantidadeProd">
+                                    <div class="input-group-append">
+                                        <!--<button type="button" class="btn-acao-primario">+</button> -->
+                                    </div>
+                                </div>
+                                 <button class="btn-excluir" onclick="confirmRemove('@item.IdCarro')">× Remover</button> 
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+        <div class="resumo" style="display: @(!Model.Any() ? "none" : "")">
             @using (Html.BeginForm("FinalizarCompra", "Home", FormMethod.Post))
             {
-                <button type="submit" class="btn btn-outline-primary btn-continuar-comprando">
-                    Finalizar a compra
-                </button>
+                <button type="submit" class="btn-fechar-pedido">Finalizar a compra</button>
             }
+            <div class="subtotal">
+                <strong><p>Valor Total: @total.ToString("C")</p></strong>
+            </div>
         </div>
-
     </div>
-</div>
+</section>
 
+<div class="info-preco">
+    <p>O preço e a disponibilidade dos produtos na Overhaul.com.br estão sujeitos a alterações...</p>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 <script>
     function confirmRemove(id) {
         Swal.fire({
-            title: 'tem certeza?',
-            text: 'deseja remover o carro do carrinho?',
+            title: 'Tem certeza?',
+            text: 'Deseja remover o carro do carrinho?',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'sim, remover!',
-            cancelButtonText: 'não, cancelar!'
+            confirmButtonText: 'Sim, remover!',
+            cancelButtonText: 'Não, cancelar!'
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
@@ -158,7 +243,7 @@
                         if (response.success) {
                             location.reload();
                         } else {
-                            Swal.fire('Erro', 'nao foi possível remover. tente novamente.', 'error');
+                            Swal.fire('Erro', 'Não foi possível remover. Tente novamente.', 'error');
                         }
                     }
                 });

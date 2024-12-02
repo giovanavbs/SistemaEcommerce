@@ -1,50 +1,235 @@
-﻿@model overhaul_teste.Models.Cliente
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel do Adm</title>
+    <link rel="stylesheet" href="src/css/style.css" />
 
-<div>
-    <h2>Perfil do Cliente</h2>
-    <div>
-        <strong>Código:</strong> @Cliente.ClienteLogadoId<br />
-        <strong>nivel de acesso:</strong> @Cliente.NivelAcesso<br />
-        <strong>Nome:</strong> @Model.Nome<br />
-        <strong>Sobrenome:</strong> @Model.Sobrenome<br />
-        <strong>Email:</strong> @Model.Email<br />
-        <strong>Telefone:</strong> @Model.Telefone<br />
-        <strong>Tipo de Cliente:</strong> @Model.TipoCliente<br />
-        <strong>Data de Cadastro:</strong> @Model.DataCadastro.ToString("dd/MM/yyyy HH:mm:ss")<br />
-        <strong>CEP:</strong> @Model.CepCli<br />
-        <strong>Número do Endereço:</strong> @Model.NumEnd<br />
-        <strong>Complemento:</strong> @Model.CompEnd<br />
-        <strong>Logradouro:</strong> @Model.Logradouro<br />
-        <strong>Bairro:</strong> @Model.Bairro<br />
-        <strong>Cidade:</strong> @Model.Cidade<br />
-        <strong>UF:</strong> @Model.UF<br />
-        <strong>CPF/CNPJ:</strong> @Model.CpfCnpj<br />
-    </div>
+        <style>
+      .painel-adm {
+        background-color: #202020f7;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 30px 0px;
+      }
+      .conteudo {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        background-color: #222;
+        border-radius: 8px;
+        max-width: 1200px;
+        width: 100%;
+      }
 
-    <!-- botao editar cliente -->
-    <div>
-        <a asp-action="EditarCliente" asp-route-id="@Model.Codigo" class="btn btn-primary">Editar Conta</a>
-    </div>
+      .sidebar {
+        flex: 1;
+        min-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #111;
+        padding: 20px;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
 
-    <!-- botao excluir cliente -->
-    <div>
-        <form asp-action="ExcluirConta" method="post" onsubmit="return confirm('tem certeza que deseja excluir sua conta?');">
-            <input type="hidden" name="id" value="@Model.Codigo" />
-            <button type="submit" class="btn btn-danger">Excluir Conta</button>
-        </form>
-    </div> 
+      .sidebar h2 {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
 
-    <!-- botao ver pedidos do cliente -->
-    <div>
-        <a asp-action="VerPedidosCliente" class="btn btn-primary">Ver Pedidos</a>
-    </div>
+      .sidebar p {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #fff;
+      }
 
-    <!-- botqo pra acessar o menu de administrador -->
-    @if (@Cliente.NivelAcesso == 2)
-    {
-        <div>
-            <a asp-action="MenuAdmin" class="btn btn-warning">Acessar Menu de Administrador</a>
+      .sidebar a {
+        background-color: #333;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.3s;
+        max-width: 400px;
+        width: 100%;
+      }
+
+      .sidebar a:hover {
+        background-color: #444;
+      }
+
+      .form-container {
+        flex: 3;
+        min-width: 250px;
+        padding: 20px;
+        background-color: #111;
+        border-radius: 8px;
+        height: max-content;
+      }
+
+      .form-container h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #444;
+        padding-bottom: 5px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        margin-top: 10px;
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 10px;
+      }
+
+      .form-row .form-group {
+        flex: 1;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+
+      .buttons button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .buttons .sair {
+        background-color: #c0392b;
+        color: #fff;
+      }
+
+      .buttons .editar {
+        background-color: #7f8c8d;
+        color: #fff;
+      }
+
+      /*media (max-width: 768px) {
+        .form-row {
+          flex-direction: column;
+        }*/
+
+
+        .conteudo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .btn-excluir {
+            height: 40px;
+            padding: 10px 20px;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            background-color: #202020;
+            box-shadow: 2px 2px 5px rgba(192, 192, 192, 0.5);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+      }
+    </style>
+</head>
+<body>
+
+
+    <section class="painel-adm">
+        <div class="conteudo">
+            <div class="sidebar">
+                <h2>SEJA<br />BEM - VINDO!</h2>
+                <p>@Model.Nome @Model.Sobrenome </p>
+                <center><img src="~/images/perfil.png" alt=""/></center>
+                <a href="#">Informações Pessoais</a>
+                <a asp-action="EditarCliente" asp-route-id="@Model.Codigo" class="btn btn-primary">Editar Conta</a>
+                <a asp-action="VerPedidosCliente">Ver Meus Pedidos</a>
+                <a asp-action="VerTestDrivesCliente" class="btn btn-primary">Ver Test Drives</a>
+                @if (@Cliente.NivelAcesso == 2)
+                {
+                    <a asp-action="MenuAdmin">Área do Administrador</a>
+                }
+                <a href="https://www.byd.com/br/privacy" target="_blank">Privacidade e Segurança</a>
+                <a asp-action="Logout" class="btn btn-danger">Logout</a>
+            </div>
+
+            <div class="form-container">
+                <h2>Informações Pessoais</h2>
+                <div>
+                    <strong>Código:</strong> @Cliente.ClienteLogadoId<br />
+                    <strong>Nível de Acesso:</strong> @Cliente.NivelAcesso<br />
+                    <strong>Nome:</strong> @Model.Nome<br />
+                    <strong>Sobrenome:</strong> @Model.Sobrenome<br />
+                    <strong>Email:</strong> @Model.Email<br />
+                    <strong>Telefone:</strong> @Model.Telefone<br />
+                    <strong>Tipo de Cliente:</strong> @Model.TipoCliente<br />
+                    <strong>Data de Cadastro:</strong> @Model.DataCadastro.ToString("dd/MM/yyyy HH:mm:ss")<br />
+                    <strong>CEP:</strong> @Model.CepCli<br />
+                    <strong>Número do Endereço:</strong> @Model.NumEnd<br />
+                    <strong>Complemento:</strong> @Model.CompEnd<br />
+                    <strong>Logradouro:</strong> @Model.Logradouro<br />
+                    <strong>Bairro:</strong> @Model.Bairro<br />
+                    <strong>Cidade:</strong> @Model.Cidade<br />
+                    <strong>UF:</strong> @Model.UF<br />
+                    <strong>CPF/CNPJ:</strong> @Model.CpfCnpj<br />
+                </div>
+
+                <form asp-action="ExcluirConta" method="post" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?');">
+                    <input type="hidden" name="id" value="@Model.Codigo" />
+                    <button type="submit" class="btn-excluir">Excluir Conta</button>
+                </form>
+
+                <!-- 
+                <div>
+                    <a asp-action="EditarCliente" asp-route-id="@Model.Codigo" class="btn btn-primary">Editar Conta</a>
+                </div>
+                <div>
+                    <form asp-action="ExcluirConta" method="post" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?');">
+                        <input type="hidden" name="id" value="@Model.Codigo" />
+                        <button type="submit" class="btn btn-danger">Excluir Conta</button>
+                    </form>
+                </div>
+                <div>
+                    <a asp-action="VerPedidosCliente" class="btn btn-primary">Ver Pedidos</a>
+                </div>
+                <div>
+                    <a asp-action="VerTestDrivesCliente" class="btn btn-primary">Ver Test Drives</a>
+                </div>
+                <div>
+                    <a asp-action="Logout" class="btn btn-danger">Logout</a>
+                </div>-->
+                
+            </div>
         </div>
-    }
-
-</div>
+    </section>
+</body>
+</html>

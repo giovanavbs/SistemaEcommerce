@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lenaj\\Downloads\\TCCoverhaul - torcendo por vc\\TCCoverhaul\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|c:\\users\\lenaj\\downloads\\tccoverhaul - torcendo por vc\\tccoverhaul\\overhaul teste\\views\\home\\editarcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D896733-A53C-484C-89BB-EF5B5646FA42}|overhaul teste\\overhaul teste.csproj|solutionrelative:overhaul teste\\views\\home\\editarcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditarCliente.cshtml",
+              "DocumentMoniker": "C:\\Users\\lenaj\\Downloads\\TCCoverhaul - torcendo por vc\\TCCoverhaul\\overhaul teste\\Views\\Home\\EditarCliente.cshtml",
+              "RelativeDocumentMoniker": "overhaul teste\\Views\\Home\\EditarCliente.cshtml",
+              "ToolTip": "C:\\Users\\lenaj\\Downloads\\TCCoverhaul - torcendo por vc\\TCCoverhaul\\overhaul teste\\Views\\Home\\EditarCliente.cshtml*",
+              "RelativeToolTip": "overhaul teste\\Views\\Home\\EditarCliente.cshtml*",
+              "ViewState": "AgIAAFsAAAAAqZmZmRkmwGwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-28T23:46:23.493Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,48 +1,160 @@
 ﻿@model List<overhaul_teste.Models.Pedido>
 
-<h2>Pedidos do Cliente</h2>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Pedidos</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+    <style>
+        .pedido-cliente {
+            font-family: Arial, sans-serif;
+            background-color: #202020;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
 
-@if (Model == null || !Model.Any())
-{
-    <p>voce ainda não realizou nenhum pedido.</p>
-}
-else
-{
-    @foreach (var grupoPedido in Model.GroupBy(p => p.IdPedido))
-    {
-        var pedido = grupoPedido.First();
+        .conteudo {
+            max-width: 1200px;
+            width: 100%;
+            border-radius: 8px;
+            padding: 20px;
+        }
 
-        <div>
-            <h3>pedido #@pedido.IdPedido - @pedido.DataPedido.ToShortDateString()</h3>
-            <p>status: @pedido.StatusPedido</p>
-            <p>valor total: @pedido.ValorTotal.ToString("C")</p>
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: left;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
 
-            @if (pedido.StatusPedido == "pagamento concluido")
-            {
-                <form asp-action="ExibirPagamentoConfirmado" asp-controller="Home" method="get">
-                    <input type="hidden" name="idPedido" value="@pedido.IdPedido" />
-                    <button type="submit">ver detalhes da compra</button>
-                </form>
+        .order {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #444;
+        }
+
+        .order h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .order p {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .order-items {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .order-items p {
+            margin-top: 20px;
+        }
+        .order-items strong {
+            font-size: 20px;
+        }
+
+        .order .details-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            width: 30%;
+            transition: background 0.3s;
+        }
+
+        .order .details-button:hover {
+            background-color: #444;
+        }
+
+        .conteudo img {
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 20px;
+        }
+
+        /*media (max-width: 600px) {
+            .order {
+                text-align: left;
+            }*/
+
+            .order .details-button {
+                width: 100%;
+                margin-top: 10px;
             }
-            else if (pedido.StatusPedido == "aguardando pagamento")
-            {
-                <form asp-action="IrParaPagamento" asp-controller="Home" method="get">
-                    <input type="hidden" name="idPedido" value="@pedido.IdPedido" />
-                    <button type="submit">ir para pagamento</button>
-                </form>
-            }
-            else if (pedido.StatusPedido == "cancelado")
-            {
-                <p>pedido cancelado</p>
-            }
+        }
+    </style>
+</head>
+<body>
 
-            <h4>Itens do Pedido:</h4>
-            <ul>
-                @foreach (var item in grupoPedido.SelectMany(p => p.Itens))
+    <section class="pedido-cliente">
+        <div class="conteudo">
+            <img src="~/images/img-meus-pedidos.png" alt="">
+            <div class="title">Meus Pedidos</div>
+
+            @if (Model == null || !Model.Any())
+            {
+                <p style="color: #fff;">Você ainda não realizou nenhum pedido.</p>
+            }
+            else
+            {
+                @foreach (var grupoPedido in Model.GroupBy(p => p.IdPedido))
                 {
-                    <li>Modelo: @item.Modelo, Marca: @item.Marca</li>
+                    var pedido = grupoPedido.First();
+
+                    <div class="order">
+                        <h3>Pedido #@pedido.IdPedido - @pedido.DataPedido.ToShortDateString()</h3>
+                        <p>Status: @pedido.StatusPedido</p>
+                        <p>Valor Total: @pedido.ValorTotal.ToString("C")</p>
+
+                        @if (pedido.StatusPedido == "pagamento concluido")
+                        {
+                            <form asp-action="ExibirPagamentoConfirmado" asp-controller="Home" method="get">
+                                <input type="hidden" name="idPedido" value="@pedido.IdPedido" />
+                                <button type="submit" class="details-button">Ver Detalhes da Compra</button>
+                            </form>
+                        }
+                        else if (pedido.StatusPedido == "aguardando pagamento")
+                        {
+                            <form asp-action="IrParaPagamento" asp-controller="Home" method="get">
+                                <input type="hidden" name="idPedido" value="@pedido.IdPedido" />
+                                <button type="submit" class="details-button">Ir Para Pagamento</button>
+                            </form>
+                        }
+                        else if (pedido.StatusPedido == "cancelado")
+                        {
+                            <p>Pedido Cancelado</p>
+                        }
+
+                        <div class="order-items">
+                            <strong>Itens do Pedido:</strong>
+                            <ul>
+                                @foreach (var item in grupoPedido.SelectMany(p => p.Itens))
+                                {
+                                    <li>Modelo: @item.Modelo, Marca: @item.Marca</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
                 }
-            </ul>
+            }
         </div>
-    }
-}
+    </section>
+</body>
+</html>

@@ -2,7 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-
+/*
 $(document).ready(function () {
     $('#btn-menu').click(function () {
         $('body').toggleClass('side-menu-open');
@@ -18,4 +18,4 @@ $(document).ready(function () {
     $('#sideMenu ul li a').click(function () {
         $('body').removeClass('side-menu-open');
     });
-});
+});*/

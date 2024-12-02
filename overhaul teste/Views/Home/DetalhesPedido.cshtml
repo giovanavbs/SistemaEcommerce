@@ -1,34 +1,105 @@
 ﻿@model overhaul_teste.ViewModels.AvaliacaoViewModel
 
-<h2>Detalhes da Avaliação</h2>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
 
-<h3>Avaliação</h3>
-<p><strong>nome do cliente:</strong> @Model.NomeCliente @Model.SobrenomeCliente</p>
-<p><strong>avaliação escrita:</strong> @Model.AvaliacaoEscrita</p>
-<p><strong>nota:</strong> @Model.AvaliacaoNota</p>
-<p><strong>data da avaliação:</strong> @Model.DataAvaliacao.ToString("dd/MM/yyyy")</p>
+<div class="avaliacao-container">
+    <div class="container-avaliacao">
+        <div class="container-detalhes-avaliacao">
+            <strong><p>Avaliação do Cliente:</p></strong>
+            <p><strong>Nome do Cliente:</strong> @Model.NomeCliente @Model.SobrenomeCliente</p>
+            <p><strong>Avaliação Escrita:</strong> @Model.AvaliacaoEscrita</p>
+            <p><strong>Nota: <i class="fa-solid fa-star" style="color: #FFD43B;"></i></strong> @Model.AvaliacaoNota</p>
+            <p><strong>Data da Avaliação:</strong> @Model.DataAvaliacao.ToString("dd/MM/yyyy")</p>
+        </div>
 
-<h3>Itens do Pedido</h3>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Modelo</th>
-            <th>Marca</th>
-            <th>Ano</th>
-            <th>Quantidade</th>
-            <th>Preço Unitário</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.ItensPedido)
-        {
-            <tr>
-                <td>@item.Modelo</td>
-                <td>@item.Marca</td>
-                <td>@item.Ano</td>
-                <td>@item.Quantidade</td>
-                <td>@item.PrecoUnitario.ToString("C")</td> 
-            </tr>
+        <br />
+
+        <div class="container-itens-pedido">
+            <strong><p>Itens do Pedido:</p></strong>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Modelo</th>
+                        <th>Marca</th>
+                        <th>Ano</th>
+                        <th>Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ItensPedido)
+                    {
+                        <tr>
+                            <td>@item.Modelo</td>
+                            <td>@item.Marca</td>
+                            <td>@item.Ano</td>
+                            <td>@item.Quantidade</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #1c1c1c;
+    }
+
+    .avaliacao-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .container-avaliacao {
+        background-color: #2b2b2b;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .container-detalhes-avaliacao {
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+        .container-detalhes-avaliacao p {
+            color: #f0f0f0;
+            margin: 5px 0;
         }
-    </tbody>
-</table>
+
+    .container-itens-pedido p {
+        color: #f0f0f0;
+    }
+
+    .container-itens-pedido table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #3d3d3d;
+        color: #f0f0f0;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .container-itens-pedido th, .container-itens-pedido td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    .container-itens-pedido th {
+        background-color: #464646;
+    }
+
+    .container-itens-pedido tr:nth-child(even) {
+        background-color: #2f2f2f;
+    }
+</style>

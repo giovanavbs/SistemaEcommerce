@@ -1,10 +1,105 @@
-﻿@model IEnumerable<overhaul_teste.Models.Carro>
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos Carros</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <style>
+      body{
+        background-color: #202020;
+      }
+      .todos-carros {
+        background-color: #202020;
+        color: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+      }
 
-<div>
-    <h2>Todos os Carros</h2>
-    <table class="table">
-        <thead>
-            <tr>
+      .carros {
+        width: 90%;
+        max-width: 1600px;
+        background-color: #2d2d2d;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        margin-top: 30px;
+      }
+
+      .carros h2 {
+        text-align: center;
+        color: #ddd;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        background-color: #444444;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #555;
+      }
+
+      th {
+        color: #ccc;
+        font-weight: bold;
+      }
+
+      tbody tr:hover {
+        background-color: #444;
+      }
+
+      button {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      button.alterar {
+        background-color: #0000cd;
+        color: #fff;
+        margin-right: 5px;
+      }
+
+      button.excluir {
+        background-color: #b22222;
+        color: #fff;
+      }
+
+      /*media (max-width: 600px) {
+        th,
+        td {
+          padding: 8px 5px;
+          font-size: 14px;
+        }*/
+
+        button {
+          padding: 6px 8px;
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <section class="todos-carros">
+        <div class="carros">
+          <h2>Todos os Carros</h2>
+          <table>
+            <thead>
+              <tr>
                 <th>ID</th>
                 <th>Modelo</th>
                 <th>Marca</th>
@@ -12,38 +107,36 @@
                 <th>Preço</th>
                 <th>Status</th>
                 <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var carro in Model)
-            {
+              </tr>
+            </thead>
+            <tbody>
+              @foreach (var carro in Model)
+              {
                 <tr>
-                    <td>@carro.Id</td>
-                    <td>@carro.Modelo</td>
-                    <td>@carro.Marca</td>
-                    <td>@carro.Ano</td>
-                    <td>@carro.Preco</td>
-                    <td>@carro.StatusCarro</td>
-                    <td>
-                        <form asp-action="EditarCarro" method="get" style="display:inline;">
-                            <input type="hidden" name="id" value="@carro.Id" />
-                            <button type="submit" class="btn btn-primary">
-                                @(carro.StatusCarro == "excluido" ? "Reabilitar Venda" : "Alterar")
-                            </button>
-                        </form>
+                  <td>@carro.Id</td>
+                  <td>@carro.Modelo</td>
+                  <td>@carro.Marca</td>
+                  <td>@carro.Ano</td>
+                  <td>@carro.Preco</td>
+                  <td>@carro.StatusCarro</td>
+                  <td>
+                    <form asp-action="EditarCarro" method="get" style="display:inline;">
+                        <input type="hidden" name="id" value="@carro.Id" />
+                        <button type="submit" class="alterar">
+                            @(carro.StatusCarro == "excluido" ? "Reabilitar Venda" : "Alterar")
+                        </button>
+                    </form>
 
-
-
-
-
-                        <form asp-action="ExcluirCarro" method="post" style="display:inline;">
-                            <input type="hidden" name="idCarro" value="@carro.Id" />
-                            <button type="submit" class="btn btn-danger" @(carro.StatusCarro == "excluido" ? "disabled" : "")>Excluir</button>
-                        </form>
-                    </td>
+                    <form asp-action="ExcluirCarro" method="post" style="display:inline;">
+                        <input type="hidden" name="idCarro" value="@carro.Id" />
+                        <button type="submit" class="excluir" @(carro.StatusCarro == "excluido" ? "disabled" : "")>Excluir</button>
+                    </form>
+                  </td>
                 </tr>
-            }
-
-        </tbody>
-    </table>
-</div>
+              }
+            </tbody>
+          </table>
+        </div>
+    </section>
+  </body>
+</html>
